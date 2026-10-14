@@ -1,0 +1,553 @@
+/* ============================================================
+   EBCOM Infographics Landing
+   Square Cards — Dark Theme
+   Each card matches its product brand color
+   ============================================================ */
+
+/* فونت سفارشی */
+@font-face {
+  font-family: "IranYekanX";
+  src: url("../../assets/fonts/IRANYekanXVFaNumVF.woff2") format("woff2");
+  font-display: swap;
+}
+
+:root {
+  /* Credit Brand — Orange #FF7722 */
+  --credit: #ff7722;
+  --credit-light: #ffa066;
+  --credit-dark: #cc5a0a;
+  --credit-glow: rgba(255, 119, 34, 0.55);
+
+  /* Ziira Brand — Purple */
+  --ziira: #6d28d9;
+  --ziira-light: #8b5cf6;
+  --ziira-dark: #4c1d95;
+  --ziira-glow: rgba(109, 40, 217, 0.55);
+
+  /* Ewano Merchant Brand — Mint Green */
+  --ewano: #3dd598;
+  --ewano-light: #5fe0a8;
+  --ewano-dark: #00a88e;
+  --ewano-glow: rgba(61, 213, 152, 0.55);
+
+  /* EBCOM Brand — Lime */
+  --ebcom: #b8e600;
+  --ebcom-light: #c9f01f;
+  --ebcom-dark: #99cc00;
+  --ebcom-glow: rgba(153, 204, 0, 0.55);
+
+  /* Dark Palette */
+  --bg-base: #0a0a0f;
+  --bg-card: #14141c;
+  --text-white: #ffffff;
+  --text-soft: #e5e7eb;
+  --text-muted: #9ca3af;
+  --border-subtle: rgba(255, 255, 255, 0.08);
+
+  --font-family:
+    "IranYekanX", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    sans-serif;
+
+  /* ✅ ابعاد کارت مربعی */
+  --card-size: 320px;
+  --card-radius: 28px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-family);
+  background: var(--bg-base);
+  color: var(--text-soft);
+  line-height: 1.7;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 20px;
+  background-image:
+    radial-gradient(
+      circle at 15% 15%,
+      rgba(255, 119, 34, 0.12) 0%,
+      transparent 45%
+    ),
+    radial-gradient(
+      circle at 85% 85%,
+      rgba(109, 40, 217, 0.15) 0%,
+      transparent 45%
+    );
+  background-attachment: fixed;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+}
+
+/* ============================================================
+   GRID
+   ============================================================ */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  justify-content: center;
+  align-items: stretch;
+  gap: 28px;
+  padding: 40px 0;
+  margin: 0 auto;
+}
+
+/* ============================================================
+   CARD — پایه (مربعی با گوشه‌های گرد)
+   ============================================================ */
+.card {
+  width: 100%;
+  height: var(--card-size);
+  border-radius: var(--card-radius);
+  overflow: hidden;
+  position: relative;
+  flex-shrink: 0;
+  background: var(--bg-card);
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease,
+    border-color 0.3s ease;
+  box-shadow:
+    0 20px 50px rgba(0, 0, 0, 0.55),
+    0 4px 12px rgba(0, 0, 0, 0.35);
+  animation: cardFadeIn 0.7s cubic-bezier(0.16, 1, 0.3, 1) backwards;
+}
+
+.card:nth-child(1) { animation-delay: 0.05s; }
+.card:nth-child(2) { animation-delay: 0.15s; }
+.card:nth-child(3) { animation-delay: 0.25s; }
+.card:nth-child(4) { animation-delay: 0.35s; }
+
+@keyframes cardFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px) scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.card-link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  text-decoration: none;
+  color: inherit;
+  width: 100%;
+  height: 100%;
+  padding: 32px 24px;
+  border-radius: var(--card-radius);
+  gap: 8px;
+}
+
+/* ============================================================
+   CARD ICON — دایره شفاف با حاشیه رنگی
+   ============================================================ */
+.card-icon {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin: 0 auto 18px auto;
+  overflow: hidden;
+  padding: 14px;
+  position: relative;
+  background: transparent;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.card-icon img {
+  display: block;
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  position: relative;
+  z-index: 1;
+}
+
+.card:hover .card-icon {
+  transform: scale(1.05);
+}
+
+/* ============================================================
+   CARD BODY
+   ============================================================ */
+.card-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+  flex-grow: 1;
+}
+
+.card-body h3 {
+  font-size: 22px;
+  font-weight: 900;
+  color: var(--text-white);
+  margin-bottom: 8px;
+  letter-spacing: 0.3px;
+  line-height: 1.3;
+}
+
+.card-body p {
+  font-size: 13px;
+  color: var(--text-muted);
+  line-height: 1.75;
+  margin-bottom: 16px;
+}
+
+/* ============================================================
+   CARD CTA — دکمه «مشاهده ←»
+   ============================================================ */
+.card-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  font-size: 14px;
+  font-weight: 800;
+  padding: 8px 20px;
+  border-radius: 20px;
+  transition: all 0.25s ease;
+  margin-top: auto;
+}
+
+.card:hover .card-cta {
+  transform: translateX(-3px);
+}
+
+/* ============================================================
+   کارت Credit — تم نارنجی #FF7722
+   ============================================================ */
+.card-credit {
+  --card-accent: var(--credit);
+  border: 2px solid rgba(255, 119, 34, 0.4);
+  background: radial-gradient(
+    circle at 30% 20%,
+    rgba(255, 119, 34, 0.2) 0%,
+    var(--bg-card) 65%
+  );
+}
+
+.card-credit:hover {
+  transform: translateY(-8px) scale(1.03);
+  border-color: var(--credit);
+  box-shadow:
+    0 35px 70px rgba(255, 119, 34, 0.45),
+    0 15px 30px rgba(0, 0, 0, 0.55);
+}
+
+.card-credit .card-icon {
+  background: transparent;
+  border: 2px solid var(--credit);
+  box-shadow: 0 0 16px var(--credit-glow);
+}
+
+.card-credit:hover .card-icon {
+  box-shadow: 0 0 26px var(--credit-glow);
+}
+
+.card-credit .card-cta {
+  color: var(--credit);
+  background: rgba(255, 119, 34, 0.15);
+  border: 1px solid rgba(255, 119, 34, 0.45);
+}
+
+.card-credit:hover .card-cta {
+  background: var(--credit);
+  color: #1a0d02;
+}
+
+/* ============================================================
+   کارت Ziira — تم بنفش #6d28d9
+   ============================================================ */
+.card-ziira {
+  --card-accent: var(--ziira);
+  border: 2px solid rgba(109, 40, 217, 0.45);
+  background: radial-gradient(
+    circle at 30% 20%,
+    rgba(109, 40, 217, 0.22) 0%,
+    var(--bg-card) 65%
+  );
+}
+
+.card-ziira:hover {
+  transform: translateY(-8px) scale(1.03);
+  border-color: var(--ziira);
+  box-shadow:
+    0 35px 70px rgba(109, 40, 217, 0.45),
+    0 15px 30px rgba(0, 0, 0, 0.55);
+}
+
+.card-ziira .card-icon {
+  background: transparent;
+  border: 2px solid var(--ziira);
+  box-shadow: 0 0 16px var(--ziira-glow);
+}
+
+.card-ziira:hover .card-icon {
+  box-shadow: 0 0 26px var(--ziira-glow);
+}
+
+.card-ziira .card-cta {
+  color: var(--ziira-light);
+  background: rgba(109, 40, 217, 0.2);
+  border: 1px solid rgba(109, 40, 217, 0.45);
+}
+
+.card-ziira:hover .card-cta {
+  background: var(--ziira);
+  color: #fff;
+}
+
+/* ============================================================
+   کارت Ewano Merchant — تم سبز نعنایی #3DD598
+   ============================================================ */
+.card-ewano {
+  --card-accent: var(--ewano);
+  border: 2px solid rgba(61, 213, 152, 0.4);
+  background: radial-gradient(
+    circle at 30% 20%,
+    rgba(61, 213, 152, 0.18) 0%,
+    var(--bg-card) 65%
+  );
+}
+
+.card-ewano:hover {
+  transform: translateY(-8px) scale(1.03);
+  border-color: var(--ewano);
+  box-shadow:
+    0 35px 70px rgba(61, 213, 152, 0.4),
+    0 15px 30px rgba(0, 0, 0, 0.55);
+}
+
+.card-ewano .card-icon {
+  background: transparent;
+  border: 2px solid var(--ewano);
+  box-shadow: 0 0 16px var(--ewano-glow);
+}
+
+.card-ewano:hover .card-icon {
+  box-shadow: 0 0 26px var(--ewano-glow);
+}
+
+.card-ewano .card-cta {
+  color: var(--ewano);
+  background: rgba(61, 213, 152, 0.15);
+  border: 1px solid rgba(61, 213, 152, 0.4);
+}
+
+.card-ewano:hover .card-cta {
+  background: var(--ewano);
+  color: #071210;
+}
+
+/* ============================================================
+   کارت EBCOM News — تم لایم #B8E600
+   ============================================================ */
+.card-ebcom {
+  --card-accent: var(--ebcom);
+  border: 2px solid rgba(153, 204, 0, 0.4);
+  background: radial-gradient(
+    circle at 30% 20%,
+    rgba(153, 204, 0, 0.18) 0%,
+    var(--bg-card) 65%
+  );
+}
+
+.card-ebcom:hover {
+  transform: translateY(-8px) scale(1.03);
+  border-color: var(--ebcom);
+  box-shadow:
+    0 35px 70px rgba(153, 204, 0, 0.4),
+    0 15px 30px rgba(0, 0, 0, 0.55);
+}
+
+.card-ebcom .card-icon {
+  background: transparent;
+  border: 2px solid var(--ebcom);
+  box-shadow: 0 0 16px var(--ebcom-glow);
+}
+
+.card-ebcom:hover .card-icon {
+  box-shadow: 0 0 26px var(--ebcom-glow);
+}
+
+.card-ebcom .card-cta {
+  color: var(--ebcom);
+  background: rgba(153, 204, 0, 0.15);
+  border: 1px solid rgba(153, 204, 0, 0.4);
+}
+
+.card-ebcom:hover .card-cta {
+  background: var(--ebcom);
+  color: #071210;
+}
+
+/* ============================================================
+   لوگوی Ewano (در هدر صفحات داخلی)
+   ============================================================ */
+.ewano-logo-box {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: auto;
+  min-width: 160px;
+  height: 64px;
+  overflow: visible;
+  flex-shrink: 0;
+}
+
+.ewano-logo-full {
+  display: block;
+  height: 100%;
+  width: auto;
+  max-width: 260px;
+  object-fit: contain;
+  object-position: right center;
+}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@media (max-width: 1100px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+}
+
+@media (max-width: 900px) {
+  :root {
+    --card-size: 300px;
+  }
+  .card-link {
+    padding: 28px 20px;
+  }
+  .card-icon {
+    width: 80px;
+    height: 80px;
+    padding: 12px;
+  }
+  .card-body h3 {
+    font-size: 20px;
+  }
+  .card-body p {
+    font-size: 12.5px;
+  }
+  .ewano-logo-box {
+    height: 52px;
+    min-width: 130px;
+  }
+}
+
+@media (max-width: 700px) {
+  :root {
+    --card-size: 280px;
+    --card-radius: 24px;
+  }
+  body {
+    padding: 40px 16px;
+  }
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  .card-link {
+    padding: 24px 20px;
+  }
+  .card-icon {
+    width: 70px;
+    height: 70px;
+    padding: 10px;
+    margin-bottom: 14px;
+  }
+  .card-body h3 {
+    font-size: 19px;
+  }
+  .card-body p {
+    font-size: 12px;
+    line-height: 1.65;
+  }
+  .card-cta {
+    padding: 6px 16px;
+    font-size: 13px;
+  }
+  .ewano-logo-box {
+    height: 44px;
+    min-width: 110px;
+  }
+}
+
+@media (max-width: 360px) {
+  :root {
+    --card-size: 260px;
+    --card-radius: 22px;
+  }
+  .card-icon {
+    width: 62px;
+    height: 62px;
+    padding: 8px;
+  }
+  .card-body h3 {
+    font-size: 17px;
+  }
+  .card-body p {
+    font-size: 11.5px;
+  }
+  .ewano-logo-box {
+    height: 38px;
+    min-width: 95px;
+  }
+}
+
+/* ============================================================
+   دسترس‌پذیری
+   ============================================================ */
+@media (prefers-reduced-motion: reduce) {
+  .card,
+  .card-icon,
+  .card-cta {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+/* ============================================================
+   PRINT
+   ============================================================ */
+@media print {
+  body {
+    background: #fff;
+    padding: 0;
+  }
+  .card {
+    box-shadow: none;
+    border: 1px solid #ccc;
+  }
+}
