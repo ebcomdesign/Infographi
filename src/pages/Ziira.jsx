@@ -1,21 +1,10 @@
-import React, { useEffect, useRef } from 'react';
-import { Link } from 'react-router-dom';
-import { ArrowRight, Download } from 'lucide-react';
+import React, { useEffect } from 'react';
+import TopBar from '../components/common/TopBar';
+
+const primaryColor = '#A855F7';
 
 export default function Ziira() {
-  const containerRef = useRef(null);
-
   useEffect(() => {
-    // پیاده‌سازی انیمیشن هرم معماری ۴ سطحی
-    const archTiers = [
-      { id: 1, startX: 218, endX: 76, tierClass: "tier-1", rectId: "clip-rect-1" },
-      { id: 2, startX: 178, endX: 76, tierClass: "tier-2", rectId: "clip-rect-2" },
-      { id: 3, startX: 138, endX: 76, tierClass: "tier-3", rectId: "clip-rect-3" },
-      { id: 4, startX: 98, endX: 76, tierClass: "tier-4", rectId: "clip-rect-4" }
-    ];
-
-    let archAnimationRunning = false;
-
     function animateLeaderLine(rectId, startX, endX, duration, onComplete) {
       const rectEl = document.getElementById(rectId);
       if (!rectEl) return;
@@ -40,18 +29,27 @@ export default function Ziira() {
       requestAnimationFrame(step);
     }
 
+    const archTiers = [
+      { id: 1, startX: 218, endX: 76, tierClass: "tier-1", rectId: "clip-rect-1" },
+      { id: 2, startX: 178, endX: 76, tierClass: "tier-2", rectId: "clip-rect-2" },
+      { id: 3, startX: 138, endX: 76, tierClass: "tier-3", rectId: "clip-rect-3" },
+      { id: 4, startX: 98, endX: 76, tierClass: "tier-4", rectId: "clip-rect-4" }
+    ];
+
+    let archAnimationRunning = false;
+
     function resetArchElements() {
-      archTiers.forEach(t => {
+      archTiers.forEach((t) => {
         const drop = document.getElementById(`drop-tier-${t.id}`);
         if (drop) {
-          drop.classList.remove('drop-active');
-          drop.style.opacity = '0';
+          drop.classList.remove("drop-active");
+          drop.style.opacity = "0";
         }
         const cylinder = document.getElementById(`pyr-tier-${t.id}`);
-        if (cylinder) cylinder.classList.remove('tier-expanded');
+        if (cylinder) cylinder.classList.remove("tier-expanded");
 
         const dot = document.getElementById(`dot-tier-${t.id}`);
-        if (dot) dot.classList.remove('dot-visible');
+        if (dot) dot.classList.remove("dot-visible");
 
         const rect = document.getElementById(t.rectId);
         if (rect) {
@@ -60,10 +58,12 @@ export default function Ziira() {
         }
 
         const badge = document.getElementById(`badge-tier-${t.id}`);
-        if (badge) badge.classList.remove('badge-visible');
+        if (badge) badge.classList.remove("badge-visible");
 
         const card = document.querySelector(`.arch-capsule-card.${t.tierClass}`);
-        if (card) card.classList.remove('card-visible', 'card-active-glow');
+        if (card) {
+          card.classList.remove("card-visible", "card-active-glow");
+        }
       });
     }
 
@@ -74,31 +74,31 @@ export default function Ziira() {
       const badgeEl = document.getElementById(`badge-tier-${tierObj.id}`);
       const cardEl = document.querySelector(`.arch-capsule-card.${tierObj.tierClass}`);
 
-      if (dropEl) dropEl.classList.add('drop-active');
+      if (dropEl) dropEl.classList.add("drop-active");
 
       setTimeout(() => {
-        if (cylEl) cylEl.classList.add('tier-expanded');
+        if (cylEl) cylEl.classList.add("tier-expanded");
       }, 180);
 
       setTimeout(() => {
-        if (dropEl) dropEl.style.opacity = '0';
-        if (dotEl) dotEl.classList.add('dot-visible');
+        if (dropEl) dropEl.style.opacity = "0";
+        if (dotEl) dotEl.classList.add("dot-visible");
 
         animateLeaderLine(tierObj.rectId, tierObj.startX, tierObj.endX, 360, () => {
           const isMobile = window.innerWidth <= 768;
-          if (badgeEl) badgeEl.classList.add('badge-visible');
+          if (badgeEl) badgeEl.classList.add("badge-visible");
 
           if (!isMobile) {
             if (cardEl) {
-              cardEl.classList.add('card-visible', 'card-active-glow');
-              setTimeout(() => cardEl.classList.remove('card-active-glow'), 800);
+              cardEl.classList.add("card-visible", "card-active-glow");
+              setTimeout(() => cardEl.classList.remove("card-active-glow"), 800);
             }
             if (onTierFinished) setTimeout(onTierFinished, 240);
           } else {
             setTimeout(() => {
               if (cardEl) {
-                cardEl.classList.add('card-visible', 'card-active-glow');
-                setTimeout(() => cardEl.classList.remove('card-active-glow'), 900);
+                cardEl.classList.add("card-visible", "card-active-glow");
+                setTimeout(() => cardEl.classList.remove("card-active-glow"), 900);
               }
               if (onTierFinished) setTimeout(onTierFinished, 450);
             }, 380);
@@ -124,52 +124,42 @@ export default function Ziira() {
       setTimeout(next, 100);
     }
 
-    // پیاده‌سازی انیمیشن گیج‌ها
     const gaugeData = [
-      { selector: '.gauge-cyan', targetOffset: 75, delay: 0 },
-      { selector: '.gauge-green', targetOffset: 95, delay: 160 },
-      { selector: '.gauge-purple', targetOffset: 60, delay: 320 },
-      { selector: '.gauge-orange', targetOffset: 110, delay: 480 }
+      { selector: ".gauge-cyan", targetOffset: 75, delay: 0 },
+      { selector: ".gauge-green", targetOffset: 95, delay: 160 },
+      { selector: ".gauge-purple", targetOffset: 60, delay: 320 },
+      { selector: ".gauge-orange", targetOffset: 110, delay: 480 },
     ];
 
-    let gaugeAnimationRunning = false;
     function playGaugeAnimation() {
-      if (gaugeAnimationRunning) return;
-      gaugeAnimationRunning = true;
-
-      gaugeData.forEach(g => {
+      gaugeData.forEach((g) => {
         setTimeout(() => {
           const card = document.querySelector(g.selector);
           if (card) {
-            card.classList.add('gauge-visible');
-            const circle = card.querySelector('.gauge-fill-circle');
+            card.classList.add("gauge-visible");
+            const circle = card.querySelector(".gauge-fill-circle");
             if (circle) circle.style.strokeDashoffset = g.targetOffset;
           }
         }, g.delay + 100);
       });
-
-      setTimeout(() => {
-        gaugeAnimationRunning = false;
-      }, 1800);
     }
 
-    // مشاهده‌گرهای تقاطع (Intersection Observers)
-    const revealBoxes = document.querySelectorAll('.reveal-box');
+    const revealBoxes = document.querySelectorAll(".reveal-box");
     const boxObserver = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
+      entries.forEach((entry) => {
         if (entry.isIntersecting) {
-          entry.target.classList.add('box-revealed');
+          entry.target.classList.add("box-revealed");
           boxObserver.unobserve(entry.target);
         }
       });
     }, { threshold: 0.1 });
-    revealBoxes.forEach(b => boxObserver.observe(b));
+    revealBoxes.forEach((b) => boxObserver.observe(b));
 
-    const archBox = document.querySelector('.arch-redesign-box');
+    const archBox = document.querySelector(".arch-redesign-box");
     let archObs;
     if (archBox) {
       archObs = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
+        entries.forEach((entry) => {
           if (entry.isIntersecting) {
             playArchAnimation();
             archObs.unobserve(entry.target);
@@ -179,11 +169,11 @@ export default function Ziira() {
       archObs.observe(archBox);
     }
 
-    const gaugeSection = document.querySelector('.gauge-section');
+    const gaugeSection = document.querySelector(".gauge-section");
     let gaugeObs;
     if (gaugeSection) {
       gaugeObs = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
+        entries.forEach((entry) => {
           if (entry.isIntersecting) {
             playGaugeAnimation();
             gaugeObs.unobserve(entry.target);
@@ -201,26 +191,10 @@ export default function Ziira() {
   }, []);
 
   return (
-    <div className="ziira-scope pb-16 max-w-[1220px] mx-auto space-y-6" ref={containerRef}>
-      {/* دکمه‌های کنترل و ناوبری بالا */}
-      <div className="flex items-center justify-between">
-        <Link 
-          to="/" 
-          className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-medium text-slate-400 hover:text-white transition-colors"
-        >
-          <ArrowRight size={16} />
-          <span>بازگشت به پرتال اصلی</span>
-        </Link>
-        <button 
-          onClick={() => window.print()}
-          className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-800 text-xs text-slate-300 hover:bg-slate-800 hover:text-white transition-colors"
-        >
-          <Download size={14} />
-          <span>چاپ / خروجی PDF</span>
-        </button>
-      </div>
+    <div className="min-h-screen py-6 flex flex-col items-center">
+      <TopBar title="پلتفرم هوش مصنوعی زیرا (Ziira)" />
 
-      {/* SVG تعاریف گرادینت‌های مرجع */}
+      {/* SVG Definitions */}
       <svg width="0" height="0" style={{ position: 'absolute' }}>
         <defs>
           <linearGradient id="grad-cyan-svg" x1="0%" y1="0%" x2="100%" y2="100%">
@@ -251,827 +225,506 @@ export default function Ziira() {
         </defs>
       </svg>
 
-      {/* پوسته اینفوگرافیک زیرا */}
-      <div className="infographic-container">
-        <header className="header">
-          <div className="header-top">
-            <div className="brand-lockup">
-              <div className="brand-row-main">
-                <div className="ebcom-logo-wrap">
-                  <img
-                    src="/assets/images/Ziira.png"
-                    alt="شرکت همراه کسب‌وکارهای هوشمند (EBCOM)"
-                    className="ebcom-logo-img"
-                    onError={(e) => {
-                      e.target.onerror = null;
-                      e.target.src = '/assets/images/ebcom-sign.png';
-                    }}
-                  />
-                </div>
-
-                <div className="brand-divider brand-divider-internal"></div>
-
-                <div className="ziira-brand-badge">
-                  <div className="ziira-brand-text">
-                    <span className="ziira-brand-name">پلتفرم زیرا | Ziira AI</span>
-                    <span className="ziira-brand-sub">هوش مصنوعی یکپارچه سازمانی</span>
+      <div className="ziira-scope w-full max-w-[1200px] my-4">
+        <div className="infographic-container">
+          {/* HEADER */}
+          <header className="header p-8 sm:p-12 border-b border-white/10">
+            <div className="header-top flex justify-between items-center pb-6 mb-8 border-b border-white/10 flex-wrap gap-4">
+              <div className="brand-lockup flex items-center gap-4 flex-wrap">
+                <div className="brand-row-main flex items-center gap-4">
+                  <div className="ebcom-logo-wrap">
+                    <img
+                      src="/assets/images/Ziira.png"
+                      alt="Ziira"
+                      className="ebcom-logo-img h-10 sm:h-12 w-auto object-contain"
+                      onError={(e) => { e.target.src = '/assets/images/ebcom-sign.png'; }}
+                    />
                   </div>
-                </div>
-              </div>
-
-              <div className="brand-divider brand-divider-main"></div>
-
-              <div className="strategic-affiliation">
-                <div className="affiliation-pill">
-                  هم‌پیمان راهبردی: <strong>همراه اول</strong>
-                </div>
-                <a
-                  href="https://ziira.ir"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="affiliation-link"
-                >
-                  <span className="live-dot"></span>
-                  <span>ziira.ir</span>
-                </a>
-              </div>
-            </div>
-
-            <div className="exec-badge">گزارش راهبردی</div>
-          </div>
-
-          <div className="hero-title-area">
-            <div className="hero-text">
-              <h1>
-                پلتفرم هوش مصنوعی «زیرا» (Ziira)
-                <span className="badge-glow">زیرساخت حاکمیتی AI</span>
-              </h1>
-              <p>
-                پلتفرم جامع، بومی و چندوجهی هوش مصنوعی شرکت همراه کسب‌وکارهای هوشمند (EBCOM)؛ ارائه‌دهنده راهکارهای هوش مصنوعی یکپارچه با تمرکز ویژه بر زبان فارسی، حاکمیت داده سازمانی و اتصال مستقیم به سامانه‌های عملیاتی کشور در بستر ارتباطی همراه اول.
-              </p>
-            </div>
-
-            <div className="hero-quick-kpi">
-              <div className="quick-kpi-item">
-                <div className="quick-kpi-num">Omni-Channel</div>
-                <div className="quick-kpi-label">دسترسی چندرسانه‌ای</div>
-              </div>
-              <div className="quick-kpi-item">
-                <div className="quick-kpi-num">B2B & B2C</div>
-                <div className="quick-kpi-label">مدل درآمدی دوگانه</div>
-              </div>
-              <div className="quick-kpi-item">
-                <div className="quick-kpi-num">RAG بومی</div>
-                <div className="quick-kpi-label">پایگاه دانش سازمانی</div>
-              </div>
-            </div>
-          </div>
-        </header>
-
-        {/* نوار ۴ گانه استراتژیک */}
-        <div className="strategic-strip">
-          <div className="strip-card c-green reveal-box">
-            <div className="strip-icon-sphere">🇮🇷</div>
-            <div>
-              <div className="strip-text-title">تمرکز عمیق بر زبان فارسی</div>
-              <div className="strip-text-desc">درک بافت فرهنگی و نگارش تخصصی اداری و تجاری</div>
-            </div>
-          </div>
-
-          <div className="strip-card c-cyan reveal-box">
-            <div className="strip-icon-sphere">🏢</div>
-            <div>
-              <div className="strip-text-title">فضای اختصاصی سازمانی</div>
-              <div className="strip-text-desc">ایزولاسیون کامل داده‌ها و امنیت در تراز Enterprise</div>
-            </div>
-          </div>
-
-          <div className="strip-card c-purple reveal-box">
-            <div className="strip-icon-sphere">🤖</div>
-            <div>
-              <div className="strip-text-title">دستیاران متصل به فرآیند</div>
-              <div className="strip-text-desc">اتصال زنده به جیرا، تیکتینگ و ERP سازمان</div>
-            </div>
-          </div>
-
-          <div className="strip-card c-orange reveal-box">
-            <div className="strip-icon-sphere">💳</div>
-            <div>
-              <div className="strip-text-title">کیف پول متمرکز و سهمیه‌بندی</div>
-              <div className="strip-text-desc">مدیریت مصرف تیم‌ها با مکانیزم Pay-per-Use</div>
-            </div>
-          </div>
-        </div>
-
-        <div className="content">
-          {/* بخش اول: معماری ۴ لایه و هرم سه‌بعدی */}
-          <div className="section-header">
-            <div className="section-title">
-              <div className="section-title-bar bar-cyan"></div>
-              <h2>
-                معماری ۴ سطحی پلتفرم زیرا
-                <span className="sec-title-en">(Layered AI Architecture)</span>
-              </h2>
-            </div>
-            <div className="section-subtitle">
-              تفکیک لایه‌های زیرساختی، دانشی، عاملیتی و رابط کاربری
-            </div>
-          </div>
-
-          <div className="arch-redesign-box">
-            <div className="arch-two-col">
-              <div className="pyramid-stage" id="arch-pyramid-stage">
-                <svg
-                  className="pyramid-svg-clean"
-                  viewBox="0 0 540 480"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <defs>
-                    <linearGradient id="p-cyl1-top" x1="0%" y1="0%" x2="100%" y2="100%">
-                      <stop offset="0%" stopColor="#FFA0C5" />
-                      <stop offset="100%" stopColor="#FF1E7A" />
-                    </linearGradient>
-                    <linearGradient id="p-cyl1-side" x1="0%" y1="0%" x2="100%" y2="0%">
-                      <stop offset="0%" stopColor="#FF1E7A" />
-                      <stop offset="30%" stopColor="#FF6AA2" />
-                      <stop offset="70%" stopColor="#D60057" />
-                      <stop offset="100%" stopColor="#800034" />
-                    </linearGradient>
-
-                    <linearGradient id="p-cyl2-top" x1="0%" y1="0%" x2="100%" y2="100%">
-                      <stop offset="0%" stopColor="#E2A6FF" />
-                      <stop offset="100%" stopColor="#9C27B0" />
-                    </linearGradient>
-                    <linearGradient id="p-cyl2-side" x1="0%" y1="0%" x2="100%" y2="0%">
-                      <stop offset="0%" stopColor="#9C27B0" />
-                      <stop offset="30%" stopColor="#BA68C8" />
-                      <stop offset="70%" stopColor="#7B1FA2" />
-                      <stop offset="100%" stopColor="#4A148C" />
-                    </linearGradient>
-
-                    <linearGradient id="p-cyl3-top" x1="0%" y1="0%" x2="100%" y2="100%">
-                      <stop offset="0%" stopColor="#FFC588" />
-                      <stop offset="100%" stopColor="#FF6F00" />
-                    </linearGradient>
-                    <linearGradient id="p-cyl3-side" x1="0%" y1="0%" x2="100%" y2="0%">
-                      <stop offset="0%" stopColor="#FF6F00" />
-                      <stop offset="30%" stopColor="#FFA040" />
-                      <stop offset="70%" stopColor="#E65100" />
-                      <stop offset="100%" stopColor="#8F3000" />
-                    </linearGradient>
-
-                    <linearGradient id="p-cyl4-top" x1="0%" y1="0%" x2="100%" y2="100%">
-                      <stop offset="0%" stopColor="#EAFF85" />
-                      <stop offset="100%" stopColor="#99CC00" />
-                    </linearGradient>
-                    <linearGradient id="p-cyl4-side" x1="0%" y1="0%" x2="100%" y2="0%">
-                      <stop offset="0%" stopColor="#99CC00" />
-                      <stop offset="30%" stopColor="#BEE838" />
-                      <stop offset="70%" stopColor="#739900" />
-                      <stop offset="100%" stopColor="#405500" />
-                    </linearGradient>
-
-                    <radialGradient id="p-shadow" cx="50%" cy="50%" r="50%">
-                      <stop offset="0%" stopColor="rgba(0,0,0,0.85)" />
-                      <stop offset="60%" stopColor="rgba(0,0,0,0.4)" />
-                      <stop offset="100%" stopColor="transparent" />
-                    </radialGradient>
-
-                    <filter id="badge-glow-pink" x="-20%" y="-20%" width="140%" height="140%">
-                      <feDropShadow dx="0" dy="4" stdDeviation="6" floodColor="rgba(255, 46, 147, 0.4)" />
-                    </filter>
-                    <filter id="badge-glow-purple" x="-20%" y="-20%" width="140%" height="140%">
-                      <feDropShadow dx="0" dy="4" stdDeviation="6" floodColor="rgba(168, 85, 247, 0.4)" />
-                    </filter>
-                    <filter id="badge-glow-orange" x="-20%" y="-20%" width="140%" height="140%">
-                      <feDropShadow dx="0" dy="4" stdDeviation="6" floodColor="rgba(255, 122, 0, 0.4)" />
-                    </filter>
-                    <filter id="badge-glow-green" x="-20%" y="-20%" width="140%" height="140%">
-                      <feDropShadow dx="0" dy="4" stdDeviation="6" floodColor="rgba(153, 204, 0, 0.4)" />
-                    </filter>
-
-                    <clipPath id="clip-line-1"><rect id="clip-rect-1" x="218" y="70" width="0" height="35" /></clipPath>
-                    <clipPath id="clip-line-2"><rect id="clip-rect-2" x="178" y="155" width="0" height="40" /></clipPath>
-                    <clipPath id="clip-line-3"><rect id="clip-rect-3" x="138" y="250" width="0" height="40" /></clipPath>
-                    <clipPath id="clip-line-4"><rect id="clip-rect-4" x="98" y="350" width="0" height="40" /></clipPath>
-                  </defs>
-
-                  <ellipse id="pyr-floor-shadow" cx="280" cy="445" rx="200" ry="26" fill="url(#p-shadow)" />
-
-                  {/* لایه ۴ */}
-                  <g id="pyr-tier-4" className="tier-shape tier-shape-4">
-                    <path d="M 90 340 A 190 38 0 0 0 470 340 L 470 405 A 190 38 0 0 1 90 405 Z" fill="url(#p-cyl4-side)" />
-                    <ellipse cx="280" cy="340" rx="190" ry="38" fill="url(#p-cyl4-top)" />
-                    <path d="M 100 340 A 180 34 0 0 0 460 340" stroke="rgba(255,255,255,0.4)" strokeWidth="2" fill="none" />
-                  </g>
-
-                  {/* لایه ۳ */}
-                  <g id="pyr-tier-3" className="tier-shape tier-shape-3">
-                    <path d="M 130 240 A 150 30 0 0 0 430 240 L 430 295 A 150 30 0 0 1 130 295 Z" fill="url(#p-cyl3-side)" />
-                    <ellipse cx="280" cy="240" rx="150" ry="30" fill="url(#p-cyl3-top)" />
-                    <path d="M 140 240 A 140 26 0 0 0 420 240" stroke="rgba(255,255,255,0.45)" strokeWidth="2" fill="none" />
-                  </g>
-
-                  {/* لایه ۲ */}
-                  <g id="pyr-tier-2" className="tier-shape tier-shape-2">
-                    <path d="M 170 150 A 110 24 0 0 0 390 150 L 390 198 A 110 24 0 0 1 170 198 Z" fill="url(#p-cyl2-side)" />
-                    <ellipse cx="280" cy="150" rx="110" ry="24" fill="url(#p-cyl2-top)" />
-                    <path d="M 178 150 A 102 20 0 0 0 382 150" stroke="rgba(255,255,255,0.45)" strokeWidth="2" fill="none" />
-                  </g>
-
-                  {/* لایه ۱ */}
-                  <g id="pyr-tier-1" className="tier-shape tier-shape-1">
-                    <path d="M 210 65 A 70 16 0 0 0 350 65 L 350 108 A 70 16 0 0 1 210 108 Z" fill="url(#p-cyl1-side)" />
-                    <ellipse cx="280" cy="65" rx="70" ry="16" fill="url(#p-cyl1-top)" />
-                    <path d="M 216 65 A 64 14 0 0 0 344 65" stroke="rgba(255,255,255,0.5)" strokeWidth="2" fill="none" />
-                  </g>
-
-                  {/* قطره‌ها و امواج */}
-                  <g id="drop-tier-1" className="tier-drop drop-1">
-                    <circle className="drop-core" cx="280" cy="87" r="7" fill="url(#p-cyl1-top)" filter="url(#badge-glow-pink)" />
-                    <circle className="drop-ripple-a" cx="280" cy="87" r="14" fill="none" stroke="#FF1E7A" strokeWidth="2.5" />
-                    <circle className="drop-ripple-b" cx="280" cy="87" r="24" fill="none" stroke="#FFA0C5" strokeWidth="1.5" />
-                  </g>
-                  <g id="drop-tier-2" className="tier-drop drop-2">
-                    <circle className="drop-core" cx="280" cy="174" r="8" fill="url(#p-cyl2-top)" filter="url(#badge-glow-purple)" />
-                    <circle className="drop-ripple-a" cx="280" cy="174" r="16" fill="none" stroke="#9C27B0" strokeWidth="2.5" />
-                    <circle className="drop-ripple-b" cx="280" cy="174" r="28" fill="none" stroke="#E2A6FF" strokeWidth="1.5" />
-                  </g>
-                  <g id="drop-tier-3" className="tier-drop drop-3">
-                    <circle className="drop-core" cx="280" cy="268" r="9" fill="url(#p-cyl3-top)" filter="url(#badge-glow-orange)" />
-                    <circle className="drop-ripple-a" cx="280" cy="268" r="18" fill="none" stroke="#FF6F00" strokeWidth="2.5" />
-                    <circle className="drop-ripple-b" cx="280" cy="268" r="32" fill="none" stroke="#FFA040" strokeWidth="1.5" />
-                  </g>
-                  <g id="drop-tier-4" className="tier-drop drop-4">
-                    <circle className="drop-core" cx="280" cy="372" r="10" fill="url(#p-cyl4-top)" filter="url(#badge-glow-green)" />
-                    <circle className="drop-ripple-a" cx="280" cy="372" r="22" fill="none" stroke="#99CC00" strokeWidth="2.5" />
-                    <circle className="drop-ripple-b" cx="280" cy="372" r="38" fill="none" stroke="#EAFF85" strokeWidth="1.5" />
-                  </g>
-
-                  {/* خطوط اتصال و درصدها */}
-                  <g id="callout-tier-1" className="tier-callout-group">
-                    <circle id="dot-tier-1" className="callout-dot dot-1" cx="218" cy="87" r="4.5" fill="#FF1E7A" stroke="#FFFFFF" strokeWidth="1.5" />
-                    <path id="line-tier-1" className="callout-line line-1" d="M 218 87 L 76 87" stroke="#FF1E7A" strokeWidth="2" strokeDasharray="4,3" clipPath="url(#clip-line-1)" opacity="0.95" />
-                    <g id="badge-tier-1" className="callout-badge badge-1">
-                      <rect x="12" y="66" width="64" height="42" rx="12" fill="#181E2C" stroke="#FF1E7A" strokeWidth="2" filter="url(#badge-glow-pink)" />
-                      <text className="badge-text" x="44" y="87" dy="0.35em" textAnchor="middle" fill="#FFA0C5" fontSize="16" fontWeight="900">۲۵٪</text>
-                    </g>
-                  </g>
-
-                  <g id="callout-tier-2" className="tier-callout-group">
-                    <circle id="dot-tier-2" className="callout-dot dot-2" cx="178" cy="174" r="4.5" fill="#9C27B0" stroke="#FFFFFF" strokeWidth="1.5" />
-                    <path id="line-tier-2" className="callout-line line-2" d="M 178 174 L 76 174" stroke="#9C27B0" strokeWidth="2" strokeDasharray="4,3" clipPath="url(#clip-line-2)" opacity="0.95" />
-                    <g id="badge-tier-2" className="callout-badge badge-2">
-                      <rect x="12" y="153" width="64" height="42" rx="12" fill="#181E2C" stroke="#A855F7" strokeWidth="2" filter="url(#badge-glow-purple)" />
-                      <text className="badge-text" x="44" y="174" dy="0.35em" textAnchor="middle" fill="#E2A6FF" fontSize="16" fontWeight="900">۵۰٪</text>
-                    </g>
-                  </g>
-
-                  <g id="callout-tier-3" className="tier-callout-group">
-                    <circle id="dot-tier-3" className="callout-dot dot-3" cx="138" cy="268" r="4.5" fill="#FF6F00" stroke="#FFFFFF" strokeWidth="1.5" />
-                    <path id="line-tier-3" className="callout-line line-3" d="M 138 268 L 76 268" stroke="#FF6F00" strokeWidth="2" strokeDasharray="4,3" clipPath="url(#clip-line-3)" opacity="0.95" />
-                    <g id="badge-tier-3" className="callout-badge badge-3">
-                      <rect x="12" y="247" width="64" height="42" rx="12" fill="#181E2C" stroke="#FF7A00" strokeWidth="2" filter="url(#badge-glow-orange)" />
-                      <text className="badge-text" x="44" y="268" dy="0.35em" textAnchor="middle" fill="#FFC588" fontSize="16" fontWeight="900">۷۵٪</text>
-                    </g>
-                  </g>
-
-                  <g id="callout-tier-4" className="tier-callout-group">
-                    <circle id="dot-tier-4" className="callout-dot dot-4" cx="98" cy="370" r="4.5" fill="#99CC00" stroke="#FFFFFF" strokeWidth="1.5" />
-                    <path id="line-tier-4" className="callout-line line-4" d="M 98 370 L 76 370" stroke="#99CC00" strokeWidth="2" strokeDasharray="4,3" clipPath="url(#clip-line-4)" opacity="0.95" />
-                    <g id="badge-tier-4" className="callout-badge badge-4">
-                      <rect x="12" y="349" width="64" height="42" rx="12" fill="#181E2C" stroke="#99CC00" strokeWidth="2" filter="url(#badge-glow-green)" />
-                      <text className="badge-text" x="44" y="370" dy="0.35em" textAnchor="middle" fill="#EAFF85" fontSize="16" fontWeight="900">۱۰۰٪</text>
-                    </g>
-                  </g>
-                </svg>
-
-                <div className="pyramid-footer-note">
-                  <span>🎯</span>
-                  <span>هرم توزیع کارکردی پلتفرم هوش مصنوعی زیرا</span>
-                </div>
-              </div>
-
-              {/* کارت‌های تشریحی کنار هرم */}
-              <div className="arch-cards-col">
-                <div className="arch-capsule-card tier-1">
-                  <div className="capsule-sphere">🌐</div>
-                  <div className="capsule-info">
-                    <h3>
-                      لایه اول: کانال‌های دسترسی و تجربه یکپارچه
-                      <span className="card-title-en">(Omnichannel Experience)</span>
-                    </h3>
-                    <p>
-                      دسترسی آسان و چندکاناله از طریق وب‌سایت، اپلیکیشن اندروید، افزونه کروم، پیامک، و به‌زودی بات‌های روبیکا، بله و تلفن گویا با شناسه هویتی واحد.
-                    </p>
-                    <div className="capsule-tags">
-                      <span className="capsule-tag">وب‌سایت ziira.ir</span>
-                      <span className="capsule-tag">اپلیکیشن اندروید</span>
-                      <span className="capsule-tag">سرشماره پیامکی</span>
-                      <span className="capsule-tag">افزونه Chrome</span>
-                      <span className="capsule-tag">روبیکا و بله</span>
-                      <span className="capsule-tag">IVR تلفن گویا</span>
+                  <div className="brand-divider"></div>
+                  <div className="ziira-brand-badge">
+                    <div className="ziira-brand-text">
+                      <span className="ziira-brand-name" style={{ color: primaryColor }}>پلتفرم زیرا | Ziira AI[cite: 7]</span>
+                      <span className="ziira-brand-sub">هوش مصنوعی یکپارچه سازمانی[cite: 7]</span>
                     </div>
                   </div>
-                  <div className="capsule-pct-pill">۲۵٪</div>
                 </div>
 
-                <div className="arch-capsule-card tier-2">
-                  <div className="capsule-sphere">🤖</div>
-                  <div className="capsule-info">
-                    <h3>
-                      لایه دوم: دستیاران تخصصی و یکپارچگی عملیاتی
-                      <span className="card-title-en">(Agentic AI & Integration)</span>
-                    </h3>
-                    <p>
-                      مجموعه دستیاران هوشمند با قابلیت اتصال زنده به سامانه‌های داخلی سازمان (جیرا، CRM و...)، مدیریت اتوماتیک تسک‌ها، پشتیبانی ۲۴/۷ و پردازش چندوجهی تصویر و ویدیو.
-                    </p>
-                    <div className="capsule-tags">
-                      <span className="capsule-tag">دستیار مدیریت پروژه</span>
-                      <span className="capsule-tag">اتصال مستقیم به Jira</span>
-                      <span className="capsule-tag">ویجت پشتیبانی و CRM</span>
-                      <span className="capsule-tag">پردازش OCR و ویدیو</span>
-                    </div>
-                  </div>
-                  <div className="capsule-pct-pill">۵۰٪</div>
-                </div>
+                <div className="brand-divider"></div>
 
-                <div className="arch-capsule-card tier-3">
-                  <div className="capsule-sphere">📚</div>
-                  <div className="capsule-info">
-                    <h3>
-                      لایه سوم: پایگاه دانش سازمانی و RAG بومی
-                      <span className="card-title-en">(Enterprise Knowledge & Security)</span>
-                    </h3>
-                    <p>
-                      ایجاد فضای کار اختصاصی (Tenant ایزوله)، بارگذاری امن مستندات پروژه، ماتریکس کنترل دسترسی تیم‌ها (RBAC) و پاسخگویی دقیق و مستند بدون توهم داده‌ای.
-                    </p>
-                    <div className="capsule-tags">
-                      <span className="capsule-tag">فضای کار اختصاصی</span>
-                      <span className="capsule-tag">موتور RAG بومی</span>
-                      <span className="capsule-tag">مدیریت سطوح دسترسی</span>
-                      <span className="capsule-tag">حاکمیت داده و امنیت</span>
-                    </div>
-                  </div>
-                  <div className="capsule-pct-pill">۷۵٪</div>
+                <div className="strategic-affiliation flex items-center gap-3">
+                  <div className="affiliation-pill">هم‌پیمان راهبردی: <strong>همراه اول</strong>[cite: 7]</div>
+                  <a href="https://ziira.ir" target="_blank" rel="noreferrer" className="affiliation-link">
+                    <span className="live-dot"></span>
+                    <span>ziira.ir[cite: 7]</span>
+                  </a>
                 </div>
+              </div>
 
-                <div className="arch-capsule-card tier-4">
-                  <div className="capsule-sphere">⚡</div>
-                  <div className="capsule-info">
-                    <h3>
-                      لایه چهارم: زیرساخت تجمیعی مدل‌ها و کیف پول مرکزی
-                      <span className="card-title-en">(Foundational Model Hub)</span>
-                    </h3>
-                    <p>
-                      محیط چندمدلی یکپارچه با تمرکز بر پردازش زبان فارسی، مدیریت متمرکز اعتبار و مصرف (Pay-as-you-go)، سهمیه‌بندی بودجه تیم‌ها و داشبورد تحلیل مصرف سازمان.
-                    </p>
-                    <div className="capsule-tags">
-                      <span className="capsule-tag">طیف متنوع LLMها</span>
-                      <span className="capsule-tag">پردازش عمیق زبان فارسی</span>
-                      <span className="capsule-tag">کیف پول متمرکز مصرف</span>
-                      <span className="capsule-tag">داشبورد مانیتورینگ</span>
-                    </div>
-                  </div>
-                  <div className="capsule-pct-pill">۱۰۰٪</div>
+              <div className="exec-badge" style={{ background: primaryColor, color: '#FFFFFF' }}>گزارش راهبردی[cite: 7]</div>
+            </div>
+
+            <div className="hero-title-area">
+              <div className="hero-text space-y-3">
+                <h1 className="text-2xl sm:text-4xl font-black text-white flex items-center gap-3 flex-wrap">
+                  پلتفرم هوش مصنوعی «زیرا» (Ziira)[cite: 7]
+                  <span className="badge-glow" style={{ borderColor: primaryColor, color: primaryColor, boxShadow: `0 0 15px ${primaryColor}40` }}>زیرساخت حاکمیتی AI[cite: 7]</span>
+                </h1>
+                <p className="text-slate-300 text-xs sm:text-sm md:text-base leading-relaxed text-justify font-light">
+                  پلتفرم جامع، بومی و چندوجهی هوش مصنوعی شرکت همراه کسب‌وکارهای هوشمند (EBCOM)؛ ارائه‌دهنده راهکارهای هوش مصنوعی یکپارچه با تمرکز ویژه بر زبان فارسی، حاکمیت داده سازمانی و اتصال مستقیم به سامانه‌های عملیاتی کشور در بستر ارتباطی همراه اول[cite: 7].
+                </p>
+              </div>
+
+              <div className="hero-quick-kpi grid grid-cols-1 sm:grid-cols-3 gap-4 mt-8">
+                <div className="quick-kpi-item bg-white/5 border border-white/10 rounded-2xl p-4 text-center">
+                  <div className="quick-kpi-num text-xl font-black mb-1" style={{ color: primaryColor }}>Omni-Channel[cite: 7]</div>
+                  <div className="quick-kpi-label text-xs text-slate-400">دسترسی چندرسانه‌ای[cite: 7]</div>
+                </div>
+                <div className="quick-kpi-item bg-white/5 border border-white/10 rounded-2xl p-4 text-center">
+                  <div className="quick-kpi-num text-xl font-black mb-1" style={{ color: primaryColor }}>B2B & B2C[cite: 7]</div>
+                  <div className="quick-kpi-label text-xs text-slate-400">مدل درآمدی دوگانه[cite: 7]</div>
+                </div>
+                <div className="quick-kpi-item bg-white/5 border border-white/10 rounded-2xl p-4 text-center">
+                  <div className="quick-kpi-num text-xl font-black mb-1" style={{ color: primaryColor }}>RAG بومی[cite: 7]</div>
+                  <div className="quick-kpi-label text-xs text-slate-400">پایگاه دانش سازمانی[cite: 7]</div>
                 </div>
               </div>
             </div>
-          </div>
+          </header>
 
-          {/* بخش دوم: ماتریکس دوگانه B2B و B2C */}
-          <div className="section-header">
-            <div className="section-title">
-              <div className="section-title-bar bar-green"></div>
-              <h2>
-                تفکیک راهبردی مخاطبان هدف
-                <span className="sec-title-en">(Dual Core Ecosystem)</span>
-              </h2>
-            </div>
-            <div className="section-subtitle">
-              پوشش هم‌زمان بازار خرد مشترکین و شرکت‌های بزرگ سازمانی
-            </div>
-          </div>
-
-          <div className="dual-core-grid">
-            <div className="dual-box b2c reveal-box">
-              <div className="dual-box-header">
-                <div className="dual-title-group">
-                  <div className="dual-icon-badge">👤</div>
-                  <div>
-                    <h3>زیرا برای کاربران عمومی (B2C)</h3>
-                    <span style={{ fontSize: '11.5px', color: 'var(--text-dim)' }}>
-                      مشترکین خرد، پژوهشگران، متخصصین و عموم شهروندان
-                    </span>
-                  </div>
-                </div>
-                <span className="dual-tag">پایگاه مصرف انبوه</span>
-              </div>
-
-              <ul className="dual-feature-list">
-                <li className="dual-feature-item">
-                  <span className="dual-feature-bullet"></span>
-                  <div>
-                    <strong>دسترسی چندکاناله همه‌جا‌حاضر:</strong> تعامل روان از طریق وب‌سایت، اپلیکیشن، افزونه کروم و بات‌های پیام‌رسان بومی.
-                  </div>
-                </li>
-                <li className="dual-feature-item">
-                  <span className="dual-feature-bullet"></span>
-                  <div>
-                    <strong>شناسه هویت واحد (Single Sign-On):</strong> حفظ تاریخچه مکالمات، پرامپت‌ها و داده‌ها با شماره تلفن همراه.
-                  </div>
-                </li>
-                <li className="dual-feature-item">
-                  <span className="dual-feature-bullet"></span>
-                  <div>
-                    <strong>کیف پول خرد مرکزی (Micro-Wallet):</strong> شارژ آسان اعتباری و پرداخت منعطف متناسب با مصرف واقعی (Pay-As-You-Go).
-                  </div>
-                </li>
-                <li className="dual-feature-item">
-                  <span className="dual-feature-bullet"></span>
-                  <div>
-                    <strong>تنوع خدمات چندرسانه‌ای:</strong> گفت‌وگو، تولید محتوای متنی، پردازش و ساخت تصاویر و خلاصه‌سازی هوشمند.
-                  </div>
-                </li>
-              </ul>
-
-              <div className="dual-bottom-note">
-                <div className="dual-note-title">اهرم همراه اول:</div>
-                <div className="dual-note-desc">
-                  امکان فعال‌سازی مستقیم روی بسته اینترنت، شارژ اعتباری و پرداخت روی قبض سیم‌کارت
-                </div>
-              </div>
-            </div>
-
-            <div className="dual-box b2b reveal-box">
-              <div className="dual-box-header">
-                <div className="dual-title-group">
-                  <div className="dual-icon-badge">🏢</div>
-                  <div>
-                    <h3>زیرا برای سازمان‌ها و کسب‌وکارها (B2B)</h3>
-                    <span style={{ fontSize: '11.5px', color: 'var(--text-dim)' }}>
-                      هلدینگ‌ها، بانک‌ها، اپراتورها و شرکت‌های فناور کشور
-                    </span>
-                  </div>
-                </div>
-                <span className="dual-tag">درآمدزایی پایدار سازمانی</span>
-              </div>
-
-              <ul className="dual-feature-list">
-                <li className="dual-feature-item">
-                  <span className="dual-feature-bullet"></span>
-                  <div>
-                    <strong>فضای کاری اختصاصی (Enterprise Tenant):</strong> محیط امن، رمزنگاری‌شده و کاملاً ایزوله مختص هر سازمان.
-                  </div>
-                </li>
-                <li className="dual-feature-item">
-                  <span className="dual-feature-bullet"></span>
-                  <div>
-                    <strong>ماتریکس مدیریت دسترسی (RBAC):</strong> تعیین نقش‌ها، دسترسی تیم‌ها به مدل‌های مشخص و پایش امنیت داده‌ها.
-                  </div>
-                </li>
-                <li className="dual-feature-item">
-                  <span className="dual-feature-bullet"></span>
-                  <div>
-                    <strong>کیف پول سازمانی و سهمیه‌بندی:</strong> تخصیص بودجه و سقف مصرف هوش مصنوعی برای هر دپارتمان یا واحد کاری.
-                  </div>
-                </li>
-                <li className="dual-feature-item">
-                  <span className="dual-feature-bullet"></span>
-                  <div>
-                    <strong>ادغام عمیق در فرآیندهای کسب‌وکار:</strong> تبدیل هوش مصنوعی به بازوی اتوماسیون تصمیم‌گیری و اجرای وظایف.
-                  </div>
-                </li>
-              </ul>
-
-              <div className="dual-bottom-note">
-                <div className="dual-note-title" style={{ color: 'var(--ebcom-green)' }}>
-                  ارزش افزوده همراه اول:
-                </div>
-                <div className="dual-note-desc">
-                  بسته‌بندی در قالب بسته راهکارهای سازمانی همراه اول (B2B) برای ۵۰۰ شرکت برتر کشور
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* بخش سوم: گیج‌های مدور عملکردی */}
-          <div className="gauge-section">
-            <div className="section-header">
-              <div className="section-title">
-                <div className="section-title-bar bar-purple"></div>
-                <h2>
-                  ۴ موتور تمایز و ارزش‌آفرینی پلتفرم «زیرا»
-                  <span className="sec-title-en">(Core Value Engines)</span>
-                </h2>
-              </div>
-              <div className="section-subtitle">
-                مزیت رقابتی پایدار در صنعت هوش مصنوعی کشور
-              </div>
-            </div>
-
-            <div className="gauge-grid">
-              <div className="gauge-card gauge-cyan">
-                <div className="gauge-vis">
-                  <svg className="gauge-svg" viewBox="0 0 140 140">
-                    <circle className="gauge-bg-circle" cx="70" cy="70" r="56"></circle>
-                    <circle className="gauge-fill-circle" cx="70" cy="70" r="56"></circle>
-                  </svg>
-                  <div className="gauge-inner-sphere">
-                    <span className="gauge-inner-icon">🇮🇷</span>
-                  </div>
-                </div>
-                <div className="gauge-title">بومی‌سازی عمیق فارسی</div>
-                <div className="gauge-desc">
-                  درک دقیق تفاوت‌های زبانی، ادبیات تخصصی اداری، حقوقی و تجاری ایران بدون افت کیفیت در مقایسه با ابزارهای غیربومی.
-                </div>
-              </div>
-
-              <div className="gauge-card gauge-green">
-                <div className="gauge-vis">
-                  <svg className="gauge-svg" viewBox="0 0 140 140">
-                    <circle className="gauge-bg-circle" cx="70" cy="70" r="56"></circle>
-                    <circle className="gauge-fill-circle" cx="70" cy="70" r="56"></circle>
-                  </svg>
-                  <div className="gauge-inner-sphere">
-                    <span className="gauge-inner-icon">🔗</span>
-                  </div>
-                </div>
-                <div className="gauge-title">لایه اتصال سامانه‌ای</div>
-                <div className="gauge-desc">
-                  یکپارچگی بی‌واسطه با جیرا، سیستم‌های مدیریت وظایف، CRM و پایگاه‌های دانش داخلی به عنوان لایه هوشمند سازمان.
-                </div>
-              </div>
-
-              <div className="gauge-card gauge-purple">
-                <div className="gauge-vis">
-                  <svg className="gauge-svg" viewBox="0 0 140 140">
-                    <circle className="gauge-bg-circle" cx="70" cy="70" r="56"></circle>
-                    <circle className="gauge-fill-circle" cx="70" cy="70" r="56"></circle>
-                  </svg>
-                  <div className="gauge-inner-sphere">
-                    <span className="gauge-inner-icon">📊</span>
-                  </div>
-                </div>
-                <div className="gauge-title">حاکمیت مصرف و هزینه</div>
-                <div className="gauge-desc">
-                  داشبورد زنده پایش توکن، گزارش‌گیری دپارتمانی، سقف اعتباری تیم‌ها و شفافیت کامل در مدل‌های پرداخت سازمانی و فردی.
-                </div>
-              </div>
-
-              <div className="gauge-card gauge-orange">
-                <div className="gauge-vis">
-                  <svg className="gauge-svg" viewBox="0 0 140 140">
-                    <circle className="gauge-bg-circle" cx="70" cy="70" r="56"></circle>
-                    <circle className="gauge-fill-circle" cx="70" cy="70" r="56"></circle>
-                  </svg>
-                  <div className="gauge-inner-sphere">
-                    <span className="gauge-inner-icon">👁️</span>
-                  </div>
-                </div>
-                <div className="gauge-title">پردازش چندوجهی رسانه</div>
-                <div className="gauge-desc">
-                  استخراج هوشمند متن از تصاویر، جستجوی ویژوال در کاتالوگ محصولات دیجیتال و خلاصه‌سازی هوشمند محتوای ویدیویی.
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* بخش چهارم: سبد راهکارهای سازمانی */}
-          <div className="section-header">
-            <div className="section-title">
-              <div className="section-title-bar bar-orange"></div>
-              <h2>
-                سبد راهکارهای تخصصی سازمانی
-                <span className="sec-title-en">(Enterprise AI Portfolio)</span>
-              </h2>
-            </div>
-            <div className="section-subtitle">
-              محصولات آماده به‌کار جهت ارتقای بهره‌وری عملیاتی
-            </div>
-          </div>
-
-          <div className="pillars-grid">
-            <div className="pillar-box reveal-box">
-              <div className="pillar-header">
-                <div className="pillar-sphere-sm" style={{ background: 'var(--grad-green)', color: '#111a00' }}>
-                  🎯
-                </div>
-                <div>
-                  <h3>
-                    دستیار مدیریت و عملیات پروژه
-                    <span className="card-title-en">(Project Ops AI)</span>
-                  </h3>
-                  <span style={{ fontSize: '11px', color: 'var(--text-dim)' }}>
-                    کاهش محسوس اصطکاک پروژه‌های پیچیده سازمانی
-                  </span>
-                </div>
-              </div>
-              <div className="feature-tags">
-                <div className="feature-tag">
-                  <span style={{ fontSize: '20px' }}>📁</span>
-                  <div>
-                    <div className="feature-tag-title"><strong>تحلیل اطلاعات و مستندات:</strong></div>
-                    <div className="feature-tag-desc">استخراج آنی پیش‌نیازها و شناسایی موانع</div>
-                  </div>
-                </div>
-
-                <div className="feature-tag">
-                  <span style={{ fontSize: '20px' }}>⚡</span>
-                  <div>
-                    <div className="feature-tag-title"><strong>برنامه‌ریزی و اولویت‌بندی:</strong></div>
-                    <div className="feature-tag-desc">چیدمان فعالیت‌ها بر مبنای توان واقعی تیم</div>
-                  </div>
-                </div>
-
-                <div className="feature-tag">
-                  <span style={{ fontSize: '20px' }}>🔗</span>
-                  <div>
-                    <div className="feature-tag-title"><strong>اتصال به Jira و Task Manager:</strong></div>
-                    <div className="feature-tag-desc">ثبت و تخصیص مستقیم وظایف</div>
-                  </div>
-                </div>
-
-                <div className="feature-tag">
-                  <span style={{ fontSize: '20px' }}>📈</span>
-                  <div>
-                    <div className="feature-tag-title"><strong>گزارش‌های مدیریتی:</strong></div>
-                    <div className="feature-tag-desc">سنجش وضعیت پیشرفت پروژه بر اساس داده‌های زنده</div>
-                  </div>
-                </div>
-
-                <div className="feature-tag">
-                  <span style={{ fontSize: '20px' }}>🛡️</span>
-                  <div>
-                    <div className="feature-tag-title"><strong>رعایت سطح دسترسی:</strong></div>
-                    <div className="feature-tag-desc">تفکیک دسترسی کاربران هنگام فراخوانی اطلاعات پروژه</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div className="pillar-box reveal-box">
-              <div className="pillar-header">
-                <div className="pillar-sphere-sm" style={{ background: 'var(--grad-purple)', color: '#fff' }}>
-                  🎧
-                </div>
-                <div>
-                  <h3>
-                    دستیار هوشمند پشتیبانی و پاسخ‌گویی
-                    <span className="card-title-en">(Omni Support AI)</span>
-                  </h3>
-                  <span style={{ fontSize: '11px', color: 'var(--text-dim)' }}>
-                    پاسخگویی ۲۴/۷ متناسب با محصولات و خدمات کسب‌وکار
-                  </span>
-                </div>
-              </div>
-              <div className="feature-tags">
-                <div className="feature-tag">
-                  <span style={{ fontSize: '20px' }}>💬</span>
-                  <div>
-                    <div className="feature-tag-title"><strong>پاسخ‌گویی هوشمند:</strong></div>
-                    <div className="feature-tag-desc">رفع سوالات مشتریان بدون صف انتظار و خستگی</div>
-                  </div>
-                </div>
-
-                <div className="feature-tag">
-                  <span style={{ fontSize: '20px' }}>📚</span>
-                  <div>
-                    <div className="feature-tag-title"><strong>پایگاه دانش اختصاصی:</strong></div>
-                    <div className="feature-tag-desc">تکیه بر اطلاعات و اسناد رسمی کسب‌وکار</div>
-                  </div>
-                </div>
-
-                <div className="feature-tag">
-                  <span style={{ fontSize: '20px' }}>🌐</span>
-                  <div>
-                    <div className="feature-tag-title"><strong>ویجت وب‌سایت و اپلیکیشن:</strong></div>
-                    <div className="feature-tag-desc">استقرار تجربه گفتگو‌محور در چند دقیقه</div>
-                  </div>
-                </div>
-
-                <div className="feature-tag">
-                  <span style={{ fontSize: '20px' }}>🔍</span>
-                  <div>
-                    <div className="feature-tag-title"><strong>تحلیل رفتار و تعاملات:</strong></div>
-                    <div className="feature-tag-desc">شناسایی موضوعات و نیازهای پرتکرار مشتریان</div>
-                  </div>
-                </div>
-
-                <div className="feature-tag">
-                  <span style={{ fontSize: '20px' }}>🔄</span>
-                  <div>
-                    <div className="feature-tag-title"><strong>اتصال به سیستم‌های تیکتینگ:</strong></div>
-                    <div className="feature-tag-desc">ارجاع هوشمند موارد خاص به کارشناسان</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* بخش پنجم: کانال‌های دسترسی و نقشه راه */}
-          <div className="omni-section">
-            <div className="section-header" style={{ marginBottom: '20px' }}>
-              <div className="section-title">
-                <div className="section-title-bar bar-cyan"></div>
-                <h2>
-                  کانال‌های دسترسی و نقشه راه توسعه
-                  <span className="sec-title-en">(Omnichannel Ecosystem)</span>
-                </h2>
-              </div>
-              <div className="section-subtitle">
-                دسترسی فراگیر در سراسر زیرساخت ارتباطی و پیام‌رسانی کشور
-              </div>
-            </div>
-
-            <div className="omni-layout">
+          {/* STRATEGIC STRIP */}
+          <div className="strategic-strip grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 p-6 sm:px-12 bg-black/30 border-b border-white/10">
+            <div className="strip-card c-green reveal-box bg-[#181E2C] border border-white/10 p-4 rounded-xl flex items-center gap-3.5 border-r-4 border-r-[#99CC00]">
+              <div className="strip-icon-sphere w-10 h-10 rounded-full flex items-center justify-center text-lg shrink-0 bg-[#99CC00] text-slate-950 font-bold">🇮🇷</div>
               <div>
-                <div className="channel-group-title">
-                  <span className="status-dot active"></span>
-                  <span>کانال‌های فعال و در دسترس کاربران<br />(Active Channels)</span>
-                </div>
-                <div className="channels-flex">
-                  <div className="channel-item active reveal-box">
-                    <span style={{ fontSize: '20px' }}>🌐</span>
-                    <div>
-                      <div className="channel-name">وب‌سایت اختصاصی</div>
-                      <div className="channel-meta">ziira.ir (محیط ابری پرسرعت)</div>
-                    </div>
-                  </div>
-                  <div className="channel-item active reveal-box">
-                    <span style={{ fontSize: '20px' }}>📱</span>
-                    <div>
-                      <div className="channel-name">اپلیکیشن اندروید</div>
-                      <div className="channel-meta">تجربه کاربری نیتیو موبایل</div>
-                    </div>
-                  </div>
-                  <div className="channel-item active reveal-box">
-                    <span style={{ fontSize: '20px' }}>🧩</span>
-                    <div>
-                      <div className="channel-name">افزونه مرورگر Chrome</div>
-                      <div className="channel-meta">دستیار همراه وب‌گردی و مطالعه</div>
-                    </div>
-                  </div>
-                  <div className="channel-item active reveal-box">
-                    <span style={{ fontSize: '20px' }}>💬</span>
-                    <div>
-                      <div className="channel-name">سرشماره پیامکی (SMS)</div>
-                      <div className="channel-meta">هوش مصنوعی بدون نیاز به اینترنت</div>
-                    </div>
-                  </div>
-                </div>
+                <div className="strip-text-title text-xs font-bold text-white">تمرکز عمیق بر زبان فارسی[cite: 7]</div>
+                <div className="strip-text-desc text-[11px] text-slate-400 mt-0.5">درک بافت فرهنگی و نگارش تخصصی اداری و تجاری[cite: 7]</div>
               </div>
-
+            </div>
+            <div className="strip-card c-cyan reveal-box bg-[#181E2C] border border-white/10 p-4 rounded-xl flex items-center gap-3.5 border-r-4 border-r-[#00D2FF]">
+              <div className="strip-icon-sphere w-10 h-10 rounded-full flex items-center justify-center text-lg shrink-0 bg-[#00D2FF] text-slate-950 font-bold">🏢</div>
               <div>
-                <div className="channel-group-title" style={{ color: 'var(--ai-purple)' }}>
-                  <span className="status-dot pipeline"></span>
-                  <span>کانال‌های در آستانه راه‌اندازی<br />(Upcoming Pipeline)</span>
+                <div className="strip-text-title text-xs font-bold text-white">فضای اختصاصی سازمانی[cite: 7]</div>
+                <div className="strip-text-desc text-[11px] text-slate-400 mt-0.5">ایزولاسیون کامل داده‌ها و امنیت در تراز Enterprise[cite: 7]</div>
+              </div>
+            </div>
+            <div className="strip-card c-purple reveal-box bg-[#181E2C] border border-white/10 p-4 rounded-xl flex items-center gap-3.5 border-r-4 border-r-[#A855F7]">
+              <div className="strip-icon-sphere w-10 h-10 rounded-full flex items-center justify-center text-lg shrink-0 text-white font-bold" style={{ backgroundColor: primaryColor }}>🤖</div>
+              <div>
+                <div className="strip-text-title text-xs font-bold text-white">دستیاران متصل به فرآیند[cite: 7]</div>
+                <div className="strip-text-desc text-[11px] text-slate-400 mt-0.5">اتصال زنده به جیرا، تیکتینگ و ERP سازمان[cite: 7]</div>
+              </div>
+            </div>
+            <div className="strip-card c-orange reveal-box bg-[#181E2C] border border-white/10 p-4 rounded-xl flex items-center gap-3.5 border-r-4 border-r-[#FF7722]">
+              <div className="strip-icon-sphere w-10 h-10 rounded-full flex items-center justify-center text-lg shrink-0 bg-[#FF7722] text-white font-bold">💳</div>
+              <div>
+                <div className="strip-text-title text-xs font-bold text-white">کیف پول متمرکز و سهمیه‌بندی[cite: 7]</div>
+                <div className="strip-text-desc text-[11px] text-slate-400 mt-0.5">مدیریت مصرف تیم‌ها با مکانیزم Pay-per-Use[cite: 7]</div>
+              </div>
+            </div>
+          </div>
+
+          <div className="content p-8 sm:p-12 space-y-16">
+            {/* SECTION 1: 4 TIERS ARCHITECTURE */}
+            <div className="space-y-6">
+              <div className="section-header flex justify-between items-center mb-6">
+                <div className="section-title flex items-center gap-3">
+                  <div className="section-title-bar w-1.5 h-6 rounded-full" style={{ backgroundColor: primaryColor }} />
+                  <h2 className="text-xl font-black text-white">معماری ۴ سطحی پلتفرم زیرا <span className="sec-title-en text-sm text-slate-400 font-normal">(Layered AI Architecture)[cite: 7]</span></h2>
                 </div>
-                <div className="channels-flex">
-                  <div className="channel-item pipeline reveal-box">
-                    <span style={{ fontSize: '20px' }}>💬</span>
-                    <div>
-                      <div className="channel-name">ربات پیام‌رسان بله</div>
-                      <div className="channel-meta">یکپارچگی با جامعه کسب‌وکاری</div>
+                <div className="section-subtitle text-xs text-slate-400 bg-white/5 border border-white/10 px-3 py-1 rounded-full">
+                  تفکیک لایه‌های زیرساختی، دانشی، عاملیتی و رابط کاربری[cite: 7]
+                </div>
+              </div>
+
+              <div className="arch-redesign-box bg-[#121622] border border-white/10 rounded-3xl p-6 sm:p-10">
+                <div className="arch-two-col grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                  <div className="pyramid-stage lg:col-span-5 flex flex-col items-center justify-center">
+                    <svg className="pyramid-svg-clean w-full max-w-[420px] h-auto overflow-visible" viewBox="0 0 540 480" xmlns="http://www.w3.org/2000/svg">
+                      <defs>
+                        <linearGradient id="p-cyl1-top" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stopColor="#FFA0C5" /><stop offset="100%" stopColor="#FF1E7A" /></linearGradient>
+                        <linearGradient id="p-cyl1-side" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" stopColor="#FF1E7A" /><stop offset="30%" stopColor="#FF6AA2" /><stop offset="70%" stopColor="#D60057" /><stop offset="100%" stopColor="#800034" /></linearGradient>
+                        <linearGradient id="p-cyl2-top" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stopColor="#E2A6FF" /><stop offset="100%" stopColor="#9C27B0" /></linearGradient>
+                        <linearGradient id="p-cyl2-side" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" stopColor="#9C27B0" /><stop offset="30%" stopColor="#BA68C8" /><stop offset="70%" stopColor="#7B1FA2" /><stop offset="100%" stopColor="#4A148C" /></linearGradient>
+                        <linearGradient id="p-cyl3-top" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stopColor="#FFC588" /><stop offset="100%" stopColor="#FF6F00" /></linearGradient>
+                        <linearGradient id="p-cyl3-side" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" stopColor="#FF6F00" /><stop offset="30%" stopColor="#FFA040" /><stop offset="70%" stopColor="#E65100" /><stop offset="100%" stopColor="#8F3000" /></linearGradient>
+                        <linearGradient id="p-cyl4-top" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stopColor="#EAFF85" /><stop offset="100%" stopColor="#99CC00" /></linearGradient>
+                        <linearGradient id="p-cyl4-side" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" stopColor="#99CC00" /><stop offset="30%" stopColor="#BEE838" /><stop offset="70%" stopColor="#739900" /><stop offset="100%" stopColor="#405500" /></linearGradient>
+                        <radialGradient id="p-shadow" cx="50%" cy="50%" r="50%"><stop offset="0%" stopColor="rgba(0,0,0,0.85)" /><stop offset="60%" stopColor="rgba(0,0,0,0.4)" /><stop offset="100%" stopColor="transparent" /></radialGradient>
+                        <clipPath id="clip-line-1"><rect id="clip-rect-1" x="218" y="70" width="0" height="35" /></clipPath>
+                        <clipPath id="clip-line-2"><rect id="clip-rect-2" x="178" y="155" width="0" height="40" /></clipPath>
+                        <clipPath id="clip-line-3"><rect id="clip-rect-3" x="138" y="250" width="0" height="40" /></clipPath>
+                        <clipPath id="clip-line-4"><rect id="clip-rect-4" x="98" y="350" width="0" height="40" /></clipPath>
+                      </defs>
+
+                      <ellipse id="pyr-floor-shadow" cx="280" cy="445" rx="200" ry="26" fill="url(#p-shadow)" />
+
+                      <g id="pyr-tier-4" className="tier-shape tier-shape-4">
+                        <path d="M 90 340 A 190 38 0 0 0 470 340 L 470 405 A 190 38 0 0 1 90 405 Z" fill="url(#p-cyl4-side)" />
+                        <ellipse cx="280" cy="340" rx="190" ry="38" fill="url(#p-cyl4-top)" />
+                      </g>
+                      <g id="pyr-tier-3" className="tier-shape tier-shape-3">
+                        <path d="M 130 240 A 150 30 0 0 0 430 240 L 430 295 A 150 30 0 0 1 130 295 Z" fill="url(#p-cyl3-side)" />
+                        <ellipse cx="280" cy="240" rx="150" ry="30" fill="url(#p-cyl3-top)" />
+                      </g>
+                      <g id="pyr-tier-2" className="tier-shape tier-shape-2">
+                        <path d="M 170 150 A 110 24 0 0 0 390 150 L 390 198 A 110 24 0 0 1 170 198 Z" fill="url(#p-cyl2-side)" />
+                        <ellipse cx="280" cy="150" rx="110" ry="24" fill="url(#p-cyl2-top)" />
+                      </g>
+                      <g id="pyr-tier-1" className="tier-shape tier-shape-1">
+                        <path d="M 210 65 A 70 16 0 0 0 350 65 L 350 108 A 70 16 0 0 1 210 108 Z" fill="url(#p-cyl1-side)" />
+                        <ellipse cx="280" cy="65" rx="70" ry="16" fill="url(#p-cyl1-top)" />
+                      </g>
+
+                      {/* DROPLETS */}
+                      <g id="drop-tier-1" className="tier-drop drop-1"><circle cx="280" cy="87" r="7" fill="url(#p-cyl1-top)" /></g>
+                      <g id="drop-tier-2" className="tier-drop drop-2"><circle cx="280" cy="174" r="8" fill="url(#p-cyl2-top)" /></g>
+                      <g id="drop-tier-3" className="tier-drop drop-3"><circle cx="280" cy="268" r="9" fill="url(#p-cyl3-top)" /></g>
+                      <g id="drop-tier-4" className="tier-drop drop-4"><circle cx="280" cy="372" r="10" fill="url(#p-cyl4-top)" /></g>
+
+                      {/* CALLOUTS */}
+                      <g id="callout-tier-1" className="tier-callout-group">
+                        <circle id="dot-tier-1" className="callout-dot dot-1" cx="218" cy="87" r="4.5" fill="#FF1E7A" stroke="#FFFFFF" strokeWidth="1.5" />
+                        <path id="line-tier-1" className="callout-line line-1" d="M 218 87 L 76 87" stroke="#FF1E7A" strokeWidth="2" strokeDasharray="4,3" clipPath="url(#clip-line-1)" opacity="0.95" />
+                        <g id="badge-tier-1" className="callout-badge badge-1"><rect x="12" y="66" width="64" height="42" rx="12" fill="#181E2C" stroke="#FF1E7A" strokeWidth="2" /><text x="44" y="87" dy="0.35em" textAnchor="middle" fill="#FFA0C5" fontSize="16" fontWeight="900">۲۵٪</text></g>
+                      </g>
+                      <g id="callout-tier-2" className="tier-callout-group">
+                        <circle id="dot-tier-2" className="callout-dot dot-2" cx="178" cy="174" r="4.5" fill="#9C27B0" stroke="#FFFFFF" strokeWidth="1.5" />
+                        <path id="line-tier-2" className="callout-line line-2" d="M 178 174 L 76 174" stroke="#9C27B0" strokeWidth="2" strokeDasharray="4,3" clipPath="url(#clip-line-2)" opacity="0.95" />
+                        <g id="badge-tier-2" className="callout-badge badge-2"><rect x="12" y="153" width="64" height="42" rx="12" fill="#181E2C" stroke="#A855F7" strokeWidth="2" /><text x="44" y="174" dy="0.35em" textAnchor="middle" fill="#E2A6FF" fontSize="16" fontWeight="900">۵۰٪</text></g>
+                      </g>
+                      <g id="callout-tier-3" className="tier-callout-group">
+                        <circle id="dot-tier-3" className="callout-dot dot-3" cx="138" cy="268" r="4.5" fill="#FF6F00" stroke="#FFFFFF" strokeWidth="1.5" />
+                        <path id="line-tier-3" className="callout-line line-3" d="M 138 268 L 76 268" stroke="#FF6F00" strokeWidth="2" strokeDasharray="4,3" clipPath="url(#clip-line-3)" opacity="0.95" />
+                        <g id="badge-tier-3" className="callout-badge badge-3"><rect x="12" y="247" width="64" height="42" rx="12" fill="#181E2C" stroke="#FF7A00" strokeWidth="2" /><text x="44" y="268" dy="0.35em" textAnchor="middle" fill="#FFC588" fontSize="16" fontWeight="900">۷۵٪</text></g>
+                      </g>
+                      <g id="callout-tier-4" className="tier-callout-group">
+                        <circle id="dot-tier-4" className="callout-dot dot-4" cx="98" cy="370" r="4.5" fill="#99CC00" stroke="#FFFFFF" strokeWidth="1.5" />
+                        <path id="line-tier-4" className="callout-line line-4" d="M 98 370 L 76 370" stroke="#99CC00" strokeWidth="2" strokeDasharray="4,3" clipPath="url(#clip-line-4)" opacity="0.95" />
+                        <g id="badge-tier-4" className="callout-badge badge-4"><rect x="12" y="349" width="64" height="42" rx="12" fill="#181E2C" stroke="#99CC00" strokeWidth="2" /><text x="44" y="370" dy="0.35em" textAnchor="middle" fill="#EAFF85" fontSize="16" fontWeight="900">۱۰۰٪</text></g>
+                      </g>
+                    </svg>
+
+                    <div className="pyramid-footer-note mt-4 text-xs text-slate-400 bg-black/40 border border-white/10 px-4 py-1.5 rounded-full">
+                      <span>🎯</span> <span>هرم توزیع کارکردی پلتفرم هوش مصنوعی زیرا[cite: 7]</span>
                     </div>
                   </div>
-                  <div className="channel-item pipeline reveal-box">
-                    <span style={{ fontSize: '20px' }}>⚡</span>
-                    <div>
-                      <div className="channel-name">ربات پیام‌رسان روبیکا</div>
-                      <div className="channel-meta">دسترسی به میلیون‌ها کاربر ملی</div>
+
+                  <div className="arch-cards-col lg:col-span-7 space-y-3.5">
+                    <div className="arch-capsule-card tier-1 bg-[#181E2C] border border-white/10 p-5 rounded-2xl flex justify-between items-center gap-4" style={{ borderRight: '4px solid #FF1E7A' }}>
+                      <div className="capsule-sphere w-12 h-12 rounded-full flex items-center justify-center text-xl shrink-0" style={{ background: 'linear-gradient(135deg, #ff6ea7 0%, #ff1e7a 100%)' }}>🌐</div>
+                      <div className="capsule-info flex-grow">
+                        <h3 className="font-extrabold text-sm text-white mb-1">لایه اول: کانال‌های دسترسی و تجربه یکپارچه <span className="card-title-en text-xs text-slate-400 font-normal">(Omnichannel Experience)[cite: 7]</span></h3>
+                        <p className="text-xs text-slate-400 leading-relaxed">دسترسی آسان و چندکاناله از طریق وب‌سایت، اپلیکیشن اندروید، افزونه کروم، پیامک، و به‌زودی بات‌های روبیکا، بله و تلفن گویا با شناسه هویتی واحد[cite: 7].</p>
+                        <div className="capsule-tags flex flex-wrap gap-1.5 mt-2">
+                          {["وب‌سایت ziira.ir", "اپلیکیشن اندروید", "سرشماره پیامکی", "افزونه Chrome", "روبیکا و بله", "IVR تلفن گویا"].map((t, i) => (
+                            <span key={i} className="text-[10px] bg-white/5 border border-white/10 px-2 py-0.5 rounded-md text-slate-300">{t}[cite: 7]</span>
+                          ))}
+                        </div>
+                      </div>
+                      <div className="capsule-pct-pill font-black text-sm px-3 py-1 rounded-xl bg-black/40 border border-white/10 shrink-0 text-[#FFA0C5]">۲۵٪[cite: 7]</div>
                     </div>
-                  </div>
-                  <div className="channel-item pipeline reveal-box">
-                    <span style={{ fontSize: '20px' }}>📞</span>
-                    <div>
-                      <div className="channel-name">خط تلفن گویا (Smart IVR)</div>
-                      <div className="channel-meta">تعامل صوتی هوشمند بر بستر شبکه همراه اول</div>
+
+                    <div className="arch-capsule-card tier-2 bg-[#181E2C] border border-white/10 p-5 rounded-2xl flex justify-between items-center gap-4" style={{ borderRight: `4px solid ${primaryColor}` }}>
+                      <div className="capsule-sphere w-12 h-12 rounded-full flex items-center justify-center text-xl shrink-0" style={{ background: primaryColor }}>🤖</div>
+                      <div className="capsule-info flex-grow">
+                        <h3 className="font-extrabold text-sm text-white mb-1">لایه دوم: دستیاران تخصصی و یکپارچگی عملیاتی <span className="card-title-en text-xs text-slate-400 font-normal">(Agentic AI & Integration)[cite: 7]</span></h3>
+                        <p className="text-xs text-slate-400 leading-relaxed">مجموعه دستیاران هوشمند با قابلیت اتصال زنده به سامانه‌های داخلی سازمان (جیرا، CRM و...)، مدیریت اتوماتیک تسک‌ها، پشتیبانی ۲۴/۷ و پردازش چندوجهی تصویر و ویدیو[cite: 7].</p>
+                        <div className="capsule-tags flex flex-wrap gap-1.5 mt-2">
+                          {["دستیار مدیریت پروژه", "اتصال مستقیم به Jira", "ویجت پشتیبانی و CRM", "پردازش OCR و ویدیو"].map((t, i) => (
+                            <span key={i} className="text-[10px] bg-white/5 border border-white/10 px-2 py-0.5 rounded-md text-slate-300">{t}[cite: 7]</span>
+                          ))}
+                        </div>
+                      </div>
+                      <div className="capsule-pct-pill font-black text-sm px-3 py-1 rounded-xl bg-black/40 border border-white/10 shrink-0" style={{ color: primaryColor }}>۵۰٪[cite: 7]</div>
                     </div>
-                  </div>
-                  <div className="channel-item pipeline reveal-box">
-                    <span style={{ fontSize: '20px' }}>⚙️</span>
-                    <div>
-                      <div className="channel-name">سرویس‌های اختصاصی سازمانی</div>
-                      <div className="channel-meta">طراحی متناسب با سامانه‌های کلان هر شرکت</div>
+
+                    <div className="arch-capsule-card tier-3 bg-[#181E2C] border border-white/10 p-5 rounded-2xl flex justify-between items-center gap-4" style={{ borderRight: '4px solid #FF6F00' }}>
+                      <div className="capsule-sphere w-12 h-12 rounded-full flex items-center justify-center text-xl shrink-0" style={{ background: '#FF6F00' }}>📚</div>
+                      <div className="capsule-info flex-grow">
+                        <h3 className="font-extrabold text-sm text-white mb-1">لایه سوم: پایگاه دانش سازمانی و RAG بومی <span className="card-title-en text-xs text-slate-400 font-normal">(Enterprise Knowledge & Security)[cite: 7]</span></h3>
+                        <p className="text-xs text-slate-400 leading-relaxed">ایجاد فضای کار اختصاصی (Tenant ایزوله)، بارگذاری امن مستندات پروژه، ماتریکس کنترل دسترسی تیم‌ها (RBAC) و پاسخگویی دقیق و مستند بدون توهم داده‌ای[cite: 7].</p>
+                        <div className="capsule-tags flex flex-wrap gap-1.5 mt-2">
+                          {["فضای کار اختصاصی", "موتور RAG بومی", "مدیریت سطوح دسترسی", "حاکمیت داده و امنیت"].map((t, i) => (
+                            <span key={i} className="text-[10px] bg-white/5 border border-white/10 px-2 py-0.5 rounded-md text-slate-300">{t}[cite: 7]</span>
+                          ))}
+                        </div>
+                      </div>
+                      <div className="capsule-pct-pill font-black text-sm px-3 py-1 rounded-xl bg-black/40 border border-white/10 shrink-0 text-[#FFC588]">۷۵٪[cite: 7]</div>
+                    </div>
+
+                    <div className="arch-capsule-card tier-4 bg-[#181E2C] border border-white/10 p-5 rounded-2xl flex justify-between items-center gap-4" style={{ borderRight: '4px solid #99CC00' }}>
+                      <div className="capsule-sphere w-12 h-12 rounded-full flex items-center justify-center text-xl shrink-0 text-slate-950 font-bold" style={{ background: '#99CC00' }}>⚡</div>
+                      <div className="capsule-info flex-grow">
+                        <h3 className="font-extrabold text-sm text-white mb-1">لایه چهارم: زیرساخت تجمیعی مدل‌ها و کیف پول مرکزی <span className="card-title-en text-xs text-slate-400 font-normal">(Foundational Model Hub)[cite: 7]</span></h3>
+                        <p className="text-xs text-slate-400 leading-relaxed">محیط چندمدلی یکپارچه با تمرکز بر پردازش زبان فارسی، مدیریت متمرکز اعتبار و مصرف (Pay-as-you-go)، سهمیه‌بندی بودجه تیم‌ها و داشبورد تحلیل مصرف سازمان[cite: 7].</p>
+                        <div className="capsule-tags flex flex-wrap gap-1.5 mt-2">
+                          {["طیف متنوع LLMها", "پردازش عمیق زبان فارسی", "کیف پول متمرکز مصرف", "داشبورد مانیتورینگ"].map((t, i) => (
+                            <span key={i} className="text-[10px] bg-white/5 border border-white/10 px-2 py-0.5 rounded-md text-slate-300">{t}[cite: 7]</span>
+                          ))}
+                        </div>
+                      </div>
+                      <div className="capsule-pct-pill font-black text-sm px-3 py-1 rounded-xl bg-black/40 border border-white/10 shrink-0 text-[#EAFF85]">۱۰۰٪[cite: 7]</div>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
-        </div>
 
-        <footer className="footer">
-          <div className="footer-left">
-            <div className="footer-slogan">
-              پلتفرم زیرا؛ <span>هوش مصنوعی، یکپارچه و در دسترس</span>
+            {/* SECTION 2: DUAL CORE ECOSYSTEM */}
+            <div className="space-y-6">
+              <div className="section-header flex justify-between items-center mb-6">
+                <div className="section-title flex items-center gap-3">
+                  <div className="section-title-bar w-1.5 h-6 rounded-full" style={{ backgroundColor: primaryColor }} />
+                  <h2 className="text-xl font-black text-white">تفکیک راهبردی مخاطبان هدف <span className="sec-title-en text-sm text-slate-400 font-normal">(Dual Core Ecosystem)[cite: 7]</span></h2>
+                </div>
+                <div className="section-subtitle text-xs text-slate-400 bg-white/5 border border-white/10 px-3 py-1 rounded-full">
+                  پوشش هم‌زمان بازار خرد مشترکین و شرکت‌های بزرگ سازمانی[cite: 7]
+                </div>
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div className="dual-box b2c bg-[#181E2C] border border-white/10 rounded-2xl p-6 border-t-4" style={{ borderTopColor: primaryColor }}>
+                  <div className="flex justify-between items-center mb-5 pb-4 border-b border-white/5">
+                    <div className="flex items-center gap-3">
+                      <div className="w-11 h-11 rounded-xl flex items-center justify-center text-xl" style={{ backgroundColor: `${primaryColor}20`, color: primaryColor }}>👤</div>
+                      <div>
+                        <h3 className="font-black text-base text-white">زیرا برای کاربران عمومی (B2C)[cite: 7]</h3>
+                        <span className="text-xs text-slate-400">مشترکین خرد، پژوهشگران، متخصصین و عموم شهروندان[cite: 7]</span>
+                      </div>
+                    </div>
+                    <span className="text-[11px] font-bold px-3 py-1 rounded-full" style={{ backgroundColor: `${primaryColor}20`, color: primaryColor }}>پایگاه مصرف انبوه[cite: 7]</span>
+                  </div>
+
+                  <ul className="space-y-3 text-xs text-slate-300 leading-relaxed">
+                    <li className="flex items-start gap-2.5">
+                      <span className="w-1.5 h-1.5 rounded-full mt-1.5 shrink-0" style={{ backgroundColor: primaryColor }} />
+                      <div><strong>دسترسی چندکاناله همه‌جا‌حاضر:</strong> تعامل روان از طریق وب‌سایت، اپلیکیشن، افزونه کروم و بات‌های پیام‌رسان بومی[cite: 7].</div>
+                    </li>
+                    <li className="flex items-start gap-2.5">
+                      <span className="w-1.5 h-1.5 rounded-full mt-1.5 shrink-0" style={{ backgroundColor: primaryColor }} />
+                      <div><strong>شناسه هویت واحد (Single Sign-On):</strong> حفظ تاریخچه مکالمات، پرامپت‌ها و داده‌ها با شماره تلفن همراه[cite: 7].</div>
+                    </li>
+                    <li className="flex items-start gap-2.5">
+                      <span className="w-1.5 h-1.5 rounded-full mt-1.5 shrink-0" style={{ backgroundColor: primaryColor }} />
+                      <div><strong>کیف پول خرد مرکزی (Micro-Wallet):</strong> شارژ آسان اعتباری و پرداخت منعطف متناسب با مصرف واقعی (Pay-As-You-Go)[cite: 7].</div>
+                    </li>
+                    <li className="flex items-start gap-2.5">
+                      <span className="w-1.5 h-1.5 rounded-full mt-1.5 shrink-0" style={{ backgroundColor: primaryColor }} />
+                      <div><strong>تنوع خدمات چندرسانه‌ای:</strong> گفت‌وگو، تولید محتوای متنی، پردازش و ساخت تصاویر و خلاصه‌سازی هوشمند[cite: 7].</div>
+                    </li>
+                  </ul>
+
+                  <div className="mt-5 p-3 rounded-xl bg-black/40 border border-white/5 text-xs">
+                    <strong style={{ color: primaryColor }}>اهرم همراه اول:</strong> امکان فعال‌سازی مستقیم روی بسته اینترنت، شارژ اعتباری و پرداخت روی قبض سیم‌کارت[cite: 7].
+                  </div>
+                </div>
+
+                <div className="dual-box b2b bg-[#181E2C] border border-white/10 rounded-2xl p-6 border-t-4 border-t-[#99CC00]">
+                  <div className="flex justify-between items-center mb-5 pb-4 border-b border-white/5">
+                    <div className="flex items-center gap-3">
+                      <div className="w-11 h-11 rounded-xl bg-[#99CC00]/20 text-[#99CC00] flex items-center justify-center text-xl">🏢</div>
+                      <div>
+                        <h3 className="font-black text-base text-white">زیرا برای سازمان‌ها و کسب‌وکارها (B2B)[cite: 7]</h3>
+                        <span className="text-xs text-slate-400">هلدینگ‌ها، بانک‌ها، اپراتورها و شرکت‌های فناور کشور[cite: 7]</span>
+                      </div>
+                    </div>
+                    <span className="text-[11px] font-bold px-3 py-1 rounded-full bg-[#99CC00]/20 text-[#99CC00]">درآمدزایی پایدار سازمانی[cite: 7]</span>
+                  </div>
+
+                  <ul className="space-y-3 text-xs text-slate-300 leading-relaxed">
+                    <li className="flex items-start gap-2.5">
+                      <span className="w-1.5 h-1.5 rounded-full mt-1.5 shrink-0 bg-[#99CC00]" />
+                      <div><strong>فضای کاری اختصاصی (Enterprise Tenant):</strong> محیط امن، رمزنگاری‌شده و کاملاً ایزوله مختص هر سازمان[cite: 7].</div>
+                    </li>
+                    <li className="flex items-start gap-2.5">
+                      <span className="w-1.5 h-1.5 rounded-full mt-1.5 shrink-0 bg-[#99CC00]" />
+                      <div><strong>ماتریکس مدیریت دسترسی (RBAC):</strong> تعیین نقش‌ها، دسترسی تیم‌ها به مدل‌های مشخص و پایش امنیت داده‌ها[cite: 7].</div>
+                    </li>
+                    <li className="flex items-start gap-2.5">
+                      <span className="w-1.5 h-1.5 rounded-full mt-1.5 shrink-0 bg-[#99CC00]" />
+                      <div><strong>کیف پول سازمانی و سهمیه‌بندی:</strong> تخصیص بودجه و سقف مصرف هوش مصنوعی برای هر دپارتمان یا واحد کاری[cite: 7].</div>
+                    </li>
+                    <li className="flex items-start gap-2.5">
+                      <span className="w-1.5 h-1.5 rounded-full mt-1.5 shrink-0 bg-[#99CC00]" />
+                      <div><strong>ادغام عمیق در فرآیندهای کسب‌وکار:</strong> تبدیل هوش مصنوعی به بازوی اتوماسیون تصمیم‌گیری و اجرای وظایف[cite: 7].</div>
+                    </li>
+                  </ul>
+
+                  <div className="mt-5 p-3 rounded-xl bg-black/40 border border-white/5 text-xs">
+                    <strong className="text-[#99CC00]">ارزش افزوده همراه اول:</strong> بسته‌بندی در قالب بسته راهکارهای سازمانی همراه اول (B2B) برای ۵۰۰ شرکت برتر کشور[cite: 7].
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* SECTION 3: 4 VALUE ENGINES (GAUGES) */}
+            <div className="gauge-section space-y-6">
+              <div className="section-header flex justify-between items-center mb-6">
+                <div className="section-title flex items-center gap-3">
+                  <div className="section-title-bar w-1.5 h-6 rounded-full" style={{ backgroundColor: primaryColor }} />
+                  <h2 className="text-xl font-black text-white">۴ موتور تمایز و ارزش‌آفرینی پلتفرم «زیرا» <span className="sec-title-en text-sm text-slate-400 font-normal">(Core Value Engines)[cite: 7]</span></h2>
+                </div>
+                <div className="section-subtitle text-xs text-slate-400 bg-white/5 border border-white/10 px-3 py-1 rounded-full">
+                  مزیت رقابتی پایدار در صنعت هوش مصنوعی کشور[cite: 7]
+                </div>
+              </div>
+
+              <div className="gauge-grid grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+                {[
+                  { cls: 'gauge-cyan', icon: '🇮🇷', title: 'بومی‌سازی عمیق فارسی', desc: 'درک دقیق تفاوت‌های زبانی، ادبیات تخصصی اداری، حقوقی و تجاری ایران بدون افت کیفیت در مقایسه با ابزارهای غیربومی.' },
+                  { cls: 'gauge-green', icon: '🔗', title: 'لایه اتصال سامانه‌ای', desc: 'یکپارچگی بی‌واسطه با جیرا، سیستم‌های مدیریت وظایف، CRM و پایگاه‌های دانش داخلی به عنوان لایه هوشمند سازمان.' },
+                  { cls: 'gauge-purple', icon: '📊', title: 'حاکمیت مصرف و هزینه', desc: 'داشبورد زنده پایش توکن، گزارش‌گیری دپارتمانی، سقف اعتباری تیم‌ها و شفافیت کامل در مدل‌های پرداخت سازمانی و فردی.' },
+                  { cls: 'gauge-orange', icon: '👁️', title: 'پردازش چندوجهی رسانه', desc: 'استخراج هوشمند متن از تصاویر، جستجوی ویژوال در کاتالوگ محصولات دیجیتال و خلاصه‌سازی هوشمند محتوای ویدیویی.' },
+                ].map((g, idx) => (
+                  <div key={idx} className={`gauge-card ${g.cls} bg-[#181E2C] border border-white/10 rounded-2xl p-6 flex flex-col items-center text-center shadow-lg`}>
+                    <div className="gauge-vis w-32 h-32 relative flex items-center justify-center mb-4">
+                      <svg className="gauge-svg w-full h-full -rotate-90" viewBox="0 0 140 140">
+                        <circle className="gauge-bg-circle" cx="70" cy="70" r="56" fill="none" stroke="#252D3D" strokeWidth="12" />
+                        <circle className="gauge-fill-circle" cx="70" cy="70" r="56" fill="none" strokeWidth="12" strokeLinecap="round" />
+                      </svg>
+                      <div className="gauge-inner-sphere absolute w-16 h-16 rounded-full bg-slate-800 flex items-center justify-center text-2xl shadow-inner border border-white/10">
+                        <span>{g.icon}</span>
+                      </div>
+                    </div>
+                    <h3 className="font-bold text-sm text-white mb-2">{g.title}[cite: 7]</h3>
+                    <p className="text-xs text-slate-400 leading-relaxed">{g.desc}[cite: 7]</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* SECTION 4: ENTERPRISE PORTFOLIO */}
+            <div className="space-y-6">
+              <div className="section-header flex justify-between items-center mb-6">
+                <div className="section-title flex items-center gap-3">
+                  <div className="section-title-bar w-1.5 h-6 rounded-full" style={{ backgroundColor: primaryColor }} />
+                  <h2 className="text-xl font-black text-white">سبد راهکارهای تخصصی سازمانی <span className="sec-title-en text-sm text-slate-400 font-normal">(Enterprise AI Portfolio)[cite: 7]</span></h2>
+                </div>
+                <div className="section-subtitle text-xs text-slate-400 bg-white/5 border border-white/10 px-3 py-1 rounded-full">
+                  محصولات آماده به‌کار جهت ارتقای بهره‌وری عملیاتی[cite: 7]
+                </div>
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div className="bg-[#181E2C] border border-white/10 rounded-2xl p-6">
+                  <div className="flex items-center gap-3.5 mb-5 pb-4 border-b border-white/10">
+                    <div className="w-11 h-11 rounded-full bg-[#99CC00] text-slate-950 font-bold flex items-center justify-center text-xl">🎯</div>
+                    <div>
+                      <h3 className="font-black text-base text-white">دستیار مدیریت و عملیات پروژه (Project Ops AI)[cite: 7]</h3>
+                      <span className="text-xs text-slate-400">کاهش محسوس اصطکاک پروژه‌های پیچیده سازمانی[cite: 7]</span>
+                    </div>
+                  </div>
+                  <div className="space-y-2 text-xs">
+                    {[
+                      { icon: '📁', title: 'تحلیل اطلاعات و مستندات:', desc: 'استخراج آنی پیش‌نیازها و شناسایی موانع' },
+                      { icon: '⚡', title: 'برنامه‌ریزی و اولویت‌بندی:', desc: 'چیدمان فعالیت‌ها بر مبنای توان واقعی تیم' },
+                      { icon: '🔗', title: 'اتصال به Jira و Task Manager:', desc: 'ثبت و تخصیص مستقیم وظایف' },
+                      { icon: '📈', title: 'گزارش‌های مدیریتی:', desc: 'سنجش وضعیت پیشرفت پروژه بر اساس داده‌های زنده' },
+                      { icon: '🛡️', title: 'رعایت سطح دسترسی:', desc: 'تفکیک دسترسی کاربران هنگام فراخوانی اطلاعات پروژه' },
+                    ].map((item, i) => (
+                      <div key={i} className="flex items-center gap-3 bg-white/5 border border-white/5 p-2.5 rounded-xl">
+                        <span className="text-lg">{item.icon}</span>
+                        <div>
+                          <strong className="text-white ml-1">{item.title}</strong>
+                          <span className="text-slate-400">{item.desc}[cite: 7]</span>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                <div className="bg-[#181E2C] border border-white/10 rounded-2xl p-6">
+                  <div className="flex items-center gap-3.5 mb-5 pb-4 border-b border-white/10">
+                    <div className="w-11 h-11 rounded-full flex items-center justify-center text-xl text-white font-bold" style={{ backgroundColor: primaryColor }}>🎧</div>
+                    <div>
+                      <h3 className="font-black text-base text-white">دستیار هوشمند پشتیبانی و پاسخ‌گویی (Omni Support AI)[cite: 7]</h3>
+                      <span className="text-xs text-slate-400">پاسخگویی ۲۴/۷ متناسب با محصولات و خدمات کسب‌وکار[cite: 7]</span>
+                    </div>
+                  </div>
+                  <div className="space-y-2 text-xs">
+                    {[
+                      { icon: '💬', title: 'پاسخ‌گویی هوشمند:', desc: 'رفع سوالات مشتریان بدون صف انتظار و خستگی' },
+                      { icon: '📚', title: 'پایگاه دانش اختصاصی:', desc: 'تکیه بر اطلاعات و اسناد رسمی کسب‌وکار' },
+                      { icon: '🌐', title: 'ویجت وب‌سایت و اپلیکیشن:', desc: 'استقرار تجربه گفتگو‌محور در چند دقیقه' },
+                      { icon: '🔍', title: 'تحلیل رفتار و تعاملات:', desc: 'شناسایی موضوعات و نیازهای پرتکرار مشتریان' },
+                      { icon: '🔄', title: 'اتصال به سیستم‌های تیکتینگ:', desc: 'ارجاع هوشمند موارد خاص به کارشناسان' },
+                    ].map((item, i) => (
+                      <div key={i} className="flex items-center gap-3 bg-white/5 border border-white/5 p-2.5 rounded-xl">
+                        <span className="text-lg">{item.icon}</span>
+                        <div>
+                          <strong className="text-white ml-1">{item.title}</strong>
+                          <span className="text-slate-400">{item.desc}[cite: 7]</span>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* SECTION 5: OMNICHANNEL ECOSYSTEM */}
+            <div className="omni-section bg-gradient-to-tr from-[#131722] to-[#1F2738] border border-white/10 rounded-3xl p-6 sm:p-10 space-y-6">
+              <div className="section-title flex items-center gap-3">
+                <div className="section-title-bar w-1.5 h-6 rounded-full" style={{ backgroundColor: primaryColor }} />
+                <h2 className="text-xl font-black text-white">کانال‌های دسترسی و نقشه راه توسعه (Omnichannel Ecosystem)[cite: 7]</h2>
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div className="space-y-4">
+                  <div className="text-xs font-black text-[#00D2FF] flex items-center gap-2">
+                    <span className="w-2 h-2 rounded-full bg-[#00E676] shadow-sm"></span>
+                    <span>کانال‌های فعال و در دسترس کاربران (Active Channels)[cite: 7]</span>
+                  </div>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
+                    {[
+                      { icon: '🌐', name: 'وب‌سایت اختصاصی', meta: 'ziira.ir (محیط ابری پرسرعت)' },
+                      { icon: '📱', name: 'اپلیکیشن اندروید', meta: 'تجربه کاربری نیتیو موبایل' },
+                      { icon: '🧩', name: 'افزونه مرورگر Chrome', meta: 'دستیار همراه وب‌گردی و مطالعه' },
+                      { icon: '💬', name: 'سرشماره پیامکی (SMS)', meta: 'هوش مصنوعی بدون نیاز به اینترنت' },
+                    ].map((ch, i) => (
+                      <div key={i} className="bg-black/30 border border-white/10 p-3 rounded-xl flex items-center gap-3 border-r-3 border-r-[#00D2FF]">
+                        <span className="text-xl">{ch.icon}</span>
+                        <div>
+                          <div className="font-bold text-white">{ch.name}[cite: 7]</div>
+                          <div className="text-[10px] text-slate-400 mt-0.5">{ch.meta}[cite: 7]</div>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                <div className="space-y-4">
+                  <div className="text-xs font-black text-purple-400 flex items-center gap-2">
+                    <span className="w-2 h-2 rounded-full bg-purple-500 shadow-sm"></span>
+                    <span>کانال‌های در آستانه راه‌اندازی (Upcoming Pipeline)[cite: 7]</span>
+                  </div>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
+                    {[
+                      { icon: '💬', name: 'ربات پیام‌رسان بله', meta: 'یکپارچگی با جامعه کسب‌وکاری' },
+                      { icon: '⚡', name: 'ربات پیام‌رسان روبیکا', meta: 'دسترسی به میلیون‌ها کاربر ملی' },
+                      { icon: '📞', name: 'خط تلفن گویا (Smart IVR)', meta: 'تعامل صوتی هوشمند بر بستر همراه اول' },
+                      { icon: '⚙️', name: 'سرویس‌های اختصاصی سازمانی', meta: 'طراحی متناسب با سامانه‌های کلان هر شرکت' },
+                    ].map((ch, i) => (
+                      <div key={i} className="bg-black/30 border border-white/10 p-3 rounded-xl flex items-center gap-3 border-r-3 border-r-purple-500 opacity-90">
+                        <span className="text-xl">{ch.icon}</span>
+                        <div>
+                          <div className="font-bold text-white">{ch.name}[cite: 7]</div>
+                          <div className="text-[10px] text-slate-400 mt-0.5">{ch.meta}[cite: 7]</div>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
-          <div className="footer-right">
-            شرکت همراه کسب‌وکارهای هوشمند (EBCOM) • بازوی نوآوری دیجیتال هلدینگ همراه اول
-          </div>
-        </footer>
+
+          {/* FOOTER */}
+          <footer className="footer bg-[#090B10] p-6 sm:px-12 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs border-t border-white/10">
+            <div className="text-white">پلتفرم زیرا؛ <span style={{ color: primaryColor }}>هوش مصنوعی، یکپارچه و در دسترس[cite: 7]</span></div>
+            <div className="text-slate-500">شرکت همراه کسب‌وکارهای هوشمند (EBCOM) • بازوی نوآوری دیجیتال هلدینگ همراه اول[cite: 7]</div>
+          </footer>
+        </div>
       </div>
     </div>
   );
