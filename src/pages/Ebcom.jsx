@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import TopBar from '../components/common/TopBar';
-import { CreditCard, Wifi, Utensils, Cpu, ShieldCheck, TrendingUp, Layers, CheckCircle2 } from 'lucide-react';
+import { CreditCard, Wifi, Utensils, Cpu } from 'lucide-react';
 
 const primaryColor = '#688A00';
 
@@ -23,53 +23,52 @@ export default function Ebcom() {
                 onError={(e) => { e.target.src = '/assets/images/ebcom-sign.png'; }}
               />
               <div className="hidden sm:block w-px h-8 bg-white/20" />
-              <div className="flex items-center gap-2 text-xs text-slate-300">
-                <span className="bg-white/10 px-3 py-1.5 rounded-full border border-white/10">هم‌پیمان استراتژیک: <strong className="text-[#99CC00]">همراه اول</strong>[cite: 9]</span>
-                <span className="bg-white/10 px-3 py-1.5 rounded-full border border-white/10">محصولات کلیدی: <strong className="text-[#00A3E0]">اوانو (Ewano)</strong> و <strong className="text-[#99CC00]">ردا (RADA)</strong>[cite: 9]</span>
+              <div className="bg-white/10 px-3.5 py-1.5 rounded-full border border-white/10 text-xs font-semibold text-slate-300">
+                هم‌پیمان استراتژیک: <strong style={{ color: primaryColor }}>همراه اول</strong>
               </div>
             </div>
             <span className="font-black text-xs px-4 py-2 rounded-full text-white shadow-md" style={{ backgroundColor: primaryColor }}>
-              بولتن رسمی اخبار و دستاوردهای ایبیکام[cite: 9]
+              بولتن رسمی اخبار و دستاوردها
             </span>
           </div>
 
           <div className="space-y-4 max-w-4xl">
             <h1 className="text-2xl sm:text-4xl font-black text-white leading-tight">
-              گام‌های تحول‌آفرین EBCOM در اقتصاد دیجیتال و نوآوری مالی[cite: 9]
+              گام‌های تحول‌آفرین EBCOM در اقتصاد دیجیتال و نوآوری مالی
             </h1>
             <p className="text-slate-300 text-xs sm:text-sm md:text-base leading-relaxed text-justify font-light">
-              شرکت همراه کسب‌وکارهای هوشمند (ایبیکام)، بازوی نوآوری دیجیتال همراه اول، با تمرکز بر گسترش خدمات فناوری‌محور، همزمان دو دستاورد راهبردی را رقم زد: توسعه فنی بستر هوشمند «ردا» برای ساماندهی جامع خدمات دانشجویان سراسر کشور، و اخذ رسمی گواهی شرکت «دانش‌بنیان» با محوریت سوپراپلیکیشن جامع مدیریت مالی و پرداخت اوانو[cite: 9].
+              شرکت همراه کسب‌وکارهای هوشمند (ایبیکام)، بازوی نوآوری دیجیتال همراه اول، با تمرکز بر گسترش خدمات فناوری‌محور، همزمان دو دستاورد راهبردی را رقم زد: توسعه فنی بستر هوشمند «ردا» برای ساماندهی جامع خدمات دانشجویان سراسر کشور، و اخذ رسمی گواهی شرکت «دانش‌بنیان» با محوریت سوپراپلیکیشن جامع مدیریت مالی و پرداخت اوانو.
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-5 mt-8">
             <div className="bg-white/5 border border-white/15 rounded-2xl p-6 text-center backdrop-blur-md relative overflow-hidden" style={{ borderTop: `4px solid ${primaryColor}` }}>
               <span className="inline-block text-xs font-extrabold px-3 py-1 rounded-full mb-3 text-white" style={{ backgroundColor: primaryColor }}>
-                زیست‌بوم ردا (رفاه دانشجویان)[cite: 9]
+                زیست‌بوم ردا (رفاه دانشجویان)
               </span>
-              <div className="text-lg font-black text-white mb-1">۴ ستون خدمت‌رسانی یکپارچه[cite: 9]</div>
-              <div className="text-xs text-slate-400">تجمیع خدمات بانکی و اعتباری، بسته‌های اینترنت، امور رفاهی و میکروسرویس‌ها در یک پلتفرم هوشمند[cite: 9]</div>
+              <div className="text-lg font-black text-white mb-1">۴ ستون خدمت‌رسانی یکپارچه</div>
+              <div className="text-xs text-slate-400">تجمیع خدمات بانکی و اعتباری، بسته‌های اینترنت، امور رفاهی و میکروسرویس‌ها در یک پلتفرم هوشمند</div>
             </div>
 
             <div className="bg-white/5 border border-white/15 rounded-2xl p-6 text-center backdrop-blur-md relative overflow-hidden" style={{ borderTop: `4px solid #00A3E0` }}>
               <span className="inline-block bg-[#00A3E0] text-white text-xs font-extrabold px-3 py-1 rounded-full mb-3">
-                عنوان رسمی دانش‌بنیان[cite: 9]
+                عنوان رسمی دانش‌بنیان
               </span>
-              <div className="text-lg font-black text-white mb-1">احراز صلاحیت علمی و فنی[cite: 9]</div>
-              <div className="text-xs text-slate-400">اخذ عنوان شرکت دانش‌بنیان برای سوپراپلیکیشن جامع مدیریت مالی و خدمات پرداخت اوانو (Ewano)[cite: 9]</div>
+              <div className="text-lg font-black text-white mb-1">احراز صلاحیت علمی و فنی</div>
+              <div className="text-xs text-slate-400">اخذ عنوان شرکت دانش‌بنیان برای سوپراپلیکیشن جامع مدیریت مالی و خدمات پرداخت اوانو (Ewano)</div>
             </div>
 
             <div className="bg-white/5 border border-white/15 rounded-2xl p-6 text-center backdrop-blur-md relative overflow-hidden" style={{ borderTop: `4px solid #FFB800` }}>
               <span className="inline-block bg-[#FFB800] text-slate-900 text-xs font-extrabold px-3 py-1 rounded-full mb-3">
-                گستره مخاطبان و اثرگذاری[cite: 9]
+                گستره مخاطبان و اثرگذاری
               </span>
-              <div className="text-lg font-black text-white mb-1">جامعه چندمیلیونی دانشگاهی و عمومی[cite: 9]</div>
-              <div className="text-xs text-slate-400">ارائه خدمات بدون مرز مالی، دیجیتال و رفاهی با بهره‌گیری از زیرساخت پیشرفته همراه اول[cite: 9]</div>
+              <div className="text-lg font-black text-white mb-1">جامعه دانشگاهی و عمومی</div>
+              <div className="text-xs text-slate-400">ارائه خدمات بدون مرز مالی، دیجیتال و رفاهی با بهره‌گیری از زیرساخت پیشرفته همراه اول</div>
             </div>
           </div>
         </header>
 
-        {/* INTERACTIVE TABS */}
+        {/* فیلتر بخش‌ها */}
         <div className="flex bg-[#F3F4F6] border-b border-[#E2E0D9] px-6 sm:px-12 py-3 gap-3 overflow-x-auto">
           {[
             { id: 'all', label: 'همه دستاوردها (نمای جامع)', badge: '★' },
@@ -95,20 +94,20 @@ export default function Ebcom() {
           ))}
         </div>
 
-        {/* CONTENT BODY */}
+        {/* محتوای صفحات */}
         <div className="p-8 sm:p-12 space-y-16">
 
-          {/* SECTION 1: RADA */}
+          {/* بخش ۱: ردا */}
           {(activeTab === 'all' || activeTab === 'rada') && (
             <section className="space-y-8">
               <div className="flex items-center gap-3">
                 <div className="w-1.5 h-8 rounded-full" style={{ backgroundColor: primaryColor }} />
                 <div>
                   <h2 className="text-xl sm:text-2xl font-black text-[#1C1C1C]">
-                    توسعه فنی زیست‌بوم «ردا» (رفاه دانشجویان ایران) در EBCOM[cite: 9]
+                    توسعه فنی زیست‌بوم «ردا» (رفاه دانشجویان ایران) در EBCOM
                   </h2>
                   <p className="text-xs sm:text-sm text-slate-500 font-medium">
-                    (RADA - Iran Student Welfare Smart Ecosystem) • یکپارچه‌سازی خدمات و هوشمندسازی زیست دانشجویی[cite: 9]
+                    (RADA - Iran Student Welfare Smart Ecosystem) • یکپارچه‌سازی خدمات و هوشمندسازی زیست دانشجویی
                   </p>
                 </div>
               </div>
@@ -117,7 +116,7 @@ export default function Ebcom() {
                 <div className="lg:col-span-5 relative rounded-2xl overflow-hidden shadow-lg border border-slate-200 aspect-16/10 bg-slate-200 flex items-center justify-center">
                   <img src="/assets/images/contract.jpeg" alt="قرارداد ردا" className="w-full h-full object-cover" />
                   <div className="absolute bottom-3 right-3 bg-slate-900/90 text-white text-[11px] font-bold px-3 py-1 rounded-full border border-white/20 backdrop-blur-md">
-                    زیست‌بوم دیجیتال ردا (RADA)[cite: 9]
+                    زیست‌بوم دیجیتال ردا (RADA)
                   </div>
                 </div>
 
@@ -126,13 +125,13 @@ export default function Ebcom() {
                     {['ساده‌سازی دسترسی دانشجویان', 'هوشمندسازی خدمات دانشگاهی', 'فضای واحد خدمات چندگانه'].map((chip, i) => (
                       <span key={i} className="bg-white border border-[#E2E0D9] text-xs font-bold text-slate-800 px-3 py-1 rounded-full shadow-2xs flex items-center gap-1.5">
                         <span className="w-2 h-2 rounded-full" style={{ backgroundColor: primaryColor }} />
-                        {chip}[cite: 9]
+                        {chip}
                       </span>
                     ))}
                   </div>
-                  <h3 className="text-xl font-black text-[#1C1C1C]">بستر یکپارچه خدمات معیشتی و دیجیتال دانشگاهی[cite: 9]</h3>
+                  <h3 className="text-xl font-black text-[#1C1C1C]">بستر یکپارچه خدمات معیشتی و دیجیتال دانشگاهی</h3>
                   <p className="text-xs sm:text-sm text-slate-700 leading-relaxed text-justify">
-                    هدف اصلی توسعه فنی زیست‌بوم «ردا»، ساده‌تر کردن دسترسی دانشجویان به خدمات مختلف و حرکت پرشتاب به سمت هوشمندسازی خدمات دانشجویی کشور است[cite: 9]. با توسعه این بستر توسط متخصصان شرکت همراه کسب‌وکارهای هوشمند (EBCOM)، مسیر ایجاد درگاه یکپارچه خدمات وارد مرحله تازه‌ای شده است؛ بستری که خدمات بانکی و اعتباری، بسته‌های اینترنتی، خدمات رفاهی و مجموعه‌ای از میکروسرویس‌ها را در یک فضای واحد در اختیار جامعه دانشگاهی قرار می‌دهد[cite: 9].
+                    هدف اصلی توسعه فنی زیست‌بوم «ردا»، ساده‌تر کردن دسترسی دانشجویان به خدمات مختلف و حرکت پرشتاب به سمت هوشمندسازی خدمات دانشجویی کشور است. با توسعه این بستر توسط متخصصان شرکت همراه کسب‌وکارهای هوشمند (EBCOM)، مسیر ایجاد درگاه یکپارچه خدمات وارد مرحله تازه‌ای شده است؛ بستری که خدمات بانکی و اعتباری، بسته‌های اینترنتی، خدمات رفاهی و مجموعه‌ای از میکروسرویس‌ها را در یک فضای واحد در اختیار جامعه دانشگاهی قرار می‌دهد.
                   </p>
                 </div>
               </div>
@@ -172,14 +171,14 @@ export default function Ebcom() {
                         <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-4 text-white" style={{ backgroundColor: primaryColor }}>
                           <Icon size={24} />
                         </div>
-                        <h4 className="font-extrabold text-base text-[#1C1C1C] mb-2">{col.title}[cite: 9]</h4>
-                        <p className="text-xs text-slate-600 leading-relaxed mb-4">{col.desc}[cite: 9]</p>
+                        <h4 className="font-extrabold text-base text-[#1C1C1C] mb-2">{col.title}</h4>
+                        <p className="text-xs text-slate-600 leading-relaxed mb-4">{col.desc}</p>
                       </div>
                       <ul className="border-t border-dashed border-[#E2E0D9] pt-3 space-y-1.5 text-xs text-slate-500">
                         {col.items.map((item, i) => (
                           <li key={i} className="flex items-center gap-1.5 font-medium">
                             <span className="font-black" style={{ color: primaryColor }}>✓</span>
-                            <span>{item}[cite: 9]</span>
+                            <span>{item}</span>
                           </li>
                         ))}
                       </ul>
@@ -190,17 +189,17 @@ export default function Ebcom() {
             </section>
           )}
 
-          {/* SECTION 2: KNOWLEDGE-BASED EWANO */}
+          {/* بخش ۲: دانش‌بنیان اوانو */}
           {(activeTab === 'all' || activeTab === 'ewano') && (
             <section className="space-y-8">
               <div className="flex items-center gap-3">
                 <div className="w-1.5 h-8 bg-[#00A3E0] rounded-full" />
                 <div>
                   <h2 className="text-xl sm:text-2xl font-black text-[#1C1C1C]">
-                    شرکت همراه کسب و کارهای هوشمند دانش‌بنیان شد[cite: 9]
+                    شرکت همراه کسب و کارهای هوشمند دانش‌بنیان شد
                   </h2>
                   <p className="text-xs sm:text-sm text-slate-500 font-medium">
-                    (Knowledge-Based Enterprise Certification - Ewano Super-App) • تأیید رسمی نوآوری فناورانه در سطح ملی[cite: 9]
+                    (Knowledge-Based Enterprise Certification - Ewano Super-App) • تأیید رسمی نوآوری فناورانه در سطح ملی
                   </p>
                 </div>
               </div>
@@ -211,20 +210,20 @@ export default function Ebcom() {
                     {['مجوز رسمی معاونت علمی', 'محصول: سوپراپلیکیشن اوانو', 'فناوری پیشرفته مالی (Fintech)'].map((chip, i) => (
                       <span key={i} className="bg-white border border-[#E2E0D9] text-xs font-bold text-slate-800 px-3 py-1 rounded-full shadow-2xs flex items-center gap-1.5">
                         <span className="w-2 h-2 rounded-full bg-[#00A3E0]" />
-                        {chip}[cite: 9]
+                        {chip}
                       </span>
                     ))}
                   </div>
-                  <h3 className="text-xl font-black text-[#1C1C1C]">ارتقای جایگاه فناورانه EBCOM به رتبه شرکت دانش‌بنیان[cite: 9]</h3>
+                  <h3 className="text-xl font-black text-[#1C1C1C]">ارتقای جایگاه فناورانه EBCOM به رتبه شرکت دانش‌بنیان</h3>
                   <p className="text-xs sm:text-sm text-slate-700 leading-relaxed text-justify">
-                    شرکت همراه کسب‌وکارهای هوشمند پس از پشت‌سر گذاشتن مراحل دقیق ارزیابی فنی و کارشناسی و اخذ مجوزها و تأییدیه‌های مراجع ذی‌صلاح، موفق به کسب عنوان معتبر <strong>«شرکت دانش‌بنیان»</strong> شد[cite: 9]. این تأییدیه ملی ارزشمند به پاس توسعه محصول راهبردی <strong>«سوپر اپلیکیشن جامع مدیریت مالی و خدمات پرداخت اوانو (Ewano)»</strong> اعطا گردیده که نمایانگر بلوغ فنی، خودکفایی و نوآوری زیرساختی در صنعت فناوری مالی کشور است[cite: 9].
+                    شرکت همراه کسب‌وکارهای هوشمند پس از پشت‌سر گذاشتن مراحل دقیق ارزیابی فنی و کارشناسی و اخذ مجوزها و تأییدیه‌های مراجع ذی‌صلاح، موفق به کسب عنوان معتبر <strong>«شرکت دانش‌بنیان»</strong> شد. این تأییدیه ملی ارزشمند به پاس توسعه محصول راهبردی <strong>«سوپر اپلیکیشن جامع مدیریت مالی و خدمات پرداخت اوانو (Ewano)»</strong> اعطا گردیده که نمایانگر بلوغ فنی، خودکفایی و نوآوری زیرساختی در صنعت فناوری مالی کشور است.
                   </p>
                 </div>
 
                 <div className="lg:col-span-5 order-1 lg:order-2 relative rounded-2xl overflow-hidden shadow-lg border border-slate-200 aspect-16/10 bg-slate-200 flex items-center justify-center">
                   <img src="/assets/images/BI.JPG" alt="گواهی اوانو" className="w-full h-full object-cover" />
                   <div className="absolute bottom-3 right-3 bg-slate-900/90 text-white text-[11px] font-bold px-3 py-1 rounded-full border border-white/20 backdrop-blur-md">
-                    گواهی دانش‌بنیان • اوانو (Ewano)[cite: 9]
+                    گواهی دانش‌بنیان • اوانو (Ewano)
                   </div>
                 </div>
               </div>
@@ -250,10 +249,10 @@ export default function Ebcom() {
                   <div key={idx} className="bg-white border border-[#E2E0D9] rounded-2xl p-6 hover:shadow-lg transition-all flex flex-col justify-between" style={{ borderTop: '4px solid #00A3E0' }}>
                     <div>
                       <span className="inline-block bg-[#00A3E0]/15 text-[#0081B3] text-xs font-black px-3 py-1 rounded-full mb-3">
-                        {card.badge}[cite: 9]
+                        {card.badge}
                       </span>
-                      <h4 className="font-extrabold text-base text-[#1C1C1C] mb-2">{card.title}[cite: 9]</h4>
-                      <p className="text-xs sm:text-sm text-slate-600 leading-relaxed text-justify">{card.desc}[cite: 9]</p>
+                      <h4 className="font-extrabold text-base text-[#1C1C1C] mb-2">{card.title}</h4>
+                      <p className="text-xs sm:text-sm text-slate-600 leading-relaxed text-justify">{card.desc}</p>
                     </div>
                   </div>
                 ))}
@@ -261,17 +260,17 @@ export default function Ebcom() {
             </section>
           )}
 
-          {/* SECTION 3: COMPARISON MATRIX */}
+          {/* بخش ۳: ماتریس مقایسه و هم‌افزایی */}
           {(activeTab === 'all' || activeTab === 'matrix') && (
             <section className="space-y-6">
               <div className="flex items-center gap-3">
                 <div className="w-1.5 h-8 bg-[#FFB800] rounded-full" />
                 <div>
                   <h2 className="text-xl sm:text-2xl font-black text-[#1C1C1C]">
-                    ماتریس راهبردی و هم‌افزایی دو رویداد[cite: 9]
+                    ماتریس راهبردی و هم‌افزایی دو رویداد
                   </h2>
                   <p className="text-xs sm:text-sm text-slate-500 font-medium">
-                    (Synergy & Strategic Alignment Matrix) • هم‌راستایی در زنجیره ارزش اقتصاد دیجیتال همراه اول[cite: 9]
+                    (Synergy & Strategic Alignment Matrix) • هم‌راستایی در زنجیره ارزش اقتصاد دیجیتال همراه اول
                   </p>
                 </div>
               </div>
@@ -280,9 +279,9 @@ export default function Ebcom() {
                 <table className="w-full text-right text-xs sm:text-sm border-collapse min-w-[700px]">
                   <thead>
                     <tr className="bg-[#1C1C1C] text-white">
-                      <th className="p-4 rounded-tr-xl font-bold">محور ارزیابی[cite: 9]</th>
-                      <th className="p-4 font-bold">زیست‌بوم دانشجویی «ردا»[cite: 9]</th>
-                      <th className="p-4 rounded-tl-xl font-bold">گواهی دانش‌بنیان «اوانو»[cite: 9]</th>
+                      <th className="p-4 rounded-tr-xl font-bold">محور ارزیابی</th>
+                      <th className="p-4 font-bold">زیست‌بوم دانشجویی «ردا»</th>
+                      <th className="p-4 rounded-tl-xl font-bold">گواهی دانش‌بنیان «اوانو»</th>
                     </tr>
                   </thead>
                   <tbody className="divide-y divide-[#E2E0D9]">
@@ -314,9 +313,9 @@ export default function Ebcom() {
                       }
                     ].map((row, idx) => (
                       <tr key={idx} className="hover:bg-white transition-colors">
-                        <td className="p-4 font-black text-[#1C1C1C] bg-black/2 w-1/4">{row.title}[cite: 9]</td>
-                        <td className="p-4 text-slate-700 leading-relaxed border-l border-[#E2E0D9] w-[37.5%]">{row.rada}[cite: 9]</td>
-                        <td className="p-4 text-slate-700 leading-relaxed w-[37.5%]">{row.ewano}[cite: 9]</td>
+                        <td className="p-4 font-black text-[#1C1C1C] bg-black/2 w-1/4">{row.title}</td>
+                        <td className="p-4 text-slate-700 leading-relaxed border-l border-[#E2E0D9] w-[37.5%]">{row.rada}</td>
+                        <td className="p-4 text-slate-700 leading-relaxed w-[37.5%]">{row.ewano}</td>
                       </tr>
                     ))}
                   </tbody>
@@ -327,10 +326,10 @@ export default function Ebcom() {
 
         </div>
 
-        {/* FOOTER */}
+        {/* سربرگ پایانی */}
         <footer className="bg-[#1C1C1C] text-slate-300 p-6 sm:px-12 flex justify-between items-center gap-4 text-xs border-t border-white/10">
-          <div><strong className="text-white">شرکت همراه کسب‌وکارهای هوشمند (EBCOM)</strong> • بازوی نوآوری همراه اول[cite: 9]</div>
-          <div className="text-slate-500">پرتال رسمی اینفوگرافیک دستاوردها[cite: 9]</div>
+          <div><strong className="text-white">شرکت همراه کسب‌وکارهای هوشمند (EBCOM)</strong> • بازوی نوآوری همراه اول</div>
+          <div className="text-slate-500">پرتال رسمی اینفوگرافیک دستاوردها</div>
         </footer>
       </div>
     </div>

@@ -194,7 +194,7 @@ export default function Ziira() {
     <div className="min-h-screen py-6 flex flex-col items-center">
       <TopBar title="پلتفرم هوش مصنوعی زیرا (Ziira)" />
 
-      {/* SVG Definitions */}
+      {/* تعاریف گرادینت‌های برداری SVG */}
       <svg width="0" height="0" style={{ position: 'absolute' }}>
         <defs>
           <linearGradient id="grad-cyan-svg" x1="0%" y1="0%" x2="100%" y2="100%">
@@ -227,7 +227,7 @@ export default function Ziira() {
 
       <div className="ziira-scope w-full max-w-[1200px] my-4">
         <div className="infographic-container">
-          {/* HEADER */}
+          {/* بخش سربرگ سازمانی */}
           <header className="header p-8 sm:p-12 border-b border-white/10">
             <div className="header-top flex justify-between items-center pb-6 mb-8 border-b border-white/10 flex-wrap gap-4">
               <div className="brand-lockup flex items-center gap-4 flex-wrap">
@@ -243,8 +243,8 @@ export default function Ziira() {
                   <div className="brand-divider"></div>
                   <div className="ziira-brand-badge">
                     <div className="ziira-brand-text">
-                      <span className="ziira-brand-name" style={{ color: primaryColor }}>پلتفرم زیرا | Ziira AI[cite: 7]</span>
-                      <span className="ziira-brand-sub">هوش مصنوعی یکپارچه سازمانی[cite: 7]</span>
+                      <span className="ziira-brand-name" style={{ color: primaryColor }}>پلتفرم زیرا | Ziira AI</span>
+                      <span className="ziira-brand-sub">هوش مصنوعی یکپارچه سازمانی</span>
                     </div>
                   </div>
                 </div>
@@ -252,87 +252,87 @@ export default function Ziira() {
                 <div className="brand-divider"></div>
 
                 <div className="strategic-affiliation flex items-center gap-3">
-                  <div className="affiliation-pill">هم‌پیمان راهبردی: <strong>همراه اول</strong>[cite: 7]</div>
+                  <div className="affiliation-pill">هم‌پیمان راهبردی: <strong>همراه اول</strong></div>
                   <a href="https://ziira.ir" target="_blank" rel="noreferrer" className="affiliation-link">
                     <span className="live-dot"></span>
-                    <span>ziira.ir[cite: 7]</span>
+                    <span>ziira.ir</span>
                   </a>
                 </div>
               </div>
 
-              <div className="exec-badge" style={{ background: primaryColor, color: '#FFFFFF' }}>گزارش راهبردی[cite: 7]</div>
+              <div className="exec-badge" style={{ background: primaryColor, color: '#FFFFFF' }}>گزارش راهبردی</div>
             </div>
 
             <div className="hero-title-area">
               <div className="hero-text space-y-3">
                 <h1 className="text-2xl sm:text-4xl font-black text-white flex items-center gap-3 flex-wrap">
-                  پلتفرم هوش مصنوعی «زیرا» (Ziira)[cite: 7]
-                  <span className="badge-glow" style={{ borderColor: primaryColor, color: primaryColor, boxShadow: `0 0 15px ${primaryColor}40` }}>زیرساخت حاکمیتی AI[cite: 7]</span>
+                  پلتفرم هوش مصنوعی «زیرا» (Ziira)
+                  <span className="badge-glow" style={{ borderColor: primaryColor, color: primaryColor, boxShadow: `0 0 15px ${primaryColor}40` }}>زیرساخت حاکمیتی AI</span>
                 </h1>
                 <p className="text-slate-300 text-xs sm:text-sm md:text-base leading-relaxed text-justify font-light">
-                  پلتفرم جامع، بومی و چندوجهی هوش مصنوعی شرکت همراه کسب‌وکارهای هوشمند (EBCOM)؛ ارائه‌دهنده راهکارهای هوش مصنوعی یکپارچه با تمرکز ویژه بر زبان فارسی، حاکمیت داده سازمانی و اتصال مستقیم به سامانه‌های عملیاتی کشور در بستر ارتباطی همراه اول[cite: 7].
+                  پلتفرم جامع، بومی و چندوجهی هوش مصنوعی شرکت همراه کسب‌وکارهای هوشمند (EBCOM)؛ ارائه‌دهنده راهکارهای هوش مصنوعی یکپارچه با تمرکز ویژه بر زبان فارسی، حاکمیت داده سازمانی و اتصال مستقیم به سامانه‌های عملیاتی کشور در بستر ارتباطی همراه اول.
                 </p>
               </div>
 
               <div className="hero-quick-kpi grid grid-cols-1 sm:grid-cols-3 gap-4 mt-8">
                 <div className="quick-kpi-item bg-white/5 border border-white/10 rounded-2xl p-4 text-center">
-                  <div className="quick-kpi-num text-xl font-black mb-1" style={{ color: primaryColor }}>Omni-Channel[cite: 7]</div>
-                  <div className="quick-kpi-label text-xs text-slate-400">دسترسی چندرسانه‌ای[cite: 7]</div>
+                  <div className="quick-kpi-num text-xl font-black mb-1" style={{ color: primaryColor }}>Omni-Channel</div>
+                  <div className="quick-kpi-label text-xs text-slate-400">دسترسی چندرسانه‌ای</div>
                 </div>
                 <div className="quick-kpi-item bg-white/5 border border-white/10 rounded-2xl p-4 text-center">
-                  <div className="quick-kpi-num text-xl font-black mb-1" style={{ color: primaryColor }}>B2B & B2C[cite: 7]</div>
-                  <div className="quick-kpi-label text-xs text-slate-400">مدل درآمدی دوگانه[cite: 7]</div>
+                  <div className="quick-kpi-num text-xl font-black mb-1" style={{ color: primaryColor }}>B2B & B2C</div>
+                  <div className="quick-kpi-label text-xs text-slate-400">مدل درآمدی دوگانه</div>
                 </div>
                 <div className="quick-kpi-item bg-white/5 border border-white/10 rounded-2xl p-4 text-center">
-                  <div className="quick-kpi-num text-xl font-black mb-1" style={{ color: primaryColor }}>RAG بومی[cite: 7]</div>
-                  <div className="quick-kpi-label text-xs text-slate-400">پایگاه دانش سازمانی[cite: 7]</div>
+                  <div className="quick-kpi-num text-xl font-black mb-1" style={{ color: primaryColor }}>RAG بومی</div>
+                  <div className="quick-kpi-label text-xs text-slate-400">پایگاه دانش سازمانی</div>
                 </div>
               </div>
             </div>
           </header>
 
-          {/* STRATEGIC STRIP */}
+          {/* نوار ۴ گانه راهبردی */}
           <div className="strategic-strip grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 p-6 sm:px-12 bg-black/30 border-b border-white/10">
             <div className="strip-card c-green reveal-box bg-[#181E2C] border border-white/10 p-4 rounded-xl flex items-center gap-3.5 border-r-4 border-r-[#99CC00]">
               <div className="strip-icon-sphere w-10 h-10 rounded-full flex items-center justify-center text-lg shrink-0 bg-[#99CC00] text-slate-950 font-bold">🇮🇷</div>
               <div>
-                <div className="strip-text-title text-xs font-bold text-white">تمرکز عمیق بر زبان فارسی[cite: 7]</div>
-                <div className="strip-text-desc text-[11px] text-slate-400 mt-0.5">درک بافت فرهنگی و نگارش تخصصی اداری و تجاری[cite: 7]</div>
+                <div className="strip-text-title text-xs font-bold text-white">تمرکز عمیق بر زبان فارسی</div>
+                <div className="strip-text-desc text-[11px] text-slate-400 mt-0.5">درک بافت فرهنگی و نگارش تخصصی اداری و تجاری</div>
               </div>
             </div>
             <div className="strip-card c-cyan reveal-box bg-[#181E2C] border border-white/10 p-4 rounded-xl flex items-center gap-3.5 border-r-4 border-r-[#00D2FF]">
               <div className="strip-icon-sphere w-10 h-10 rounded-full flex items-center justify-center text-lg shrink-0 bg-[#00D2FF] text-slate-950 font-bold">🏢</div>
               <div>
-                <div className="strip-text-title text-xs font-bold text-white">فضای اختصاصی سازمانی[cite: 7]</div>
-                <div className="strip-text-desc text-[11px] text-slate-400 mt-0.5">ایزولاسیون کامل داده‌ها و امنیت در تراز Enterprise[cite: 7]</div>
+                <div className="strip-text-title text-xs font-bold text-white">فضای اختصاصی سازمانی</div>
+                <div className="strip-text-desc text-[11px] text-slate-400 mt-0.5">ایزولاسیون کامل داده‌ها و امنیت در تراز Enterprise</div>
               </div>
             </div>
             <div className="strip-card c-purple reveal-box bg-[#181E2C] border border-white/10 p-4 rounded-xl flex items-center gap-3.5 border-r-4 border-r-[#A855F7]">
               <div className="strip-icon-sphere w-10 h-10 rounded-full flex items-center justify-center text-lg shrink-0 text-white font-bold" style={{ backgroundColor: primaryColor }}>🤖</div>
               <div>
-                <div className="strip-text-title text-xs font-bold text-white">دستیاران متصل به فرآیند[cite: 7]</div>
-                <div className="strip-text-desc text-[11px] text-slate-400 mt-0.5">اتصال زنده به جیرا، تیکتینگ و ERP سازمان[cite: 7]</div>
+                <div className="strip-text-title text-xs font-bold text-white">دستیاران متصل به فرآیند</div>
+                <div className="strip-text-desc text-[11px] text-slate-400 mt-0.5">اتصال زنده به جیرا، تیکتینگ و ERP سازمان</div>
               </div>
             </div>
             <div className="strip-card c-orange reveal-box bg-[#181E2C] border border-white/10 p-4 rounded-xl flex items-center gap-3.5 border-r-4 border-r-[#FF7722]">
               <div className="strip-icon-sphere w-10 h-10 rounded-full flex items-center justify-center text-lg shrink-0 bg-[#FF7722] text-white font-bold">💳</div>
               <div>
-                <div className="strip-text-title text-xs font-bold text-white">کیف پول متمرکز و سهمیه‌بندی[cite: 7]</div>
-                <div className="strip-text-desc text-[11px] text-slate-400 mt-0.5">مدیریت مصرف تیم‌ها با مکانیزم Pay-per-Use[cite: 7]</div>
+                <div className="strip-text-title text-xs font-bold text-white">کیف پول متمرکز و سهمیه‌بندی</div>
+                <div className="strip-text-desc text-[11px] text-slate-400 mt-0.5">مدیریت مصرف تیم‌ها با مکانیزم Pay-per-Use</div>
               </div>
             </div>
           </div>
 
           <div className="content p-8 sm:p-12 space-y-16">
-            {/* SECTION 1: 4 TIERS ARCHITECTURE */}
+            {/* بخش ۱: معماری ۴ لایه و هرم سه‌بعدی */}
             <div className="space-y-6">
               <div className="section-header flex justify-between items-center mb-6">
                 <div className="section-title flex items-center gap-3">
                   <div className="section-title-bar w-1.5 h-6 rounded-full" style={{ backgroundColor: primaryColor }} />
-                  <h2 className="text-xl font-black text-white">معماری ۴ سطحی پلتفرم زیرا <span className="sec-title-en text-sm text-slate-400 font-normal">(Layered AI Architecture)[cite: 7]</span></h2>
+                  <h2 className="text-xl font-black text-white">معماری ۴ سطحی پلتفرم زیرا <span className="sec-title-en text-sm text-slate-400 font-normal">(Layered AI Architecture)</span></h2>
                 </div>
                 <div className="section-subtitle text-xs text-slate-400 bg-white/5 border border-white/10 px-3 py-1 rounded-full">
-                  تفکیک لایه‌های زیرساختی، دانشی، عاملیتی و رابط کاربری[cite: 7]
+                  تفکیک لایه‌های زیرساختی، دانشی، عاملیتی و رابط کاربری
                 </div>
               </div>
 
@@ -375,13 +375,13 @@ export default function Ziira() {
                         <ellipse cx="280" cy="65" rx="70" ry="16" fill="url(#p-cyl1-top)" />
                       </g>
 
-                      {/* DROPLETS */}
+                      {/* قطره‌ها */}
                       <g id="drop-tier-1" className="tier-drop drop-1"><circle cx="280" cy="87" r="7" fill="url(#p-cyl1-top)" /></g>
                       <g id="drop-tier-2" className="tier-drop drop-2"><circle cx="280" cy="174" r="8" fill="url(#p-cyl2-top)" /></g>
                       <g id="drop-tier-3" className="tier-drop drop-3"><circle cx="280" cy="268" r="9" fill="url(#p-cyl3-top)" /></g>
                       <g id="drop-tier-4" className="tier-drop drop-4"><circle cx="280" cy="372" r="10" fill="url(#p-cyl4-top)" /></g>
 
-                      {/* CALLOUTS */}
+                      {/* خطوط اتصال و درصدها */}
                       <g id="callout-tier-1" className="tier-callout-group">
                         <circle id="dot-tier-1" className="callout-dot dot-1" cx="218" cy="87" r="4.5" fill="#FF1E7A" stroke="#FFFFFF" strokeWidth="1.5" />
                         <path id="line-tier-1" className="callout-line line-1" d="M 218 87 L 76 87" stroke="#FF1E7A" strokeWidth="2" strokeDasharray="4,3" clipPath="url(#clip-line-1)" opacity="0.95" />
@@ -405,7 +405,7 @@ export default function Ziira() {
                     </svg>
 
                     <div className="pyramid-footer-note mt-4 text-xs text-slate-400 bg-black/40 border border-white/10 px-4 py-1.5 rounded-full">
-                      <span>🎯</span> <span>هرم توزیع کارکردی پلتفرم هوش مصنوعی زیرا[cite: 7]</span>
+                      <span>🎯</span> <span>هرم توزیع کارکردی پلتفرم هوش مصنوعی زیرا</span>
                     </div>
                   </div>
 
@@ -413,72 +413,72 @@ export default function Ziira() {
                     <div className="arch-capsule-card tier-1 bg-[#181E2C] border border-white/10 p-5 rounded-2xl flex justify-between items-center gap-4" style={{ borderRight: '4px solid #FF1E7A' }}>
                       <div className="capsule-sphere w-12 h-12 rounded-full flex items-center justify-center text-xl shrink-0" style={{ background: 'linear-gradient(135deg, #ff6ea7 0%, #ff1e7a 100%)' }}>🌐</div>
                       <div className="capsule-info flex-grow">
-                        <h3 className="font-extrabold text-sm text-white mb-1">لایه اول: کانال‌های دسترسی و تجربه یکپارچه <span className="card-title-en text-xs text-slate-400 font-normal">(Omnichannel Experience)[cite: 7]</span></h3>
-                        <p className="text-xs text-slate-400 leading-relaxed">دسترسی آسان و چندکاناله از طریق وب‌سایت، اپلیکیشن اندروید، افزونه کروم، پیامک، و به‌زودی بات‌های روبیکا، بله و تلفن گویا با شناسه هویتی واحد[cite: 7].</p>
+                        <h3 className="font-extrabold text-sm text-white mb-1">لایه اول: کانال‌های دسترسی و تجربه یکپارچه <span className="card-title-en text-xs text-slate-400 font-normal">(Omnichannel Experience)</span></h3>
+                        <p className="text-xs text-slate-400 leading-relaxed">دسترسی آسان و چندکاناله از طریق وب‌سایت، اپلیکیشن اندروید، افزونه کروم، پیامک، و به‌زودی بات‌های روبیکا، بله و تلفن گویا با شناسه هویتی واحد.</p>
                         <div className="capsule-tags flex flex-wrap gap-1.5 mt-2">
                           {["وب‌سایت ziira.ir", "اپلیکیشن اندروید", "سرشماره پیامکی", "افزونه Chrome", "روبیکا و بله", "IVR تلفن گویا"].map((t, i) => (
-                            <span key={i} className="text-[10px] bg-white/5 border border-white/10 px-2 py-0.5 rounded-md text-slate-300">{t}[cite: 7]</span>
+                            <span key={i} className="text-[10px] bg-white/5 border border-white/10 px-2 py-0.5 rounded-md text-slate-300">{t}</span>
                           ))}
                         </div>
                       </div>
-                      <div className="capsule-pct-pill font-black text-sm px-3 py-1 rounded-xl bg-black/40 border border-white/10 shrink-0 text-[#FFA0C5]">۲۵٪[cite: 7]</div>
+                      <div className="capsule-pct-pill font-black text-sm px-3 py-1 rounded-xl bg-black/40 border border-white/10 shrink-0 text-[#FFA0C5]">۲۵٪</div>
                     </div>
 
                     <div className="arch-capsule-card tier-2 bg-[#181E2C] border border-white/10 p-5 rounded-2xl flex justify-between items-center gap-4" style={{ borderRight: `4px solid ${primaryColor}` }}>
                       <div className="capsule-sphere w-12 h-12 rounded-full flex items-center justify-center text-xl shrink-0" style={{ background: primaryColor }}>🤖</div>
                       <div className="capsule-info flex-grow">
-                        <h3 className="font-extrabold text-sm text-white mb-1">لایه دوم: دستیاران تخصصی و یکپارچگی عملیاتی <span className="card-title-en text-xs text-slate-400 font-normal">(Agentic AI & Integration)[cite: 7]</span></h3>
-                        <p className="text-xs text-slate-400 leading-relaxed">مجموعه دستیاران هوشمند با قابلیت اتصال زنده به سامانه‌های داخلی سازمان (جیرا، CRM و...)، مدیریت اتوماتیک تسک‌ها، پشتیبانی ۲۴/۷ و پردازش چندوجهی تصویر و ویدیو[cite: 7].</p>
+                        <h3 className="font-extrabold text-sm text-white mb-1">لایه دوم: دستیاران تخصصی و یکپارچگی عملیاتی <span className="card-title-en text-xs text-slate-400 font-normal">(Agentic AI & Integration)</span></h3>
+                        <p className="text-xs text-slate-400 leading-relaxed">مجموعه دستیاران هوشمند با قابلیت اتصال زنده به سامانه‌های داخلی سازمان (جیرا، CRM و...)، مدیریت اتوماتیک تسک‌ها، پشتیبانی ۲۴/۷ و پردازش چندوجهی تصویر و ویدیو.</p>
                         <div className="capsule-tags flex flex-wrap gap-1.5 mt-2">
                           {["دستیار مدیریت پروژه", "اتصال مستقیم به Jira", "ویجت پشتیبانی و CRM", "پردازش OCR و ویدیو"].map((t, i) => (
-                            <span key={i} className="text-[10px] bg-white/5 border border-white/10 px-2 py-0.5 rounded-md text-slate-300">{t}[cite: 7]</span>
+                            <span key={i} className="text-[10px] bg-white/5 border border-white/10 px-2 py-0.5 rounded-md text-slate-300">{t}</span>
                           ))}
                         </div>
                       </div>
-                      <div className="capsule-pct-pill font-black text-sm px-3 py-1 rounded-xl bg-black/40 border border-white/10 shrink-0" style={{ color: primaryColor }}>۵۰٪[cite: 7]</div>
+                      <div className="capsule-pct-pill font-black text-sm px-3 py-1 rounded-xl bg-black/40 border border-white/10 shrink-0" style={{ color: primaryColor }}>۵۰٪</div>
                     </div>
 
                     <div className="arch-capsule-card tier-3 bg-[#181E2C] border border-white/10 p-5 rounded-2xl flex justify-between items-center gap-4" style={{ borderRight: '4px solid #FF6F00' }}>
                       <div className="capsule-sphere w-12 h-12 rounded-full flex items-center justify-center text-xl shrink-0" style={{ background: '#FF6F00' }}>📚</div>
                       <div className="capsule-info flex-grow">
-                        <h3 className="font-extrabold text-sm text-white mb-1">لایه سوم: پایگاه دانش سازمانی و RAG بومی <span className="card-title-en text-xs text-slate-400 font-normal">(Enterprise Knowledge & Security)[cite: 7]</span></h3>
-                        <p className="text-xs text-slate-400 leading-relaxed">ایجاد فضای کار اختصاصی (Tenant ایزوله)، بارگذاری امن مستندات پروژه، ماتریکس کنترل دسترسی تیم‌ها (RBAC) و پاسخگویی دقیق و مستند بدون توهم داده‌ای[cite: 7].</p>
+                        <h3 className="font-extrabold text-sm text-white mb-1">لایه سوم: پایگاه دانش سازمانی و RAG بومی <span className="card-title-en text-xs text-slate-400 font-normal">(Enterprise Knowledge & Security)</span></h3>
+                        <p className="text-xs text-slate-400 leading-relaxed">ایجاد فضای کار اختصاصی (Tenant ایزوله)، بارگذاری امن مستندات پروژه، ماتریکس کنترل دسترسی تیم‌ها (RBAC) و پاسخگویی دقیق و مستند بدون توهم داده‌ای.</p>
                         <div className="capsule-tags flex flex-wrap gap-1.5 mt-2">
                           {["فضای کار اختصاصی", "موتور RAG بومی", "مدیریت سطوح دسترسی", "حاکمیت داده و امنیت"].map((t, i) => (
-                            <span key={i} className="text-[10px] bg-white/5 border border-white/10 px-2 py-0.5 rounded-md text-slate-300">{t}[cite: 7]</span>
+                            <span key={i} className="text-[10px] bg-white/5 border border-white/10 px-2 py-0.5 rounded-md text-slate-300">{t}</span>
                           ))}
                         </div>
                       </div>
-                      <div className="capsule-pct-pill font-black text-sm px-3 py-1 rounded-xl bg-black/40 border border-white/10 shrink-0 text-[#FFC588]">۷۵٪[cite: 7]</div>
+                      <div className="capsule-pct-pill font-black text-sm px-3 py-1 rounded-xl bg-black/40 border border-white/10 shrink-0 text-[#FFC588]">۷۵٪</div>
                     </div>
 
                     <div className="arch-capsule-card tier-4 bg-[#181E2C] border border-white/10 p-5 rounded-2xl flex justify-between items-center gap-4" style={{ borderRight: '4px solid #99CC00' }}>
                       <div className="capsule-sphere w-12 h-12 rounded-full flex items-center justify-center text-xl shrink-0 text-slate-950 font-bold" style={{ background: '#99CC00' }}>⚡</div>
                       <div className="capsule-info flex-grow">
-                        <h3 className="font-extrabold text-sm text-white mb-1">لایه چهارم: زیرساخت تجمیعی مدل‌ها و کیف پول مرکزی <span className="card-title-en text-xs text-slate-400 font-normal">(Foundational Model Hub)[cite: 7]</span></h3>
-                        <p className="text-xs text-slate-400 leading-relaxed">محیط چندمدلی یکپارچه با تمرکز بر پردازش زبان فارسی، مدیریت متمرکز اعتبار و مصرف (Pay-as-you-go)، سهمیه‌بندی بودجه تیم‌ها و داشبورد تحلیل مصرف سازمان[cite: 7].</p>
+                        <h3 className="font-extrabold text-sm text-white mb-1">لایه چهارم: زیرساخت تجمیعی مدل‌ها و کیف پول مرکزی <span className="card-title-en text-xs text-slate-400 font-normal">(Foundational Model Hub)</span></h3>
+                        <p className="text-xs text-slate-400 leading-relaxed">محیط چندمدلی یکپارچه با تمرکز بر پردازش زبان فارسی، مدیریت متمرکز اعتبار و مصرف (Pay-as-you-go)، سهمیه‌بندی بودجه تیم‌ها و داشبورد تحلیل مصرف سازمان.</p>
                         <div className="capsule-tags flex flex-wrap gap-1.5 mt-2">
                           {["طیف متنوع LLMها", "پردازش عمیق زبان فارسی", "کیف پول متمرکز مصرف", "داشبورد مانیتورینگ"].map((t, i) => (
-                            <span key={i} className="text-[10px] bg-white/5 border border-white/10 px-2 py-0.5 rounded-md text-slate-300">{t}[cite: 7]</span>
+                            <span key={i} className="text-[10px] bg-white/5 border border-white/10 px-2 py-0.5 rounded-md text-slate-300">{t}</span>
                           ))}
                         </div>
                       </div>
-                      <div className="capsule-pct-pill font-black text-sm px-3 py-1 rounded-xl bg-black/40 border border-white/10 shrink-0 text-[#EAFF85]">۱۰۰٪[cite: 7]</div>
+                      <div className="capsule-pct-pill font-black text-sm px-3 py-1 rounded-xl bg-black/40 border border-white/10 shrink-0 text-[#EAFF85]">۱۰۰٪</div>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
 
-            {/* SECTION 2: DUAL CORE ECOSYSTEM */}
+            {/* بخش ۲: تفکیک راهبردی مخاطبان هدف */}
             <div className="space-y-6">
               <div className="section-header flex justify-between items-center mb-6">
                 <div className="section-title flex items-center gap-3">
                   <div className="section-title-bar w-1.5 h-6 rounded-full" style={{ backgroundColor: primaryColor }} />
-                  <h2 className="text-xl font-black text-white">تفکیک راهبردی مخاطبان هدف <span className="sec-title-en text-sm text-slate-400 font-normal">(Dual Core Ecosystem)[cite: 7]</span></h2>
+                  <h2 className="text-xl font-black text-white">تفکیک راهبردی مخاطبان هدف <span className="sec-title-en text-sm text-slate-400 font-normal">(Dual Core Ecosystem)</span></h2>
                 </div>
                 <div className="section-subtitle text-xs text-slate-400 bg-white/5 border border-white/10 px-3 py-1 rounded-full">
-                  پوشش هم‌زمان بازار خرد مشترکین و شرکت‌های بزرگ سازمانی[cite: 7]
+                  پوشش هم‌زمان بازار خرد مشترکین و شرکت‌های بزرگ سازمانی
                 </div>
               </div>
 
@@ -488,34 +488,34 @@ export default function Ziira() {
                     <div className="flex items-center gap-3">
                       <div className="w-11 h-11 rounded-xl flex items-center justify-center text-xl" style={{ backgroundColor: `${primaryColor}20`, color: primaryColor }}>👤</div>
                       <div>
-                        <h3 className="font-black text-base text-white">زیرا برای کاربران عمومی (B2C)[cite: 7]</h3>
-                        <span className="text-xs text-slate-400">مشترکین خرد، پژوهشگران، متخصصین و عموم شهروندان[cite: 7]</span>
+                        <h3 className="font-black text-base text-white">زیرا برای کاربران عمومی (B2C)</h3>
+                        <span className="text-xs text-slate-400">مشترکین خرد، پژوهشگران، متخصصین و عموم شهروندان</span>
                       </div>
                     </div>
-                    <span className="text-[11px] font-bold px-3 py-1 rounded-full" style={{ backgroundColor: `${primaryColor}20`, color: primaryColor }}>پایگاه مصرف انبوه[cite: 7]</span>
+                    <span className="text-[11px] font-bold px-3 py-1 rounded-full" style={{ backgroundColor: `${primaryColor}20`, color: primaryColor }}>پایگاه مصرف انبوه</span>
                   </div>
 
                   <ul className="space-y-3 text-xs text-slate-300 leading-relaxed">
                     <li className="flex items-start gap-2.5">
                       <span className="w-1.5 h-1.5 rounded-full mt-1.5 shrink-0" style={{ backgroundColor: primaryColor }} />
-                      <div><strong>دسترسی چندکاناله همه‌جا‌حاضر:</strong> تعامل روان از طریق وب‌سایت، اپلیکیشن، افزونه کروم و بات‌های پیام‌رسان بومی[cite: 7].</div>
+                      <div><strong>دسترسی چندکاناله همه‌جا‌حاضر:</strong> تعامل روان از طریق وب‌سایت، اپلیکیشن، افزونه کروم و بات‌های پیام‌رسان بومی.</div>
                     </li>
                     <li className="flex items-start gap-2.5">
                       <span className="w-1.5 h-1.5 rounded-full mt-1.5 shrink-0" style={{ backgroundColor: primaryColor }} />
-                      <div><strong>شناسه هویت واحد (Single Sign-On):</strong> حفظ تاریخچه مکالمات، پرامپت‌ها و داده‌ها با شماره تلفن همراه[cite: 7].</div>
+                      <div><strong>شناسه هویت واحد (Single Sign-On):</strong> حفظ تاریخچه مکالمات، پرامپت‌ها و داده‌ها با شماره تلفن همراه.</div>
                     </li>
                     <li className="flex items-start gap-2.5">
                       <span className="w-1.5 h-1.5 rounded-full mt-1.5 shrink-0" style={{ backgroundColor: primaryColor }} />
-                      <div><strong>کیف پول خرد مرکزی (Micro-Wallet):</strong> شارژ آسان اعتباری و پرداخت منعطف متناسب با مصرف واقعی (Pay-As-You-Go)[cite: 7].</div>
+                      <div><strong>کیف پول خرد مرکزی (Micro-Wallet):</strong> شارژ آسان اعتباری و پرداخت منعطف متناسب با مصرف واقعی (Pay-As-You-Go).</div>
                     </li>
                     <li className="flex items-start gap-2.5">
                       <span className="w-1.5 h-1.5 rounded-full mt-1.5 shrink-0" style={{ backgroundColor: primaryColor }} />
-                      <div><strong>تنوع خدمات چندرسانه‌ای:</strong> گفت‌وگو، تولید محتوای متنی، پردازش و ساخت تصاویر و خلاصه‌سازی هوشمند[cite: 7].</div>
+                      <div><strong>تنوع خدمات چندرسانه‌ای:</strong> گفت‌وگو، تولید محتوای متنی، پردازش و ساخت تصاویر و خلاصه‌سازی هوشمند.</div>
                     </li>
                   </ul>
 
                   <div className="mt-5 p-3 rounded-xl bg-black/40 border border-white/5 text-xs">
-                    <strong style={{ color: primaryColor }}>اهرم همراه اول:</strong> امکان فعال‌سازی مستقیم روی بسته اینترنت، شارژ اعتباری و پرداخت روی قبض سیم‌کارت[cite: 7].
+                    <strong style={{ color: primaryColor }}>اهرم همراه اول:</strong> امکان فعال‌سازی مستقیم روی بسته اینترنت، شارژ اعتباری و پرداخت روی قبض سیم‌کارت.
                   </div>
                 </div>
 
@@ -524,48 +524,48 @@ export default function Ziira() {
                     <div className="flex items-center gap-3">
                       <div className="w-11 h-11 rounded-xl bg-[#99CC00]/20 text-[#99CC00] flex items-center justify-center text-xl">🏢</div>
                       <div>
-                        <h3 className="font-black text-base text-white">زیرا برای سازمان‌ها و کسب‌وکارها (B2B)[cite: 7]</h3>
-                        <span className="text-xs text-slate-400">هلدینگ‌ها، بانک‌ها، اپراتورها و شرکت‌های فناور کشور[cite: 7]</span>
+                        <h3 className="font-black text-base text-white">زیرا برای سازمان‌ها و کسب‌وکارها (B2B)</h3>
+                        <span className="text-xs text-slate-400">هلدینگ‌ها، بانک‌ها، اپراتورها و شرکت‌های فناور کشور</span>
                       </div>
                     </div>
-                    <span className="text-[11px] font-bold px-3 py-1 rounded-full bg-[#99CC00]/20 text-[#99CC00]">درآمدزایی پایدار سازمانی[cite: 7]</span>
+                    <span className="text-[11px] font-bold px-3 py-1 rounded-full bg-[#99CC00]/20 text-[#99CC00]">درآمدزایی پایدار سازمانی</span>
                   </div>
 
                   <ul className="space-y-3 text-xs text-slate-300 leading-relaxed">
                     <li className="flex items-start gap-2.5">
                       <span className="w-1.5 h-1.5 rounded-full mt-1.5 shrink-0 bg-[#99CC00]" />
-                      <div><strong>فضای کاری اختصاصی (Enterprise Tenant):</strong> محیط امن، رمزنگاری‌شده و کاملاً ایزوله مختص هر سازمان[cite: 7].</div>
+                      <div><strong>فضای کاری اختصاصی (Enterprise Tenant):</strong> محیط امن، رمزنگاری‌شده و کاملاً ایزوله مختص هر سازمان.</div>
                     </li>
                     <li className="flex items-start gap-2.5">
                       <span className="w-1.5 h-1.5 rounded-full mt-1.5 shrink-0 bg-[#99CC00]" />
-                      <div><strong>ماتریکس مدیریت دسترسی (RBAC):</strong> تعیین نقش‌ها، دسترسی تیم‌ها به مدل‌های مشخص و پایش امنیت داده‌ها[cite: 7].</div>
+                      <div><strong>ماتریکس مدیریت دسترسی (RBAC):</strong> تعیین نقش‌ها، دسترسی تیم‌ها به مدل‌های مشخص و پایش امنیت داده‌ها.</div>
                     </li>
                     <li className="flex items-start gap-2.5">
                       <span className="w-1.5 h-1.5 rounded-full mt-1.5 shrink-0 bg-[#99CC00]" />
-                      <div><strong>کیف پول سازمانی و سهمیه‌بندی:</strong> تخصیص بودجه و سقف مصرف هوش مصنوعی برای هر دپارتمان یا واحد کاری[cite: 7].</div>
+                      <div><strong>کیف پول سازمانی و سهمیه‌بندی:</strong> تخصیص بودجه و سقف مصرف هوش مصنوعی برای هر دپارتمان یا واحد کاری.</div>
                     </li>
                     <li className="flex items-start gap-2.5">
                       <span className="w-1.5 h-1.5 rounded-full mt-1.5 shrink-0 bg-[#99CC00]" />
-                      <div><strong>ادغام عمیق در فرآیندهای کسب‌وکار:</strong> تبدیل هوش مصنوعی به بازوی اتوماسیون تصمیم‌گیری و اجرای وظایف[cite: 7].</div>
+                      <div><strong>ادغام عمیق در فرآیندهای کسب‌وکار:</strong> تبدیل هوش مصنوعی به بازوی اتوماسیون تصمیم‌گیری و اجرای وظایف.</div>
                     </li>
                   </ul>
 
                   <div className="mt-5 p-3 rounded-xl bg-black/40 border border-white/5 text-xs">
-                    <strong className="text-[#99CC00]">ارزش افزوده همراه اول:</strong> بسته‌بندی در قالب بسته راهکارهای سازمانی همراه اول (B2B) برای ۵۰۰ شرکت برتر کشور[cite: 7].
+                    <strong className="text-[#99CC00]">ارزش افزوده همراه اول:</strong> بسته‌بندی در قالب بسته راهکارهای سازمانی همراه اول (B2B) برای ۵۰۰ شرکت برتر کشور.
                   </div>
                 </div>
               </div>
             </div>
 
-            {/* SECTION 3: 4 VALUE ENGINES (GAUGES) */}
+            {/* بخش ۳: ۴ موتور تمایز و ارزش‌آفرینی */}
             <div className="gauge-section space-y-6">
               <div className="section-header flex justify-between items-center mb-6">
                 <div className="section-title flex items-center gap-3">
                   <div className="section-title-bar w-1.5 h-6 rounded-full" style={{ backgroundColor: primaryColor }} />
-                  <h2 className="text-xl font-black text-white">۴ موتور تمایز و ارزش‌آفرینی پلتفرم «زیرا» <span className="sec-title-en text-sm text-slate-400 font-normal">(Core Value Engines)[cite: 7]</span></h2>
+                  <h2 className="text-xl font-black text-white">۴ موتور تمایز و ارزش‌آفرینی پلتفرم «زیرا» <span className="sec-title-en text-sm text-slate-400 font-normal">(Core Value Engines)</span></h2>
                 </div>
                 <div className="section-subtitle text-xs text-slate-400 bg-white/5 border border-white/10 px-3 py-1 rounded-full">
-                  مزیت رقابتی پایدار در صنعت هوش مصنوعی کشور[cite: 7]
+                  مزیت رقابتی پایدار در صنعت هوش مصنوعی کشور
                 </div>
               </div>
 
@@ -586,22 +586,22 @@ export default function Ziira() {
                         <span>{g.icon}</span>
                       </div>
                     </div>
-                    <h3 className="font-bold text-sm text-white mb-2">{g.title}[cite: 7]</h3>
-                    <p className="text-xs text-slate-400 leading-relaxed">{g.desc}[cite: 7]</p>
+                    <h3 className="font-bold text-sm text-white mb-2">{g.title}</h3>
+                    <p className="text-xs text-slate-400 leading-relaxed">{g.desc}</p>
                   </div>
                 ))}
               </div>
             </div>
 
-            {/* SECTION 4: ENTERPRISE PORTFOLIO */}
+            {/* بخش ۴: سبد راهکارهای سازمانی */}
             <div className="space-y-6">
               <div className="section-header flex justify-between items-center mb-6">
                 <div className="section-title flex items-center gap-3">
                   <div className="section-title-bar w-1.5 h-6 rounded-full" style={{ backgroundColor: primaryColor }} />
-                  <h2 className="text-xl font-black text-white">سبد راهکارهای تخصصی سازمانی <span className="sec-title-en text-sm text-slate-400 font-normal">(Enterprise AI Portfolio)[cite: 7]</span></h2>
+                  <h2 className="text-xl font-black text-white">سبد راهکارهای تخصصی سازمانی <span className="sec-title-en text-sm text-slate-400 font-normal">(Enterprise AI Portfolio)</span></h2>
                 </div>
                 <div className="section-subtitle text-xs text-slate-400 bg-white/5 border border-white/10 px-3 py-1 rounded-full">
-                  محصولات آماده به‌کار جهت ارتقای بهره‌وری عملیاتی[cite: 7]
+                  محصولات آماده به‌کار جهت ارتقای بهره‌وری عملیاتی
                 </div>
               </div>
 
@@ -610,8 +610,8 @@ export default function Ziira() {
                   <div className="flex items-center gap-3.5 mb-5 pb-4 border-b border-white/10">
                     <div className="w-11 h-11 rounded-full bg-[#99CC00] text-slate-950 font-bold flex items-center justify-center text-xl">🎯</div>
                     <div>
-                      <h3 className="font-black text-base text-white">دستیار مدیریت و عملیات پروژه (Project Ops AI)[cite: 7]</h3>
-                      <span className="text-xs text-slate-400">کاهش محسوس اصطکاک پروژه‌های پیچیده سازمانی[cite: 7]</span>
+                      <h3 className="font-black text-base text-white">دستیار مدیریت و عملیات پروژه (Project Ops AI)</h3>
+                      <span className="text-xs text-slate-400">کاهش محسوس اصطکاک پروژه‌های پیچیده سازمانی</span>
                     </div>
                   </div>
                   <div className="space-y-2 text-xs">
@@ -626,7 +626,7 @@ export default function Ziira() {
                         <span className="text-lg">{item.icon}</span>
                         <div>
                           <strong className="text-white ml-1">{item.title}</strong>
-                          <span className="text-slate-400">{item.desc}[cite: 7]</span>
+                          <span className="text-slate-400">{item.desc}</span>
                         </div>
                       </div>
                     ))}
@@ -637,8 +637,8 @@ export default function Ziira() {
                   <div className="flex items-center gap-3.5 mb-5 pb-4 border-b border-white/10">
                     <div className="w-11 h-11 rounded-full flex items-center justify-center text-xl text-white font-bold" style={{ backgroundColor: primaryColor }}>🎧</div>
                     <div>
-                      <h3 className="font-black text-base text-white">دستیار هوشمند پشتیبانی و پاسخ‌گویی (Omni Support AI)[cite: 7]</h3>
-                      <span className="text-xs text-slate-400">پاسخگویی ۲۴/۷ متناسب با محصولات و خدمات کسب‌وکار[cite: 7]</span>
+                      <h3 className="font-black text-base text-white">دستیار هوشمند پشتیبانی و پاسخ‌گویی (Omni Support AI)</h3>
+                      <span className="text-xs text-slate-400">پاسخگویی ۲۴/۷ متناسب با محصولات و خدمات کسب‌وکار</span>
                     </div>
                   </div>
                   <div className="space-y-2 text-xs">
@@ -653,7 +653,7 @@ export default function Ziira() {
                         <span className="text-lg">{item.icon}</span>
                         <div>
                           <strong className="text-white ml-1">{item.title}</strong>
-                          <span className="text-slate-400">{item.desc}[cite: 7]</span>
+                          <span className="text-slate-400">{item.desc}</span>
                         </div>
                       </div>
                     ))}
@@ -662,18 +662,18 @@ export default function Ziira() {
               </div>
             </div>
 
-            {/* SECTION 5: OMNICHANNEL ECOSYSTEM */}
+            {/* بخش ۵: نقشه راه و آمنی‌چنل */}
             <div className="omni-section bg-gradient-to-tr from-[#131722] to-[#1F2738] border border-white/10 rounded-3xl p-6 sm:p-10 space-y-6">
               <div className="section-title flex items-center gap-3">
                 <div className="section-title-bar w-1.5 h-6 rounded-full" style={{ backgroundColor: primaryColor }} />
-                <h2 className="text-xl font-black text-white">کانال‌های دسترسی و نقشه راه توسعه (Omnichannel Ecosystem)[cite: 7]</h2>
+                <h2 className="text-xl font-black text-white">کانال‌های دسترسی و نقشه راه توسعه (Omnichannel Ecosystem)</h2>
               </div>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <div className="space-y-4">
                   <div className="text-xs font-black text-[#00D2FF] flex items-center gap-2">
                     <span className="w-2 h-2 rounded-full bg-[#00E676] shadow-sm"></span>
-                    <span>کانال‌های فعال و در دسترس کاربران (Active Channels)[cite: 7]</span>
+                    <span>کانال‌های فعال و در دسترس کاربران (Active Channels)</span>
                   </div>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
                     {[
@@ -685,8 +685,8 @@ export default function Ziira() {
                       <div key={i} className="bg-black/30 border border-white/10 p-3 rounded-xl flex items-center gap-3 border-r-3 border-r-[#00D2FF]">
                         <span className="text-xl">{ch.icon}</span>
                         <div>
-                          <div className="font-bold text-white">{ch.name}[cite: 7]</div>
-                          <div className="text-[10px] text-slate-400 mt-0.5">{ch.meta}[cite: 7]</div>
+                          <div className="font-bold text-white">{ch.name}</div>
+                          <div className="text-[10px] text-slate-400 mt-0.5">{ch.meta}</div>
                         </div>
                       </div>
                     ))}
@@ -696,7 +696,7 @@ export default function Ziira() {
                 <div className="space-y-4">
                   <div className="text-xs font-black text-purple-400 flex items-center gap-2">
                     <span className="w-2 h-2 rounded-full bg-purple-500 shadow-sm"></span>
-                    <span>کانال‌های در آستانه راه‌اندازی (Upcoming Pipeline)[cite: 7]</span>
+                    <span>کانال‌های در آستانه راه‌اندازی (Upcoming Pipeline)</span>
                   </div>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
                     {[
@@ -708,8 +708,8 @@ export default function Ziira() {
                       <div key={i} className="bg-black/30 border border-white/10 p-3 rounded-xl flex items-center gap-3 border-r-3 border-r-purple-500 opacity-90">
                         <span className="text-xl">{ch.icon}</span>
                         <div>
-                          <div className="font-bold text-white">{ch.name}[cite: 7]</div>
-                          <div className="text-[10px] text-slate-400 mt-0.5">{ch.meta}[cite: 7]</div>
+                          <div className="font-bold text-white">{ch.name}</div>
+                          <div className="text-[10px] text-slate-400 mt-0.5">{ch.meta}</div>
                         </div>
                       </div>
                     ))}
@@ -719,10 +719,10 @@ export default function Ziira() {
             </div>
           </div>
 
-          {/* FOOTER */}
+          {/* سربرگ پایانی */}
           <footer className="footer bg-[#090B10] p-6 sm:px-12 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs border-t border-white/10">
-            <div className="text-white">پلتفرم زیرا؛ <span style={{ color: primaryColor }}>هوش مصنوعی، یکپارچه و در دسترس[cite: 7]</span></div>
-            <div className="text-slate-500">شرکت همراه کسب‌وکارهای هوشمند (EBCOM) • بازوی نوآوری دیجیتال هلدینگ همراه اول[cite: 7]</div>
+            <div className="text-white">پلتفرم زیرا؛ <span style={{ color: primaryColor }}>هوش مصنوعی، یکپارچه و در دسترس</span></div>
+            <div className="text-slate-500">شرکت همراه کسب‌وکارهای هوشمند (EBCOM) • بازوی نوآوری دیجیتال هلدینگ همراه اول</div>
           </footer>
         </div>
       </div>
