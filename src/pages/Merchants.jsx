@@ -328,42 +328,42 @@ export default function Merchants() {
               <img src="/assets/images/Ewano.png" alt="Ewano" className="h-10 sm:h-12 w-auto object-contain" onError={(e) => { e.target.src = '/assets/images/ebcom-sign.png'; }} />
               <div className="hidden sm:block w-px h-8 bg-white/20" />
               <div className="bg-white/10 px-3.5 py-1.5 rounded-full border border-white/10 text-xs font-semibold text-slate-300">
-                هم‌پیمان استراتژیک: <strong style={{ color: primaryColor }}>همراه اول</strong>[cite: 8]
+                هم‌پیمان استراتژیک: <strong style={{ color: primaryColor }}>همراه اول</strong>
               </div>
             </div>
             <span className="font-black text-xs px-4 py-2 rounded-full text-slate-900" style={{ backgroundColor: primaryColor }}>
-              گزارش جامع شبکه پذیرندگان فروشگاهی[cite: 8]
+              گزارش جامع شبکه پذیرندگان فروشگاهی
             </span>
           </div>
 
           <div className="space-y-4 max-w-4xl">
             <h1 className="text-2xl sm:text-4xl font-black text-white leading-tight">
-              اکوسیستم جامع پذیرندگی ، فروشگاه‌ها و <span style={{ color: primaryColor }}>نقاط فروش اوانو</span>[cite: 8]
+              اکوسیستم جامع پذیرندگی ، فروشگاه‌ها و <span style={{ color: primaryColor }}>نقاط فروش اوانو</span>
             </h1>
             <p className="text-slate-300 text-xs sm:text-sm md:text-base leading-relaxed text-justify font-light">
-              در بخش «فروشگاه» سوپراپلیکیشن اوانو، مجموعه‌ای به وسعت <strong>۹،۳۹۷ مرچنت و پذیرنده فعال</strong> سازمان‌دهی شده است[cite: 8]. کاربران اوانو در سراسر کشور می‌توانند انواع اعتبار مالی شامل <strong>اعتبار سازمانی رفاهی، اعتبار اقساطی BNPL، اعتبار قبوض سیم‌کارت دائمی همراه اول و کیف پول ریالی</strong> را چه به صورت آنلاین در برترین وب‌سایت‌های کشور و چه به صورت حضوری در بیش از <strong>۸،۲۰۰ شعبه زنجیره‌ای فیزیکی</strong> از طریق اسکن سریع کد QR بدون نیاز به کارت بانکی یا نقدینگی مصرف کنند[cite: 8].
+              در بخش «فروشگاه» سوپراپلیکیشن اوانو، مجموعه‌ای به وسعت <strong>۹،۳۹۷ مرچنت و پذیرنده فعال</strong> سازمان‌دهی شده است. کاربران اوانو در سراسر کشور می‌توانند انواع اعتبار مالی شامل <strong>اعتبار سازمانی رفاهی، اعتبار اقساطی BNPL، اعتبار قبوض سیم‌کارت دائمی همراه اول و کیف پول ریالی</strong> را چه به صورت آنلاین در برترین وب‌سایت‌های کشور و چه به صورت حضوری در بیش از <strong>۸،۲۰۰ شعبه زنجیره‌ای فیزیکی</strong> از طریق اسکن سریع کد QR بدون نیاز به کارت بانکی یا نقدینگی مصرف کنند.
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-8">
             <div className="bg-white/5 border border-white/15 rounded-2xl p-6 text-center">
-              <div className="text-3xl sm:text-4xl font-black mb-1" style={{ color: primaryColor }}>۹،۳۹۷[cite: 8]</div>
-              <div className="text-sm font-bold text-white mb-1">کل پذیرندگان فعال شبکه[cite: 8]</div>
-              <div className="text-xs text-slate-400">پوشش سراسری در ۳۰ صنف تجاری و خدماتی[cite: 8]</div>
+              <div className="text-3xl sm:text-4xl font-black mb-1" style={{ color: primaryColor }}>۹،۳۹۷</div>
+              <div className="text-sm font-bold text-white mb-1">کل پذیرندگان فعال شبکه</div>
+              <div className="text-xs text-slate-400">پوشش سراسری در ۳۰ صنف تجاری و خدماتی</div>
             </div>
             <div className="bg-white/5 border border-white/15 rounded-2xl p-6 text-center">
               <div className="text-3xl sm:text-4xl font-black text-[#0093DD] mb-1">
-                ۶،۱۸۹ <span className="text-lg font-bold text-[#FF7722]">(۶۵.۹٪)</span>[cite: 8]
+                ۶،۱۸۹ <span className="text-lg font-bold text-[#FF7722]">(۶۵.۹٪)</span>
               </div>
-              <div className="text-sm font-bold text-white mb-1">پذیرندگان آنلاین (Web & In-App)[cite: 8]</div>
-              <div className="text-xs text-slate-400">درگاه‌های اعتباری اوانو، زرین‌پلاس، اسنپ‌پی و ترب‌پی[cite: 8]</div>
+              <div className="text-sm font-bold text-white mb-1">پذیرندگان آنلاین (Web & In-App)</div>
+              <div className="text-xs text-slate-400">درگاه‌های اعتباری اوانو، زرین‌پلاس، اسنپ‌پی و ترب‌پی</div>
             </div>
             <div className="bg-white/5 border border-white/15 rounded-2xl p-6 text-center">
               <div className="text-3xl sm:text-4xl font-black text-[#FF7722] mb-1">
-                ۳،۲۰۸ <span className="text-lg font-bold text-[#00D4B4]">(۳۴.۱٪)</span>[cite: 8]
+                ۳،۲۰۸ <span className="text-lg font-bold text-[#00D4B4]">(۳۴.۱٪)</span>
               </div>
-              <div className="text-sm font-bold text-white mb-1">پذیرندگان حضوری (صندوق و QR)[cite: 8]</div>
-              <div className="text-xs text-slate-400">به همراه بیش از ۷،۴۶۶ شعبه زنجیره‌ای قطعی در سراسر کشور[cite: 8]</div>
+              <div className="text-sm font-bold text-white mb-1">پذیرندگان حضوری (صندوق و QR)</div>
+              <div className="text-xs text-slate-400">به همراه بیش از ۷،۴۶۶ شعبه زنجیره‌ای قطعی در سراسر کشور</div>
             </div>
           </div>
         </header>
@@ -403,8 +403,8 @@ export default function Merchants() {
             { num: "۰۵. تسویه تضمین‌شده و شفاف", text: "تسویه منظم بانکی شاپرکی و پایا بدون دغدغه یا ریسک بازپرداخت برای فروشندگان" },
           ].map((pillar, idx) => (
             <div key={idx} className="bg-white p-4 rounded-xl border border-slate-200 flex flex-col gap-1 shadow-xs" style={{ borderRight: `4px solid ${primaryColor}` }}>
-              <span className="text-xs font-black" style={{ color: '#00A88E' }}>{pillar.num}[cite: 8]</span>
-              <span className="text-xs font-bold text-slate-800 leading-snug">{pillar.text}[cite: 8]</span>
+              <span className="text-xs font-black" style={{ color: '#00A88E' }}>{pillar.num}</span>
+              <span className="text-xs font-bold text-slate-800 leading-snug">{pillar.text}</span>
             </div>
           ))}
         </div>
@@ -417,7 +417,7 @@ export default function Merchants() {
             <section className="space-y-6">
               <div className="flex items-center gap-3">
                 <div className="w-1.5 h-6 rounded-full" style={{ backgroundColor: primaryColor }} />
-                <h2 className="text-xl font-black text-slate-900">دو بال خرید در فروشگاه اوانو؛ آنلاین و حضوری (Omnichannel Shopping Infrastructure)[cite: 8]</h2>
+                <h2 className="text-xl font-black text-slate-900">دو بال خرید در فروشگاه اوانو؛ آنلاین و حضوری (Omnichannel Shopping Infrastructure)</h2>
               </div>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -426,20 +426,20 @@ export default function Merchants() {
                     <div className="flex justify-between items-center pb-4 mb-4 border-b border-slate-200 flex-wrap gap-2">
                       <div className="flex items-center gap-3">
                         <div className="w-10 h-10 rounded-xl bg-[#0093DD]/10 text-[#0093DD] flex items-center justify-center"><Globe size={22} /></div>
-                        <h3 className="font-extrabold text-base text-slate-900">فروشگاه‌های آنلاین (Web & In-App)[cite: 8]</h3>
+                        <h3 className="font-extrabold text-base text-slate-900">فروشگاه‌های آنلاین (Web & In-App)</h3>
                       </div>
-                      <span className="bg-[#0093DD]/15 text-[#0093DD] font-black text-xs px-3 py-1 rounded-full">۶،۱۸۹ (۶۵.۹٪)[cite: 8]</span>
+                      <span className="bg-[#0093DD]/15 text-[#0093DD] font-black text-xs px-3 py-1 rounded-full">۶،۱۸۹ (۶۵.۹٪)</span>
                     </div>
                     <ul className="space-y-2.5 text-xs sm:text-sm text-slate-700 leading-relaxed mb-6">
-                      <li>• <strong>خرید از برترین پلتفرم‌های اینترنتی:</strong> دیجی‌کالا، اُکالا، تکنولایف، تپسی‌شاپ، زرین‌پلاس، فلای‌تودی و...[cite: 8]</li>
-                      <li>• <strong>تنوع صنفی گسترده:</strong> کالای دیجیتال، طلا و جواهر، سفر و اقامت، خدمات بیمه، آموزش آنلاین و کتاب[cite: 8]</li>
-                      <li>• <strong>تسویه و تسهیم هوشمند:</strong> کسر آنی از اعتبار سازمانی، اقساط ۴ ماهه BNPL یا بالانس کیف پول[cite: 8]</li>
+                      <li>• <strong>خرید از برترین پلتفرم‌های اینترنتی:</strong> دیجی‌کالا، اُکالا، تکنولایف، تپسی‌شاپ، زرین‌پلاس، فلای‌تودی و...</li>
+                      <li>• <strong>تنوع صنفی گسترده:</strong> کالای دیجیتال، طلا و جواهر، سفر و اقامت، خدمات بیمه، آموزش آنلاین و کتاب</li>
+                      <li>• <strong>تسویه و تسهیم هوشمند:</strong> کسر آنی از اعتبار سازمانی، اقساط ۴ ماهه BNPL یا بالانس کیف پول</li>
                     </ul>
                   </div>
                   <div className="bg-white p-3 rounded-xl border border-slate-200 flex flex-wrap gap-2 text-xs">
-                    <span className="text-slate-500 font-bold w-full mb-1">کانال‌ها و درگاه‌های آنلاین متصل:[cite: 8]</span>
+                    <span className="text-slate-500 font-bold w-full mb-1">کانال‌ها و درگاه‌های آنلاین متصل:</span>
                     {["درگاه مستقیم اوانو", "زرین‌پلاس", "اسنپ‌پی آنلاین", "تپسی‌شاپ", "ترب‌پی"].map((g, i) => (
-                      <span key={i} className="bg-slate-100 px-2.5 py-1 rounded-md font-bold">{g}[cite: 8]</span>
+                      <span key={i} className="bg-slate-100 px-2.5 py-1 rounded-md font-bold">{g}</span>
                     ))}
                   </div>
                 </div>
@@ -449,20 +449,20 @@ export default function Merchants() {
                     <div className="flex justify-between items-center pb-4 mb-4 border-b border-slate-200 flex-wrap gap-2">
                       <div className="flex items-center gap-3">
                         <div className="w-10 h-10 rounded-xl bg-[#FF7722]/10 text-[#FF7722] flex items-center justify-center"><QrCode size={22} /></div>
-                        <h3 className="font-extrabold text-base text-slate-900">فروشگاه‌های حضوری (کد QR و پایانه)[cite: 8]</h3>
+                        <h3 className="font-extrabold text-base text-slate-900">فروشگاه‌های حضوری (کد QR و پایانه)</h3>
                       </div>
-                      <span className="bg-[#FF7722]/15 text-[#FF7722] font-black text-xs px-3 py-1 rounded-full">۳،۲۰۸ (۳۴.۱٪)[cite: 8]</span>
+                      <span className="bg-[#FF7722]/15 text-[#FF7722] font-black text-xs px-3 py-1 rounded-full">۳،۲۰۸ (۳۴.۱٪)</span>
                     </div>
                     <ul className="space-y-2.5 text-xs sm:text-sm text-slate-700 leading-relaxed mb-6">
-                      <li>• <strong>اسکن سریع کد QR پایانه:</strong> پرداخت در کمتر از ۳ ثانیه با دوربین اپلیکیشن اوانو در صندوق فروشگاه[cite: 8]</li>
-                      <li>• <strong>بیش از ۸،۲۰۰ شعبه فیزیکی زنجیره‌ای:</strong> افق کوروش، دیلی مارکت، رفاه، هفت، هایپراستار، شهروند و چرم مشهد[cite: 8]</li>
-                      <li>• <strong>خرید حضوری پوشاک و طلا:</strong> ۱،۸۸۷ فروشگاه پوشاک و ۳۶۲ گالری طلا و ساعت مجهز به پایانه‌های حضوری[cite: 8]</li>
+                      <li>• <strong>اسکن سریع کد QR پایانه:</strong> پرداخت در کمتر از ۳ ثانیه با دوربین اپلیکیشن اوانو در صندوق فروشگاه</li>
+                      <li>• <strong>بیش از ۸،۲۰۰ شعبه فیزیکی زنجیره‌ای:</strong> افق کوروش، دیلی مارکت، رفاه، هفت، هایپراستار، شهروند و چرم مشهد</li>
+                      <li>• <strong>خرید حضوری پوشاک و طلا:</strong> ۱،۸۸۷ فروشگاه پوشاک و ۳۶۲ گالری طلا و ساعت مجهز به پایانه‌های حضوری</li>
                     </ul>
                   </div>
                   <div className="bg-white p-3 rounded-xl border border-slate-200 flex flex-wrap gap-2 text-xs">
-                    <span className="text-slate-500 font-bold w-full mb-1">شبکه‌های پذیرش حضوری و پایانه فروشگاهی:[cite: 8]</span>
+                    <span className="text-slate-500 font-bold w-full mb-1">شبکه‌های پذیرش حضوری و پایانه فروشگاهی:</span>
                     {["پینکت (سوپرمارکت و هایپر)", "پایانه‌های پوز متصل به اوانو", "بارکدخوان QR صندوق", "اسنپ‌پی حضوری"].map((g, i) => (
-                      <span key={i} className="bg-slate-100 px-2.5 py-1 rounded-md font-bold">{g}[cite: 8]</span>
+                      <span key={i} className="bg-slate-100 px-2.5 py-1 rounded-md font-bold">{g}</span>
                     ))}
                   </div>
                 </div>
@@ -475,7 +475,7 @@ export default function Merchants() {
             <section className="space-y-6">
               <div className="flex items-center gap-3">
                 <div className="w-1.5 h-6 rounded-full" style={{ backgroundColor: primaryColor }} />
-                <h2 className="text-xl font-black text-slate-900">شبیه‌ساز مصرف انواع اعتبار در فروشگاه اوانو[cite: 8]</h2>
+                <h2 className="text-xl font-black text-slate-900">شبیه‌ساز مصرف انواع اعتبار در فروشگاه اوانو</h2>
               </div>
 
               <div className="bg-[#F8FAF9] border border-slate-200 rounded-2xl p-6">
@@ -505,25 +505,25 @@ export default function Merchants() {
                 <div className="bg-white border border-slate-200 rounded-xl p-6 grid grid-cols-1 lg:grid-cols-12 gap-6">
                   <div className="lg:col-span-7 space-y-4">
                     <span className="inline-block px-3 py-1 rounded-full text-xs font-black" style={{ backgroundColor: `${primaryColor}20`, color: '#008F5D' }}>
-                      {creditData[selectedCredit].badge}[cite: 8]
+                      {creditData[selectedCredit].badge}
                     </span>
-                    <h3 className="text-xl font-black text-slate-900">{creditData[selectedCredit].title}[cite: 8]</h3>
-                    <p className="text-xs sm:text-sm text-slate-600 leading-relaxed text-justify">{creditData[selectedCredit].desc}[cite: 8]</p>
+                    <h3 className="text-xl font-black text-slate-900">{creditData[selectedCredit].title}</h3>
+                    <p className="text-xs sm:text-sm text-slate-600 leading-relaxed text-justify">{creditData[selectedCredit].desc}</p>
                     <div className="flex flex-wrap gap-2 pt-2">
                       {creditData[selectedCredit].chips.map((c, i) => (
                         <span key={i} className="text-xs font-bold px-3 py-1 rounded-full border" style={{ borderColor: `${primaryColor}40`, backgroundColor: `${primaryColor}10`, color: '#008F5D' }}>
-                          ✓ {c}[cite: 8]
+                          ✓ {c}
                         </span>
                       ))}
                     </div>
                   </div>
 
                   <div className="lg:col-span-5 bg-[#F8FAF9] border border-slate-200 rounded-xl p-5 flex flex-col justify-between">
-                    <h4 className="text-xs font-black text-slate-800 mb-3">{creditData[selectedCredit].merchantsTitle}[cite: 8]</h4>
+                    <h4 className="text-xs font-black text-slate-800 mb-3">{creditData[selectedCredit].merchantsTitle}</h4>
                     <div className="flex flex-wrap gap-2">
                       {creditData[selectedCredit].merchants.map((m, i) => (
                         <span key={i} className="bg-white border border-slate-200 text-slate-800 text-xs font-bold px-2.5 py-1.5 rounded-lg shadow-2xs">
-                          {m}[cite: 8]
+                          {m}
                         </span>
                       ))}
                     </div>
@@ -538,51 +538,51 @@ export default function Merchants() {
             <section className="space-y-6">
               <div className="flex items-center gap-3">
                 <div className="w-1.5 h-6 rounded-full" style={{ backgroundColor: primaryColor }} />
-                <h2 className="text-xl font-black text-slate-900">نمودارهای تحلیلی و بصری‌سازی داده‌های شبکه[cite: 8]</h2>
+                <h2 className="text-xl font-black text-slate-900">نمودارهای تحلیلی و بصری‌سازی داده‌های شبکه</h2>
               </div>
 
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
                 <div className="bg-[#F8FAF9] border border-slate-200 rounded-2xl p-6">
-                  <h3 className="font-extrabold text-base text-slate-900 mb-1">توازن کانال‌های دسترسی شبکه اوانو[cite: 8]</h3>
+                  <h3 className="font-extrabold text-base text-slate-900 mb-1">توازن کانال‌های دسترسی شبکه اوانو</h3>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 items-center mt-4">
                     <div className="h-48 flex justify-center"><canvas ref={donutCanvasRef}></canvas></div>
                     <div className="space-y-2 text-xs font-bold">
-                      <div className="bg-white p-2.5 rounded-xl border border-slate-200 flex justify-between"><span>آنلاین:</span> <span className="text-[#0093DD]">۶،۱۸۹ (۶۵.۹٪)[cite: 8]</span></div>
-                      <div className="bg-white p-2.5 rounded-xl border border-slate-200 flex justify-between"><span>حضوری QR:</span> <span className="text-[#FF7722]">۳،۲۰۸ (۳۴.۱٪)[cite: 8]</span></div>
-                      <div className="bg-white p-2.5 rounded-xl border border-slate-200 flex justify-between"><span>مجموع کل:</span> <span className="text-[#00A88E]">۹،۳۹۷[cite: 8]</span></div>
+                      <div className="bg-white p-2.5 rounded-xl border border-slate-200 flex justify-between"><span>آنلاین:</span> <span className="text-[#0093DD]">۶،۱۸۹ (۶۵.۹٪)</span></div>
+                      <div className="bg-white p-2.5 rounded-xl border border-slate-200 flex justify-between"><span>حضوری QR:</span> <span className="text-[#FF7722]">۳،۲۰۸ (۳۴.۱٪)</span></div>
+                      <div className="bg-white p-2.5 rounded-xl border border-slate-200 flex justify-between"><span>مجموع کل:</span> <span className="text-[#00A88E]">۹،۳۹۷</span></div>
                     </div>
                   </div>
                 </div>
 
                 <div className="bg-[#F8FAF9] border border-slate-200 rounded-2xl p-6">
-                  <h3 className="font-extrabold text-base text-slate-900 mb-1">۱۰ صنف برتر تجاری از نظر تعداد پذیرنده[cite: 8]</h3>
+                  <h3 className="font-extrabold text-base text-slate-900 mb-1">۱۰ صنف برتر تجاری از نظر تعداد پذیرنده</h3>
                   <div className="h-56 mt-4"><canvas ref={barCanvasRef}></canvas></div>
                 </div>
 
                 <div className="bg-[#F8FAF9] border border-slate-200 rounded-2xl p-6">
-                  <h3 className="font-extrabold text-base text-slate-900 mb-1">ترکیب آنلاین و حضوری در ۱۰ صنف بزرگ[cite: 8]</h3>
+                  <h3 className="font-extrabold text-base text-slate-900 mb-1">ترکیب آنلاین و حضوری در ۱۰ صنف بزرگ</h3>
                   <div className="h-56 mt-4"><canvas ref={stackedCanvasRef}></canvas></div>
                 </div>
 
                 <div className="bg-[#F8FAF9] border border-slate-200 rounded-2xl p-6">
-                  <h3 className="font-extrabold text-base text-slate-900 mb-1">پوشش سبدهای کلیدی هزینه خانوار[cite: 8]</h3>
+                  <h3 className="font-extrabold text-base text-slate-900 mb-1">پوشش سبدهای کلیدی هزینه خانوار</h3>
                   <div className="h-56 mt-4 flex justify-center"><canvas ref={polarCanvasRef}></canvas></div>
                 </div>
 
                 <div className="bg-[#F8FAF9] border border-slate-200 rounded-2xl p-6 lg:col-span-2">
-                  <h3 className="font-extrabold text-base text-slate-900 mb-1">ظرفیت شبکه فیزیکی غول‌های خرده‌فروشی زنجیره‌ای متصل به اوانو[cite: 8]</h3>
+                  <h3 className="font-extrabold text-base text-slate-900 mb-1">ظرفیت شبکه فیزیکی غول‌های خرده‌فروشی زنجیره‌ای متصل به اوانو</h3>
                   <div className="h-64 mt-4"><canvas ref={chainsCanvasRef}></canvas></div>
                 </div>
               </div>
             </section>
           )}
 
-          {/* ۴. غول‌های خرده‌فروشی */}
+          {/* ۴. غول‌های زنجیره‌ای */}
           {(activeTab === 'all' || activeTab === 'giants') && (
             <section className="space-y-6">
               <div className="flex items-center gap-3">
                 <div className="w-1.5 h-6 rounded-full" style={{ backgroundColor: primaryColor }} />
-                <h2 className="text-xl font-black text-slate-900">غول‌های خرده‌فروشی زنجیره‌ای در شبکه اوانو (۷،۴۶۶+ شعبه فعال)[cite: 8]</h2>
+                <h2 className="text-xl font-black text-slate-900">غول‌های خرده‌فروشی زنجیره‌ای در شبکه اوانو (۷،۴۶۶+ شعبه فعال)</h2>
               </div>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
@@ -590,10 +590,10 @@ export default function Merchants() {
                   <div key={idx} className="bg-[#F8FAF9] border border-slate-200 rounded-xl p-4 flex flex-col justify-between hover:border-[#3DD598] transition-colors">
                     <div>
                       <div className="flex justify-between items-center mb-1">
-                        <span className="font-extrabold text-sm text-slate-900">{g.name}[cite: 8]</span>
-                        <span className="text-sm font-black" style={{ color: '#00A88E' }}>{toPersianDigits(g.branches)}[cite: 8]</span>
+                        <span className="font-extrabold text-sm text-slate-900">{g.name}</span>
+                        <span className="text-sm font-black" style={{ color: '#00A88E' }}>{toPersianDigits(g.branches)}</span>
                       </div>
-                      <span className="text-[11px] text-slate-500 block mb-3">{g.category}[cite: 8]</span>
+                      <span className="text-[11px] text-slate-500 block mb-3">{g.category}</span>
                     </div>
                     <div className="w-full h-1.5 bg-slate-200 rounded-full overflow-hidden">
                       <div className="h-full rounded-full" style={{ width: `${Math.max(8, (g.branches / 4400) * 100)}%`, backgroundColor: primaryColor }} />
@@ -609,7 +609,7 @@ export default function Merchants() {
             <section className="space-y-6">
               <div className="flex items-center gap-3">
                 <div className="w-1.5 h-6 rounded-full" style={{ backgroundColor: primaryColor }} />
-                <h2 className="text-xl font-black text-slate-900">کاوشگر هوشمند ۳۰ صنف تجاری اوانو (۹،۳۹۷ فروشگاه)[cite: 8]</h2>
+                <h2 className="text-xl font-black text-slate-900">کاوشگر هوشمند ۳۰ صنف تجاری اوانو (۹،۳۹۷ فروشگاه)</h2>
               </div>
 
               <div className="bg-white border border-slate-200 rounded-2xl p-6 shadow-sm">
@@ -626,7 +626,7 @@ export default function Merchants() {
                         onClick={() => setActiveFilter(f.key)}
                         className={`text-xs font-bold px-3 py-1.5 rounded-full transition-colors cursor-pointer ${activeFilter === f.key ? 'bg-slate-900 text-white' : 'bg-slate-100 text-slate-600'}`}
                       >
-                        {f.label}[cite: 8]
+                        {f.label}
                       </button>
                     ))}
                   </div>
@@ -650,11 +650,11 @@ export default function Merchants() {
                         <div className="flex items-center gap-2.5">
                           <span className="text-xl">{cat.icon}</span>
                           <div>
-                            <div className="font-extrabold text-sm text-slate-900">{cat.name}[cite: 8]</div>
-                            <div className="text-[11px] text-slate-500 font-bold">{toPersianDigits(cat.pct)}٪ از کل شبکه[cite: 8]</div>
+                            <div className="font-extrabold text-sm text-slate-900">{cat.name}</div>
+                            <div className="text-[11px] text-slate-500 font-bold">{toPersianDigits(cat.pct)}٪ از کل شبکه</div>
                           </div>
                         </div>
-                        <span className="text-lg font-black text-slate-900">{toPersianDigits(cat.total)}[cite: 8]</span>
+                        <span className="text-lg font-black text-slate-900">{toPersianDigits(cat.total)}</span>
                       </div>
 
                       <div className="space-y-1.5">
@@ -663,8 +663,8 @@ export default function Merchants() {
                           <div className="bg-[#FF7722]" style={{ width: `${(cat.offline / cat.total) * 100}%` }} />
                         </div>
                         <div className="flex justify-between text-[11px] font-bold text-slate-500">
-                          <span className="text-[#0093DD]">آنلاین: {toPersianDigits(cat.online)}[cite: 8]</span>
-                          <span className="text-[#FF7722]">حضوری: {toPersianDigits(cat.offline)}[cite: 8]</span>
+                          <span className="text-[#0093DD]">آنلاین: {toPersianDigits(cat.online)}</span>
+                          <span className="text-[#FF7722]">حضوری: {toPersianDigits(cat.offline)}</span>
                         </div>
                       </div>
                     </div>
@@ -677,22 +677,22 @@ export default function Merchants() {
           {/* ۶. موک‌آپ گوشی */}
           <div className="bg-gradient-to-r from-[#1C2022] to-[#141718] text-white rounded-3xl p-6 sm:p-10 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
             <div className="lg:col-span-7 space-y-4">
-              <h2 className="text-2xl sm:text-3xl font-black text-white">تجربه خرید یکپارچه در بخش «فروشگاه» اوانو[cite: 8]</h2>
+              <h2 className="text-2xl sm:text-3xl font-black text-white">تجربه خرید یکپارچه در بخش «فروشگاه» اوانو</h2>
               <p className="text-slate-300 text-xs sm:text-sm leading-relaxed">
-                در رابط کاربری مدرن اپلیکیشن اوانو، ویترین کاملی از هزاران فروشگاه معتبر کشور در دسترس است[cite: 8]. کاربران تنها با دو لمس می‌توانند فروشگاه آنلاین دلخواه را باز کرده یا با لمس آیکون اسکنر، کد QR صندوق فروشگاه فیزیکی را اسکن و خرید خود را نهایی کنند[cite: 8].
+                در رابط کاربری مدرن اپلیکیشن اوانو، ویترین کاملی از هزاران فروشگاه معتبر کشور در دسترس است. کاربران تنها با دو لمس می‌توانند فروشگاه آنلاین دلخواه را باز کرده یا با لمس آیکون اسکنر، کد QR صندوق فروشگاه فیزیکی را اسکن و خرید خود را نهایی کنند.
               </p>
               <div className="space-y-3 pt-2 text-xs sm:text-sm">
                 <div className="flex items-center gap-3">
                   <div className="w-7 h-7 rounded-full bg-[#00D4B4] text-slate-950 font-black flex items-center justify-center shrink-0">۱</div>
-                  <span><strong>پوشش ۳۶۰ درجه‌ای:</strong> خرید اینترنتی در دیجی‌کالا و خرید حضوری در افق کوروش در یک اپلیکیشن[cite: 8].</span>
+                  <span><strong>پوشش ۳۶۰ درجه‌ای:</strong> خرید اینترنتی در دیجی‌کالا و خرید حضوری در افق کوروش در یک اپلیکیشن.</span>
                 </div>
                 <div className="flex items-center gap-3">
                   <div className="w-7 h-7 rounded-full bg-[#FF7722] text-white font-black flex items-center justify-center shrink-0">۲</div>
-                  <span><strong>انتخاب خودکار منبع مالی:</strong> کسر هوشمند از بن رفاهی یا اقساط BNPL بدون کارمزد مازاد[cite: 8].</span>
+                  <span><strong>انتخاب خودکار منبع مالی:</strong> کسر هوشمند از بن رفاهی یا اقساط BNPL بدون کارمزد مازاد.</span>
                 </div>
                 <div className="flex items-center gap-3">
                   <div className="w-7 h-7 rounded-full bg-[#0093DD] text-white font-black flex items-center justify-center shrink-0">۳</div>
-                  <span><strong>تسویه آنی و بدون تأخیر:</strong> سیستم مالی ویژه همراه اول با گزارش‌های دقیق تحلیلی[cite: 8].</span>
+                  <span><strong>تسویه آنی و بدون تأخیر:</strong> سیستم مالی ویژه همراه اول با گزارش‌های دقیق تحلیلی.</span>
                 </div>
               </div>
             </div>
@@ -702,31 +702,31 @@ export default function Merchants() {
                 <div className="bg-[#F8FAF9] rounded-[24px] p-3 text-slate-900 space-y-3">
                   <div className="w-16 h-2.5 bg-black rounded-full mx-auto mb-1"></div>
                   <div className="flex justify-between items-center pb-2 border-b border-slate-200 text-xs">
-                    <span className="font-black text-[#00A88E]">فروشگاه اوانو[cite: 8]</span>
+                    <span className="font-black text-[#00A88E]">فروشگاه اوانو</span>
                     <div className="flex bg-slate-200 rounded-full p-0.5 text-[11px] font-bold">
-                      <button onClick={() => setMockupTab('online')} className={`px-2 py-0.5 rounded-full cursor-pointer ${mockupTab === 'online' ? 'bg-[#00D4B4] text-slate-900' : 'text-slate-600'}`}>آنلاین[cite: 8]</button>
-                      <button onClick={() => setMockupTab('offline')} className={`px-2 py-0.5 rounded-full cursor-pointer ${mockupTab === 'offline' ? 'bg-[#00D4B4] text-slate-900' : 'text-slate-600'}`}>حضوری[cite: 8]</button>
+                      <button onClick={() => setMockupTab('online')} className={`px-2 py-0.5 rounded-full cursor-pointer ${mockupTab === 'online' ? 'bg-[#00D4B4] text-slate-900' : 'text-slate-600'}`}>آنلاین</button>
+                      <button onClick={() => setMockupTab('offline')} className={`px-2 py-0.5 rounded-full cursor-pointer ${mockupTab === 'offline' ? 'bg-[#00D4B4] text-slate-900' : 'text-slate-600'}`}>حضوری</button>
                     </div>
                   </div>
 
                   <div className="bg-[#00D4B4]/15 text-[#00A88E] p-2 rounded-lg text-[10px] font-extrabold text-center">
-                    اعتبار قابل مصرف: ۱۰،۰۰۰،۰۰۰ تومان[cite: 8]
+                    اعتبار قابل مصرف: ۱۰،۰۰۰،۰۰۰ تومان
                   </div>
 
                   <div className="space-y-1.5 max-h-48 overflow-hidden">
                     {mockupData[mockupTab].map((m, idx) => (
                       <div key={idx} className="bg-white p-2 rounded-lg border border-slate-200 flex justify-between items-center text-[11px]">
                         <div className="flex items-center gap-1.5">
-                          <span className="w-5 h-5 rounded-md bg-[#00D4B4]/20 text-[#00A88E] flex items-center justify-center font-bold text-[9px]">{m.avatar}[cite: 8]</span>
-                          <span className="font-bold">{m.name}[cite: 8]</span>
+                          <span className="w-5 h-5 rounded-md bg-[#00D4B4]/20 text-[#00A88E] flex items-center justify-center font-bold text-[9px]">{m.avatar}</span>
+                          <span className="font-bold">{m.name}</span>
                         </div>
-                        <span className="bg-[#FF7722]/15 text-[#FF7722] text-[9px] px-1.5 py-0.5 rounded-md font-bold">{m.badge}[cite: 8]</span>
+                        <span className="bg-[#FF7722]/15 text-[#FF7722] text-[9px] px-1.5 py-0.5 rounded-md font-bold">{m.badge}</span>
                       </div>
                     ))}
                   </div>
 
                   <button className="w-full py-2 rounded-xl font-black text-xs shadow-md text-slate-900 cursor-pointer" style={{ backgroundColor: primaryColor }}>
-                    اسکن بارکد QR و پرداخت حضوری[cite: 8]
+                    اسکن بارکد QR و پرداخت حضوری
                   </button>
                 </div>
               </div>
@@ -738,10 +738,10 @@ export default function Merchants() {
         <footer className="bg-[#1C1C1C] text-white p-6 sm:px-12 flex flex-col sm:flex-row justify-between items-center gap-4 border-t border-slate-800">
           <div className="flex items-center gap-2 text-base font-extrabold">
             <span>خط همراه اول داری؟</span>
-            <span className="text-lg font-black" style={{ color: primaryColor }}>«اوانو اعتبارته»[cite: 8]</span>
+            <span className="text-lg font-black" style={{ color: primaryColor }}>«اوانو اعتبارته»</span>
           </div>
           <div className="text-xs text-slate-400 font-light">
-            شبکه پذیرندگان و درگاه‌های خرید اعتباری اپلیکیشن اوانو (Ewano) • شرکت همراه کسب‌وکارهای هوشمند (EBCOM) © ۲۰۲۶[cite: 8]
+            شبکه پذیرندگان و درگاه‌های خرید اعتباری اپلیکیشن اوانو (Ewano) • شرکت همراه کسب‌وکارهای هوشمند (EBCOM) © ۲۰۲۶
           </div>
         </footer>
       </div>
